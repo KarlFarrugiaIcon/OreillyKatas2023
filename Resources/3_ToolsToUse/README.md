@@ -1,15 +1,18 @@
 Use Cases
-- flowcharts - mermaid
-- relationship diagrams - mermaid
+- flowcharts 
+- relationship diagrams 
 - component diagrams
 - context diagrams
-- user journey diagrams sequence diagrams - mermaid
-- User Story Mapping - miro
-- System level diagrams - visio
-- deployment diagrams - visio
+- user journey diagrams sequence diagrams 
+- User Story Mapping 
+- System level diagrams 
+- deployment diagrams 
 - ui diagrams
-- behaviour - mermaid
+- behaviour
 - db diagrams
+- actor diagram
+- domain model
+- user story mapping
 
 
 Tools
@@ -17,13 +20,17 @@ Tools
 - MIRO / Microsoft Whiteboard
 - [ok so app](https://okso.app/)
 - [mermaid diagrams](http://mermaid.js.org/)
+- draw.io
+- mockflow
 
+References
+- [Developer To Architect](https://developertoarchitect.com/resources.html)
 
 ```mermaid
 flowchart TD
-    A[Christmas] -->|Get money| B(Go shopping)
-    B --> C{Let me think}
-    C -->|One| D[Laptop]
-    C -->|Two| E[iPhone]
-    C -->|Three| F[fa:fa-car Car]
+    A[Katas] -->|Enter| B(Participants)
+    B --> C{Come up with state of the art solution}
+    C -->|Judges deliberate| D[Win]
+    C -->|Walkover| E[Win]
+    C -->|Sabotage| F[Win]
 ```
