@@ -22,3 +22,17 @@ Outputs:
 Chatacteristics: 
 
 -
+
+
+
+1 - Slide Extraction
+
+Steve 
+
+2 - Extract Core from previous submissions 
+Nathan - https://github.com/tekiegirl/SoftwareArchitectureResources/blob/main/Resources/OReillyKata.md#finalists-autumnfall-2022
+Romario - https://github.com/tekiegirl/SoftwareArchitectureResources/blob/main/Resources/OReillyKata.md#finalists-spring-2022
+Hamid - https://github.com/tekiegirl/SoftwareArchitectureResources/blob/main/Resources/OReillyKata.md#finalists-autumnfall-2021
+
+3 - Outline of tools | Assign Tasks
+Karl
