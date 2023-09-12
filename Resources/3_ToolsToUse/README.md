@@ -12,8 +12,6 @@ Use Cases
 - db diagrams
 - actor diagram
 - domain model
-- user story mapping
-
 
 Tools
 - Visio
