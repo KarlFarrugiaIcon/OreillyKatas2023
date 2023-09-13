@@ -1,6 +1,17 @@
-# OreillyKatas2023
+# O'Reilly Architecture Katas 2023
 
-## Prelude (Introduction)
+Team Members:  
+- Karl Farrugia
+- Romario Grech
+- Nathan Povo
+- Steve Stellini
+- Muhammad Hamid Mughal
+
+## Contents
+- [Prelude](#prelude)  
+- [Non-functional Requirements](#NonfunctionalRequirements)
+  
+## Prelude
 
 *Described a background of the problem, the use case, and the end goal of the solution.*
 
@@ -39,6 +50,10 @@
 ## Engineering Practices
 
 *References to engineering techniques or design patterns they are considering as part of their implementation. Basic descriptions on each one.* 
+
+## ADRS
+
+*ADRs*
 
 ## Resources
 
