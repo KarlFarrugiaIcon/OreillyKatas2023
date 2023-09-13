@@ -9,7 +9,18 @@ Team Members:
 
 ## Contents
 - [Prelude](#prelude)  
-- [Non-functional Requirements](#NonfunctionalRequirements)
+- [Non-functional Requirements](#non-functional-requirements)
+- [Overall Platform Context](#overall-platform-context)
+- [User Experience](#user-experience)
+- [Assumptions](#assumptions)
+- [User Roles](#user-roles)
+- [Identifying Architectural Quanta](#identifying-architectural-quanta)
+- [Overall Architecture](#overall-architecture)
+- [Platform Roadmap](#platform-roadmap)
+- [Engineering Practices](#engineering-practices)
+- [ADRs](#adrs)
+- [Resources](#resources)
+- [Our 3rd party integrations](#our-3rd-party-integrations)
   
 ## Prelude
 
@@ -35,7 +46,7 @@ Team Members:
 
 *System user roles.* 
 
-## Identifying Architectural Quanta:
+## Identifying Architectural Quanta
 
 *Listing all architecture components and supporting services. For each one, they submitted an architecture diagram, depicting essentially from front-end to back, including external sevices, DB, API/Messaging/Communication style, etcetera.* 
 
