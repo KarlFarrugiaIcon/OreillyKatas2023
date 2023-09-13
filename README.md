@@ -54,6 +54,8 @@ Team Members:
 
 *Logical and Physical view of the Entire System. The Physical View shows the whole picture of each component shown in Identifying Architectural Quanta.* 
 
+![KatasTechnical Architecture](https://github.com/KarlFarrugiaIcon/OreillyKatas2023/assets/91567864/12b53c6c-52df-459c-9b8b-439a16900bcc)
+
 ## Platform Roadmap
 
 *Section detailing an ideal roadmap, with their suggestion top provide an MVP and then ultimately expand the project in the long term.* 
