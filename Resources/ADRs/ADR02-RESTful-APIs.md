@@ -3,7 +3,7 @@
 This ADR describes the appropriate backend API structure for our project. 
 
 
-# Rationale
+## Rationale
 RESTful APIs have become a well-established standard tailored for HTTP-based communication on the web. Notably, a RESTful API represents the highest level of abstraction that refrains from making any assumptions about the underlying system it grants access to. Although GraphQL provides flexibility in querying data, the reliability and familiarity associated with RESTful APIs make them a robust choice for structuring our backend API.
 
 ## Decision 
