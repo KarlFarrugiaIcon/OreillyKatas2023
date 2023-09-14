@@ -17,5 +17,5 @@ Positive:
 * Better accessibility, as users with slow or unreliable internet connections or devices with limited capabilities can still view the page.
 
 Negative:
-* SSR may require additional server resources, especially during periods of high traffic. We need to ensure that our infrastructure can handle the increased load
+* It may require additional server resources, especially during periods of high traffic. We need to ensure that our infrastructure can handle the increased load
 
