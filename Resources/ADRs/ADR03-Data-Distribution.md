@@ -1,5 +1,5 @@
 
-## Cosmos DB and Redis for Global Data Distribution
+# ADR 3: Cosmos DB and Redis for Global Data Distribution
 
 ## Rationale 
 In our architectural discussions, we addressed the need for global data distribution to ensure low-latency access to data for users in different geographic regions. We evaluated several options and have made the decision to use Cosmos DB in combination with Redis for this purpose
