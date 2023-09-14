@@ -1,19 +1,20 @@
 
-# ADR 2: REST-based API over GraphQL for synchronous requests
+# ADR 2: Choosing REST and CQRS for Server-Side Requests
 This ADR describes the appropriate backend API structure for our project. 
 
 
 ## Rationale
-RESTful APIs have become a well-established standard tailored for HTTP-based communication on the web. Notably, a RESTful API represents the highest level of abstraction that refrains from making any assumptions about the underlying system it grants access to. Although GraphQL provides flexibility in querying data, the reliability and familiarity associated with RESTful APIs make them a robust choice for structuring our backend API.
+In our architectural discussions, we considered REST, GraphQL, and CQRS for server-side requests. REST provides a well-established standard, GraphQL offers flexible data querying, and CQRS enforces a clear separation between commands and queries.
 
 ## Decision 
-We will use REST over GraphQL our public APIs
+We will use REST + CQRS over GraphQL our public APIs
 
 ## Consequences
 Positive:
-* RESTful APIs encourage the creation of specific, resource-oriented endpoints. This aligns well with our project's requirements, allowing for fine-grained control over data retrieval and manipulation.
-* We can take advantage of HTTP caching mechanisms, which can significantly improve performance.
-* It has a rich ecosystem of tools, libraries, and middleware that can simplify development, testing, and documentation.
+* CQRS allows us to separate the load from reads and writes and scale each independently
+* Separating write from read activity leads to more efficient scaling of geographical storage capacity.
+* RESTful APIs are easy to understand and use, it has a rich ecosystem of tools, libraries, and middleware that can simplify development, testing, and documentation.
 
 Negative:
 * RESTful APIs might lead us to over-fetching or under-fetching of data.
+* CQRS event-sourcing may add complexity to the system.
