@@ -14,6 +14,7 @@ Team Members:
 - [User Experience](#user-experience)
 - [Assumptions](#assumptions)
 - [User Roles](#user-roles)
+- [Actor Diagram](#actor-diagram)
 - [Identifying Architectural Quanta](#identifying-architectural-quanta)
 - [Overall Architecture](#overall-architecture)
 - [Platform Roadmap](#platform-roadmap)
@@ -46,6 +47,10 @@ Team Members:
 
 *System user roles.* 
 
+## Actor Diagram
+
+![Katas - Actor Diagram](https://github.com/KarlFarrugiaIcon/OreillyKatas2023/assets/91567864/58852250-9005-4051-8f56-4e68bf122b9d)
+
 ## Identifying Architectural Quanta
 
 *Listing all architecture components and supporting services. For each one, they submitted an architecture diagram, depicting essentially from front-end to back, including external sevices, DB, API/Messaging/Communication style, etcetera.* 
@@ -54,7 +59,7 @@ Team Members:
 
 *Logical and Physical view of the Entire System. The Physical View shows the whole picture of each component shown in Identifying Architectural Quanta.* 
 
-![KatasTechnical Architecture](https://github.com/KarlFarrugiaIcon/OreillyKatas2023/assets/91567864/12b53c6c-52df-459c-9b8b-439a16900bcc)
+![KatasTechnical Architecture](https://github.com/KarlFarrugiaIcon/OreillyKatas2023/assets/91567864/d3706081-d6ae-4c3c-add9-5c335cdcbee8)
 
 ## Platform Roadmap
 
