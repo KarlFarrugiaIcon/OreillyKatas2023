@@ -33,7 +33,24 @@ Team Members:
 
 ## Overall Platform Context
 
-*Diagram showing the solution components and personas - short description of what each component does, and what each persona wants to do with the system. (Very simplified diagram).*
+The context model of the system was determined to identify all the actors and their interactions in the system.
+
+The process was started by using the event storming process.
+
+Event storming is the process of identity all the "domain events" that can occur in the system.
+
+A domain event is defined as an action that is expected to happen within a business domain; it is a they are all significant occurrences or changes within a domain that are of interest to the business stakeholders and are expected to be covered by your software application.
+
+The following diagram shows all the domain events that the team came up with during a brainstorming session.
+
+![Domain Events](Images/DomainEvents.jpg)
+
+The commands that trigger these domain events were identified.
+
+A command is defined as the action that a user takes to trigger a domain event
+
+![Domain Commands](Images/DomainEventCommands.jpg)
+
 
 ## User Experience
 
@@ -76,6 +93,8 @@ Team Members:
 ## Resources
 
 *Links to relevant resources.* 
+
+[Introducing event storming](http://ziobrando.blogspot.com/2013/11/introducing-event-storming.html)
 
 ### Our 3rd party integrations
 
