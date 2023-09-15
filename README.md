@@ -87,6 +87,20 @@ _Insert final diagram_
 
 *ADRs*
 
+## User Interface Mockups
+
+_Insert brief write-up_
+
+![Login screen](Images/UI/01-Login.png)
+
+![Email provider selection screen](<Images/UI/02-Select Email Provider.png>)
+
+![Trip screen](Images/UI/03-Trips.png)
+
+![Reservation screen](<Images/UI/04-My Reservations.png>)
+
+![Add screen](Images/UI/05-Add.png)
+
 ## Resources
 
 *Links to relevant resources.* 
