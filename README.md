@@ -33,24 +33,21 @@ Team Members:
 
 ## Overall Platform Context
 
-The context model of the system was determined to identify all the actors and their interactions in the system.
+The event storming process was employed to identify essential "domain events" within a system, where each event represents an action related to a business entity. It's a crucial initial step as these events configure the central artifact for the system. Event storming meetings start with participants noting domain events, foundational for defining business rules. The team wrote down domain events, each represented on an orange sticky note on a virtual whiteboard. This collaborative approach facilitates comprehensive understanding and mapping of system events for stakeholders.
 
-The process was started by using the event storming process.
-
-Event storming is the process of identity all the "domain events" that can occur in the system.
-
-A domain event is defined as an action that is expected to happen within a business domain; it is a they are all significant occurrences or changes within a domain that are of interest to the business stakeholders and are expected to be covered by your software application.
-
-The following diagram shows all the domain events that the team came up with during a brainstorming session.
+_To be updated_
 
 ![Domain Events](Images/DomainEvents.jpg)
 
-The commands that trigger these domain events were identified.
+Following the identification of domain events, the next step involves pinpointing the commands and users responsible for triggering these events. Commands are actions initiating these events. External actors' commands are explicitly recognized, while some commands originate internally. Post-it notes are arranged to visualize a sequence: actor, command, and event, ensuring a cohesive representation of the system's flow. This step streamlines the understanding of event triggers and user interactions.   These commands and domain events are grouped into related aggregates.
 
-A command is defined as the action that a user takes to trigger a domain event
+_To be updated_
 
 ![Domain Commands](Images/DomainEventCommands.jpg)
 
+In the final step, post-gathering domain events and defining triggering commands, the focus shifts to automation policies. These policies apply to commands lacking external actors, activated upon the completion of specific domain events, signifying communication ties between bounded contexts. By grouping semantically related aggregates, we define bounded contexts. Visualized in a diagram, these boundaries and event-driven connections take shape.
+
+_Insert final diagram_
 
 ## User Experience
 
