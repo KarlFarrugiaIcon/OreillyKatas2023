@@ -18,6 +18,8 @@ Team Members:
   - [Driving Characteristics](#driving-characteristics)
   - [Implicit Characteristics](#implicit-characteristics)
   - [Other Considerations](#other-considerations)
+- [Architecture Implementation Styles](#architecture-implementation-styles)
+  - [Solution Approach](#solution-approach)
 - [Non-functional Requirements](#non-functional-requirements)
 - [Overall Platform Context](#overall-platform-context)
 - [User Experience](#user-experience)
@@ -85,6 +87,15 @@ This section takes into consideration how the architecture is to be split using 
 
 Availability in different global regions
 
+## Architecture Implementation Styles
+
+Based off the Characteristics the chosen architecture is based off microservices, event-driven and space-based architecture.
+![ArchitecutreImplementation](/Images//ArchitecturalCharacteristics/ArchitectureStyles.PNG)
+
+### Solution Approach
+
+![SolutionApproach](/Images/ArchitecturalCharacteristics/ArchitectureDiagram.png)
+
 ## Non-functional Requirements
 
 *The team performed an analysis of business requirements (listed down requirement by requirement, and their observations), NFR for each one, and then in the main section just submitted a list of NFRs encompassing all of them. The team did some additional research on the background of the business entities involved, to finetune the NFRs for their needs (e.g. the business case concerned non-profit organisations, so it made sense to focus on feasibility all throughout the system).*
@@ -121,7 +132,7 @@ _Insert final diagram_
 
 ## Actor Diagram
 
-![Katas - Actor Diagram](Images/actorDiagram.png)
+*Actor Diagram*
 
 ## Identifying Architectural Quanta
 
@@ -149,20 +160,9 @@ _Insert final diagram_
 
 _Insert brief write-up_
 
-![Login screen](Images/UI/01-Login.png)
-
-![Email provider selection screen](<Images/UI/02-Select Email Provider.png>)
-
-![Trip screen](Images/UI/03-Trips.png)
-
-![Reservation screen](<Images/UI/04-My Reservations.png>)
-
-![Add screen](Images/UI/05-Add.png)
-
 ![roadwarrior](Images/UI/flow.gif)
 
-https://github.com/KarlFarrugiaIcon/OreillyKatas2023/assets/91567864/9935a1ab-a475-47fc-9ee0-072c05fe39a6
-
+![roadwarriorvideo](Images/UI/flow.mp4)
 ## Resources
 
 *Links to relevant resources.* 
