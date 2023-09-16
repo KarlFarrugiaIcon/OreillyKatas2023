@@ -400,7 +400,7 @@ Kubernetes plays a pivotal role in load balancing the core services of our syste
 
 The container registry is an essential infrastructure component for Kubernetes. It centralises image management, version control, and distribution, promoting efficient and secure software delivery.
 
-[ADR 10 - Load Balancing](/Resources/ADRs/ADR10-Load-balancing.md)
+[ADR 10 - Load Balancing](/Resources/ADRs/ADR10-Load-balancing-Core-Services.md)
 
 ### Event Bus
 
