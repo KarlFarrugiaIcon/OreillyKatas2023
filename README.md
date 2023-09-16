@@ -511,7 +511,33 @@ The business plan revolves around strategic partnerships, software development, 
 
 ## Engineering Practices
 
-*References to engineering techniques or design patterns they are considering as part of their implementation. Basic descriptions on each one.* 
+The following are some software engineering practices that will be adhered to during the undertaking of the project:
+
+### Provider Pattern:
+A design pattern used to abstract the creation of objects or services. This pattern decouples client code from the specific implementation and is commonly used in dependency injection and inversion of control.
+
+This pattern will be used thoroughly within the solution in areas where common code can be used to cover features which are fed inputs from different sources which need to undergo the same business logic, as is the case with supporting different SSO authentication providers, different travel agency integrations and so on.
+
+### Deployment Pipelines:
+Deployment pipelines refer to an automated series of steps for deploying changes to the product. This is in line with the chosen idea to produce MVPs that increment on top of eachother with new features. It helps ensure consistent and reliable software delivery, void of human errors caused by mistakes in the deployment process.
+
+This practice is supplemented by CI/CD (Continuous Integration/Continuous Deployment):
+- CI: Frequent integration of code changes into a shared repository.
+- CD: Automated deployment of code to production or other environments.
+
+The combination of Deployment Pipelines and CI/CD practices promotes rapid development, testing, and deployment of software.
+
+### SOLID Principles:
+The SOLID principles are a series of guidelines for writing maintainable and extensible code. When followed, they help improve code design, readability, and maintainability.
+
+1. **Single Responsibility Principle (SRP):** A class should have only one reason to change, meaning it should have a single responsibility or job.
+2. **Open/Closed Principle (OCP):** Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification, encouraging the use of inheritance or interfaces for adding new functionality.
+3. **Liskov Substitution Principle (LSP):** Subtypes or derived classes should be substitutable for their base types without altering the correctness of the program.
+4. **Interface Segregation Principle (ISP):** Clients should not be forced to depend on interfaces they do not use; it promotes the creation of smaller, more focused interfaces.
+5. **Dependency Inversion Principle (DIP):** High-level modules should not depend on low-level modules, both should depend on abstractions, and abstractions should not depend on details; it encourages the use of interfaces or abstract classes to decouple components.
+
+### Unit Tests:
+Small, isolated tests that validate the behavior of individual code units (e.g., modifications of trips/reservations). Unit tests help ensure that each piece of code works correctly in isolation and keep a contribute towards consistent code quality assurance.
 
 ## ADRS
 
