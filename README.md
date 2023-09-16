@@ -8,7 +8,16 @@ Team Members:
 - Muhammad Hamid Mughal
 
 ## Contents
-- [Prelude](#prelude)  
+- [Prelude](#prelude)
+- [Business Case](#business-case)
+  - [Requirements](#requirements)
+  - [Technical Constraints](#technical-constraints)
+  - [Business Constraints](#business-constraints)
+  - [Assumptions](#assumptions)
+- [Architecture Characteristics](#architecture-characteristics)
+  - [Driving Characteristics](#driving-characteristics)
+  - [Implicit Characteristics](#implicit-characteristics)
+  - [Other Considerations](#other-considerations)
 - [Non-functional Requirements](#non-functional-requirements)
 - [Overall Platform Context](#overall-platform-context)
 - [User Experience](#user-experience)
@@ -26,6 +35,24 @@ Team Members:
 ## Prelude
 
 *Described a background of the problem, the use case, and the end goal of the solution.*
+
+## Business Case
+
+### Requirements
+
+### Technical Constraints
+
+### Business Constraints
+
+### Assumptions
+
+## Architecture Characteristics
+
+### Driving Characteristics
+
+### Implicit Characteristics
+
+### Other Considerations 
 
 ## Non-functional Requirements
 
