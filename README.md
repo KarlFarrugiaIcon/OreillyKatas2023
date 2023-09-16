@@ -421,6 +421,8 @@ The event bus allows different parts of the solution to exchange information in 
 
 [ADR 5 - Event Driven Architecture](/Resources/ADRs/ADR05-Event-driven-architecture.md)
 
+[ADR 14 - Space-Based Architecture](/Resources/ADRs/ADR14-Space-Based-architecture.md)
+
 ### RPA - Power Automate
 
 Given that the solution will be listening to a Road Warrior's owned mailbox it will be possible for the solution to implement RPA by having a 'when email received' trigger on the mailbox. This action would then allow the core services to work on the parsed email data.
