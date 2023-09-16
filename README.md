@@ -75,7 +75,7 @@ Team Members:
   
 ## Prelude
 
-Road Warrior is a startup poised to revolutionize the travel industry by developing a cutting-edge online trip management platform dedicated to providing travelers with dynamic and manual itinerary management capabilities. This innovative dashboard will empower travelers to effortlessly access and organize all their existing reservations, ensuring a seamless and hassle-free travel experience. Whether users prefer to access it through a web interface or on their mobile devices, this platform will serve as the go-to solution for travelers seeking comprehensive trip management solutions. With this pioneering tool, travelers can look forward to a more organized, convenient, and enjoyable journey, making it the next generation's must-have travel companion. In addition to its user-centric features, this platform will also harness the wealth of data it collects for invaluable reporting purposes. By leveraging this data, travelers will gain insights into their travel patterns, preferences, and spending habits, allowing them to make more informed decisions for future trips. As the platform continues to accumulate user data, it will lay the foundation for a future suggestion engine. 
+Road Warrior is a startup poised to revolutionise the travel industry by developing a cutting-edge online trip management platform dedicated to providing travellers with dynamic and manual itinerary management capabilities. This innovative dashboard will empower travellers to effortlessly access and organise all their existing reservations, ensuring a seamless and hassle-free travel experience. Whether users prefer to access it through a web interface or on their mobile devices, this platform will serve as the go-to solution for travellers seeking comprehensive trip management solutions. With this pioneering tool, travellers can look forward to a more organised, convenient, and enjoyable journey, making it the next generation's must-have travel companion. In addition to its user-centric features, this platform will also harness the wealth of data it collects for invaluable reporting purposes. By leveraging this data, travellers will gain insights into their travel patterns, preferences, and spending habits, allowing them to make more informed decisions for future trips. As the platform continues to accumulate user data, it will lay the foundation for a future suggestion engine. 
 
 ## Business Case
 
@@ -93,7 +93,7 @@ To comprehensively address the requirement outlined in the brief, it is crucial 
 
 ![Requirements Breakdown 2](Images/Requirements/RequirementsBreakdown2.png)
 
-- Updates must be in the app within 5 minutes of an update (better than the competition). This may be tackled with having the latest updates locally and at the core but have eventual consistency across different regions.
+- Updates must be in the app within 5 minutes of an update (better than the competition). This may be tackled with having the latest updates locally and at the core, but have eventual consistency across different regions.
 - The system may be composed in 2: 
     - Core services - A stand alone kubernetes cluster which is hosted in the region of the business' core user base.
         - Different components have different loads
@@ -107,7 +107,7 @@ To comprehensively address the requirement outlined in the brief, it is crucial 
 
 ### Business Constraints
 
-- This is a start up therefore funds may be limited and have to be generated from the application itself.
+- This is a start up, therefore, funds may be limited and have to be generated from the application itself.
 
 ### Assumptions
 
@@ -120,11 +120,11 @@ The event storming process was employed to identify essential "domain events" wi
 
 ![Domain Events](Images/DomainBoundaries/DomainEvents.jpg)
 
-Following the identification of domain events, the next step involves pinpointing the commands and users responsible for triggering these events. Commands are actions initiating these events. External actors' commands are explicitly recognized, while some commands originate internally. Post-it notes are arranged to visualize a sequence: actor, command, and event, ensuring a cohesive representation of the system's flow. This step streamlines the understanding of event triggers and user interactions.   These commands and domain events are grouped into related aggregates.
+Following the identification of domain events, the next step involves pinpointing the commands and users responsible for triggering these events. Commands are actions initiating these events. External actors' commands are explicitly recognised, while some commands originate internally. Post-it notes are arranged to visualise a sequence: actor, command, and event, ensuring a cohesive representation of the system's flow. This step streamlines the understanding of event triggers and user interactions. These commands and domain events are grouped into related aggregates.
 
 ![Domain Commands](Images/DomainBoundaries/DomainEventCommands.jpg)
 
-In the final step, post-gathering domain events and defining triggering commands, the focus shifts to automation policies. These policies apply to commands lacking external actors, activated upon the completion of specific domain events, signifying communication ties between bounded contexts. By grouping semantically related aggregates, we define bounded contexts. Visualized in a diagram, these boundaries and event-driven connections take shape.
+In the final step, post-gathering domain events and defining triggering commands, the focus shifts to automation policies. These policies apply to commands lacking external actors, activated upon the completion of specific domain events, signifying communication ties between bounded contexts. By grouping semantically related aggregates, we define bounded contexts. Visualised in a diagram, these boundaries and event-driven connections take shape.
 
 ![Domain Events with Bounded Contexts](Images/DomainBoundaries/DomainEventBoundedContexts.jpg)
 
@@ -269,7 +269,7 @@ By breaking down the requirement into these distinct flows with entry points and
 
 ## Context Diagram
 
-To help us visualise the system we use the actors and componenets that were outlined in previous sections and drafter the following context diagrams.
+To help us visualise the system we use the actors and componenets that were outlined in previous sections and drafted the following context diagrams.
 
 ### High-level Platform Context Diagram
 
@@ -342,7 +342,7 @@ This section takes into consideration how the architecture is to be split using 
 | Preferred | Characteristics | Reason |
 | ----------- | ----------- | ----------- |
 | [X] | Scalability | The system needs to be highly scalable since it needs to grow to accommodate increased demand and workload. This scalability is essential in the context of the solution, as travel-related services often experience fluctuations in user traffic, especially during peak seasons or special events. Whether it's a sudden surge in users making reservations or an uptick in concurrent users accessing their itineraries, the system can efficiently allocate additional resources to handle the increased load. This scalability ensures that users experience uninterrupted service and swift response times, regardless of the system's level of demand.  |
-| [X] | Elasticity | Elasticity takes the concept of scalability a step further by not only allowing the system to grow but also contract when demand decreases. The solution needs to be designed with elasticity in mind, enabling it to automatically adjust its resource allocation based on real-time demand. For instance, during periods of lower user activity, the system can scale down to conserve resources, reducing operational costs. Conversely, when demand surges, it can quickly scale up to meet the increased load. This elasticity ensures cost-efficiency and optimal resource utilization, making our solution adaptable and financially sustainable over time. |
+| [X] | Elasticity | Elasticity takes the concept of scalability a step further by not only allowing the system to grow but also contract when demand decreases. The solution needs to be designed with elasticity in mind, enabling it to automatically adjust its resource allocation based on real-time demand. For instance, during periods of lower user activity, the system can scale down to conserve resources, reducing operational costs. Conversely, when demand surges, it can quickly scale up to meet the increased load. This elasticity ensures cost-efficiency and optimal resource utilisation, making the solution adaptable and financially sustainable over time. |
 | [] | Data Integrity & Consistency | Ensuring the integrity and consistency of data is paramount in this system. There is a need to implement robust data validation mechanisms, error handling processes, and transaction management to prevent data corruption or discrepancies. By maintaining data integrity and consistency, we guarantee that users can rely on accurate information throughout their travel planning and management processes. |
 | [] | Abstraction | Abstraction is a foundational element of the system's architecture. It allows us to shield users and developers from unnecessary complexities by presenting simplified and user-friendly interfaces. By abstracting the underlying technical intricacies, we enhance usability and reduce the complexities of integrating future applications of similar types of existing implementations. |
 | [] | Availability |  The solution has to be built with high availability in mind due to the requirement of a maximum of 5 minutes downtime per month. There is the need to employ redundancy, failover mechanisms, and disaster recovery strategies to minimize downtime and ensure that users can access their travel information 24/7. Availability is critical in the travel industry, where users may require access to their itineraries and bookings at any time. |
@@ -514,7 +514,7 @@ Four named MVPs are being proposed:
 
 ## Business Plan and Cost Analysis
 
-The business plan revolves around strategic partnerships, software development, and infrastructure resources to provide a user-friendly platform with personalised recommendations for travelers. This involves ongoing investments in personnel, software development tools, marketing, and customer support. The revenue streams are diverse, encompassing subscription models, future transaction fees, advertising partnerships, and premium features, which help offset the operational costs and drive profitability. Road Warrior is commited to enhancing user experience and fostering strong customer relationships as part of its onging strategy, this ensures a sustainable and successful business.
+The business plan revolves around strategic partnerships, software development, and infrastructure resources to provide a user-friendly platform with personalised recommendations for travellers. This involves ongoing investments in personnel, software development tools, marketing, and customer support. The revenue streams are diverse, encompassing subscription models, future transaction fees, advertising partnerships, and premium features, which help offset the operational costs and drive profitability. Road Warrior is commited to enhancing user experience and fostering strong customer relationships as part of its onging strategy, this ensures a sustainable and successful business.
 
 ![Business Model Plan](/Images/BusinessPlan/businessmodel.png)
 
