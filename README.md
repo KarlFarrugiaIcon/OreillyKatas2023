@@ -14,6 +14,7 @@ Team Members:
   - [Technical Constraints](#technical-constraints)
   - [Business Constraints](#business-constraints)
   - [Assumptions](#assumptions)
+- [Overall Platform Context](#overall-platform-context)
 - [User Experience](#user-experience)
 - [Assumptions](#assumptions)
 - [User Roles](#user-roles)
@@ -30,7 +31,6 @@ Team Members:
   - [Event-Driven Architecture](#event-driven-architecture)
   - [Space-Based Architecture](#space-based-architecture)
   - [High Level Combined Architecture](#high-level-combined-architecture)
-- [Overall Platform Context](#overall-platform-context)
 - [Identifying Architectural Quanta](#identifying-architectural-quanta)
   - [Kubernetes](#kubernetes)
     - [Container Registry](#container-registry)
@@ -72,7 +72,21 @@ The provided requirements can be found [here](/Resources/1_RequirementsAnalysis/
 ### Assumptions
 
 - Start up does not have any technical partners
-- The start up will start maturing with the system MVP roll out thereby allowing the system to grow. It is assumed that if the application is not performing well the owners will take a fail fast approach and may pull the plug. Therefore, the final product while will take into consideration the cost will also assume that the application is now self sustaining. 
+- The start up will start maturing with the system MVP roll out thereby allowing the system to grow. It is assumed that if the application is not performing well the owners will take a fail fast approach and may pull the plug. Therefore, the final product while will take into consideration the cost will also assume that the application is now self sustaining.
+
+## Overall Platform Context
+
+The event storming process was employed to identify essential "domain events" within a system, where each event represents an action related to a business entity. It's a crucial initial step as these events configure the central artifact for the system. Event storming meetings start with participants noting domain events, foundational for defining business rules. The team wrote down domain events, each represented on an orange sticky note on a virtual whiteboard. This collaborative approach facilitates comprehensive understanding and mapping of system events for stakeholders.
+
+![Domain Events](Images/DomainEvents.jpg)
+
+Following the identification of domain events, the next step involves pinpointing the commands and users responsible for triggering these events. Commands are actions initiating these events. External actors' commands are explicitly recognized, while some commands originate internally. Post-it notes are arranged to visualize a sequence: actor, command, and event, ensuring a cohesive representation of the system's flow. This step streamlines the understanding of event triggers and user interactions.   These commands and domain events are grouped into related aggregates.
+
+![Domain Commands](Images/DomainEventCommands.jpg)
+
+In the final step, post-gathering domain events and defining triggering commands, the focus shifts to automation policies. These policies apply to commands lacking external actors, activated upon the completion of specific domain events, signifying communication ties between bounded contexts. By grouping semantically related aggregates, we define bounded contexts. Visualized in a diagram, these boundaries and event-driven connections take shape.
+
+![Domain Events with Bounded Contexts](Images/DomainEventBoundedContexts.jpg)
 
 ## User Experience
 
@@ -158,20 +172,6 @@ This leads to the following high level solution approach
 
 ![SolutionApproach](/Images/ArchitecturalCharacteristics/ArchitectureDiagram.png)
 
-## Overall Platform Context
-
-The event storming process was employed to identify essential "domain events" within a system, where each event represents an action related to a business entity. It's a crucial initial step as these events configure the central artifact for the system. Event storming meetings start with participants noting domain events, foundational for defining business rules. The team wrote down domain events, each represented on an orange sticky note on a virtual whiteboard. This collaborative approach facilitates comprehensive understanding and mapping of system events for stakeholders.
-
-![Domain Events](Images/DomainEvents.jpg)
-
-Following the identification of domain events, the next step involves pinpointing the commands and users responsible for triggering these events. Commands are actions initiating these events. External actors' commands are explicitly recognized, while some commands originate internally. Post-it notes are arranged to visualize a sequence: actor, command, and event, ensuring a cohesive representation of the system's flow. This step streamlines the understanding of event triggers and user interactions.   These commands and domain events are grouped into related aggregates.
-
-![Domain Commands](Images/DomainEventCommands.jpg)
-
-In the final step, post-gathering domain events and defining triggering commands, the focus shifts to automation policies. These policies apply to commands lacking external actors, activated upon the completion of specific domain events, signifying communication ties between bounded contexts. By grouping semantically related aggregates, we define bounded contexts. Visualized in a diagram, these boundaries and event-driven connections take shape.
-
-![Domain Events with Bounded Contexts](Images/DomainEventBoundedContexts.jpg)
-
 ## Identifying Architectural Quanta
 
 The following section outlines the different components which make up our architecture
@@ -208,33 +208,66 @@ The event bus allows different parts of the solution to exchange information in 
 
 Given that the solution will be listening to a Road Warrior's owned mailbox it will be possible for the solution to implement RPA by having a 'when email received' trigger on the mailbox. This action would then allow the core services to work on the parsed email data.
 
-[ADR 8 - InboxHooks vs Webhooks with Email Forwarding Rule](/Resources//ADRs/ADR08-InboxHooks-vs-InboxWebhooksWithEmailForwardingRule.md)
+[ADR 8 - Polling vs Webhooks with Email Forwarding Rule](/Resources//ADRs/ADR08-InboxHooks-vs-InboxWebhooksWithEmailForwardingRule.md)
 
-### Next JS 
+### Next JS as a PWA
+
+Given that the system needs to be performant Next.js was chosen due to its support for Server-Side Rendering (SSR) and Progressive Web App (PWA) capabilities.
+
+SSR offers several advantages namely 
+**improved SEO** and **faster initial page load** which are curcial for the app to obtain adoption with the user base.
+
+PWAs offer features which allow the application to be much more accessible due to **offline support** which allows for browsing in areas of limited internet, **app experience and packing** which facilitates publishing to mobile stores, **caching strategies** which allow the storage of assets and data on the client's device to ensure fast load times on subsequent visits.
+
+[ADR 1 - Progressive Web App](/Resources/ADRs/ADR01-Progressive-web-app.md)
+[ADR 6 - SSR](/Resources/ADRs/ADR06-Server-side-rendering.md)
 
 ### Cosmos DB
 
+CosmosDB is the backbone of the app's data management strategy. With its globally distributed, multi-model database service, CosmosDB enables us to seamlessly handle vast amounts of data, provide low-latency access to users worldwide, and ensure high availability and scalability. Its support for various data models, including document, key-value, graph, and column-family, offers the flexibility needed to store and query diverse types of data efficiently. CosmosDB's built-in global distribution, automatic scaling, and robust consistency options align perfectly with our app's requirements for data resilience, real-time updates, and responsive performance. It's the foundational layer that empowers our app to deliver a seamless and data-rich user experience.
+
+[ADR 9 - Cosmos DB](/Resources/ADRs/ADR09-CosmosDB-Consistency.md)
+
+[ADR 12 - Distribution of Data Globally](/Resources/ADRs/ADR12-Distributing-Data-Globally.md)
+
 ### Redis
+
+Redis plays a pivotal role in enhancing the speed and efficiency of our app. As an in-memory data store, Redis excels at caching frequently accessed data, reducing database load, and significantly improving response times for users. Its support for data structures like strings, sets, and hashes makes it versatile for various application needs, such as session management, real-time analytics, and queuing. With Redis, our app can deliver lightning-fast data retrieval and processing, ensuring a snappy and highly responsive user experience. It's a key component that enhances the overall performance and scalability of our application.
+
+[ADR 13 - Usage of Serverless Functions with Redis Over APIs](/Resources/ADRs/ADR13-Usage-of-Serverless-Functions-with-Redis-Over-APIs.md)
 
 ### Serverless functions
 
+Serverless functions enable the application to execute code in a highly efficient and cost-effective manner. By leveraging serverless computing platforms like Azure Functions, the solution will be able to run code in response to events or API requests without the need to manage servers or infrastructure. This approach enables rapid development, automatic scaling, and optimal resource utilization. These functions provide the solution with the agility and scalability needed to deliver a seamless and responsive user experience while minimising operational overhead and costs.
+
+[ADR 13 - Usage of Serverless Functions with Redis Over APIs](/Resources/ADRs/ADR13-Usage-of-Serverless-Functions-with-Redis-Over-APIs.md)
+
 ### Load Balancing
+
+Load balancing is a critical component of the app's infrastructure. This is achieved by leveraging Azure's suite of services to ensure optimal performance and availability.
 
 #### Azure Traffic Manager
 
+Azure Traffic Manager intelligently distributes user traffic across multiple data centers based on pre-configured geographical rules.
+
 #### Azure CDN
+
+Azure CDN accelerates content delivery by caching and serving static assets from edge locations worldwide, reducing latency for users.
 
 #### Azure Front Door
 
-ADR
+Azure Front Door acts as a global entry point, combining security and load balancing to direct traffic to the nearest available backend service.
 
-*Listing all architecture components and supporting services. For each one, they submitted an architecture diagram, depicting essentially from front-end to back, including external sevices, DB, API/Messaging/Communication style, etcetera.* 
+[ADR 10 - Load Balancing Core Services](/Resources/ADRs/ADR10-Load-balancing-Core-Services.md)
+
+
+[ADR 12 - Distribution of Data Globally](/Resources/ADRs/ADR12-Distributing-Data-Globally.md)
 
 ## Overall Architecture
 
 *Logical and Physical view of the Entire System. The Physical View shows the whole picture of each component shown in Identifying Architectural Quanta.* 
 
-![KatasTechnical Architecture](Images/ArchitecturalCharacteristics/TechnicalArchitecture.png)
+![Technical Architecture](Images/ArchitecturalCharacteristics/TechnicalArchitecture.png)
 
 ## Platform Roadmap
 

@@ -1,5 +1,5 @@
 
-# ADR 6: Server Side Rendering (SSR)
+# ADR 6: Server Side Rendering (SSR) cs Client Side Rendering (CSR)
 
 ## Status  
 Proposed
