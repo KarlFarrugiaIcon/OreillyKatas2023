@@ -369,6 +369,8 @@ Based off the Characteristics the chosen architecture is based off microservices
 ### Microservices Architecture
 The system will adopt a Microservices Architecture to promote modularity and scalability. Different components of the system, such as user management, reservation handling, and recommendation generation, will be developed as independent microservices. Each microservice will have its own database and will communicate with others through the event bus. This approach allows for agile development, easy maintenance, and the ability to scale specific services independently to meet varying demands. For example, during peak travel booking seasons, we can allocate more resources to the reservation microservice while keeping other services unaffected.
 
+While there might be a performance trade-off associated with microservices, it's feasible to mitigate this drawback by incorporating strategies such as caching, scaling, and database sharding.
+
 [ADR 4 - Microservice Architecture](/Resources/ADRs/ADR04-Microservices-architecture.md)
 
 ### Event-Driven Architecture
