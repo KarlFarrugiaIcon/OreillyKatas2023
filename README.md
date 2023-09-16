@@ -11,14 +11,16 @@ Team Members:
 - [Prelude](#prelude)
 - [Business Case](#business-case)
   - [Requirements](#requirements)
+    - [Breaking down the requirement slides](#breaking-down-the-requirement-slides)
+    - [Performance Characteristics](#performance-characteristics)
   - [Technical Constraints](#technical-constraints)
   - [Business Constraints](#business-constraints)
   - [Assumptions](#assumptions)
 - [Overall Platform Context](#overall-platform-context)
-- [User Experience](#user-experience)
-- [Assumptions](#assumptions)
+  - [Component Identification (Boundary Analysis)](#component-identification-boundary-analysis)
 - [User Roles](#user-roles)
-- [Actor Diagram](#actor-diagram)
+- [User Experience](#user-experience)
+- [Actor to System Boundary Diagram](#actor-to-system-boundary-diagram)
 - [User Interface Mockups](#user-interface-mockups)
   - [Manual Wireframing](#manual-wireframing)
   - [Figma Designs](#figma-designs)
@@ -59,7 +61,25 @@ Road Warrior is a startup which is poised to revolutionise the travel industry b
 
 ### Requirements
 
-The provided requirements can be found [here](/Resources/1_RequirementsAnalysis/Requirements.pptx) and the planned breakdown can be seen [here](/Resources/1_RequirementsAnalysis/Requirements.md)
+The provided requirements can be found [here](/Resources/1_RequirementsAnalysis/Requirements.pptx)
+
+#### Breaking down the requirement slides
+
+![Requirements Breakdown 1](/Images/Requirements/RequirementsBreakdown1.png)
+
+To comprehensively address the requirement outlined in the brief, it is crucial to break it down into specific entry points and clearly define the payloads we will receive from each of these entry points. This meticulous approach ensures that we understand and manage the data flow effectively. 
+
+#### Performance Characteristics
+
+![Requirements Breakdown 2](Images/Requirements/RequirementsBreakdown2.png)
+
+- Updates must be in the app within 5 minutes of an update (better than the competition). This may be tackled with having the latest updates locally and at the core but have eventual consistency across different regions.
+- The system may be composed in 2: 
+    - Core services - A stand alone kubernetes cluster which is hosted in the region of the business' core user base.
+        - Different components have different loads
+    - Globally distributed APIs to service read/write operations to their user base.
+        - Different loads in different regions
+        - Each region will have its own peak, which may be seasonal (summer holidays) or on weekly trends (weekend getaways)
 
 ### Technical Constraints
 
@@ -88,31 +108,165 @@ In the final step, post-gathering domain events and defining triggering commands
 
 ![Domain Events with Bounded Contexts](Images/DomainEventBoundedContexts.jpg)
 
-## User Experience
+### Component Identification (Boundary Analysis)
+![Requirements Breakdown 3](Images/Requirements/RequirementsBreakdown3.png)
 
-*Section name a bit misleading, here they submitted linear (happy path) processes of end users going through the process.* 
+Our solution adheres to a boundary analysis that encompasses several key components to ensure its functionality and effectiveness:
 
-## Assumptions
+- Trips and Reservations: At the core of our system lies the ability to manage trips and reservations seamlessly. Users can create, update, and view their travel itineraries, which include flights, hotels, and activity reservations.
 
-*Some general assumptions to take everything into context, and give more sense to the narrative.* 
+- Polling Mechanism: To keep information up-to-date, our solution employs a polling mechanism. It regularly checks external sources such as booking platforms for any changes or updates to reservations and synchronizes them with the user's itinerary.
+
+- Email Webhooks: For real-time communication and updates, our system integrates with email webhooks. Users receive notifications and updates about their reservations directly in their email, ensuring they stay informed and can make timely adjustments to their plans.
+
+- Data Analytics: The solution incorporates data analytics to derive insights from user interactions, helping to improve user experiences and provide personalized recommendations based on historical travel data.
+
+- Recommendation Engine: Utilizing a recommendation engine, our system offers tailored suggestions to users based on their travel history, preferences, and current bookings, enhancing their travel planning and decision-making process.
+
+- User Authentication: Security is paramount, and our system includes robust user authentication mechanisms to protect user data and ensure only authorized access to accounts and itineraries.
+
+- Third-party Integrations: We integrate with various third-party services and APIs for booking and reservation data, enabling users to seamlessly import and manage their travel information.
+
+By adhering to this boundary analysis, our solution provides a comprehensive and user-centric travel management experience, ensuring efficiency, accuracy, and user satisfaction throughout the journey planning process.
 
 ## User Roles
 
-*System user roles.* 
+The identified actors and their actions are as follows:
 
-## Actor Diagram
+| Actor          | Actions |
+| -------------- | ------- |
+| Customer (Authenticated)      | - Registers on the platform<br /> - Logs in the platform<br /> - Consent to email forwarding<br /> - View upcoming trips<br /> - Manage upcoming trips<br /> - View trip reservations<br /> - Manage trip reservations<br /> - Receives notifications regarding upcoming trips<br /> - View personalised analytics<br /> - Request for help from agency<br /> - Share trip details on preferred social media platform<br /> - Share trip details with platform<br /> - Share trip details with anonymous user<br /> |
+| Customer (Not Authenticated) | - View shared Trip Summary|
+| System Admin   | - Registers on the platform<br /> - Logs in the platform<br /> - Add multi-lingual translations <br /> - View regional analystics<br />  |
 
-*Actor Diagram*
+## User Experience
+
+Delving deeper into the process outlined in [Breaking down the Requirements](#breaking-down-the-requirement-slides):
+
+1. User Registration:
+
+    - Entry Point: The user registration page on the website or mobile app.
+    - Payload: User-provided information such as name, email, username, and password.
+
+      ![Alt text](image.png)
+
+2. User Login:
+
+    - Entry Point: The login page or API endpoint for authentication.
+    - Payload: User credentials, typically comprising a username/email and password.
+
+      ![Alt text](image-1.png)
+
+3. Booking Reservations:
+
+    - Entry Point: Online reservation systems or APIs for flights, hotels, and activities.
+    - Payload: Reservation details including dates, times, locations, and confirmation numbers.
+
+      ![Alt text](image-5.png)
+
+4. Profile Updates:
+
+    - Entry Point: User profile settings in the app or website.
+    - Payload: User-modified data, such as profile picture, contact information, or travel preferences.
+
+5. Trip/Reservation Creation:
+
+    - Manual Creation
+        - Entry Point: A feature allowing users to create and organize trips and reservations.
+        - Payload: User-generated trip data, which includes trip names, descriptions, and associated reservations.
+
+        ![Alt text](image-3.png)
+
+    - Automated Creation Email 
+        - Entry Point: Automated creation of trips or reservations by listening to incomping emails.
+        - Payload: System-generated trip data, which includes trip names, descriptions, and associated reservations based off email content.
+
+        ![Alt text](image-4.png)
+
+6. Trip/Reservation Deletion:
+
+    - Deleate Updates
+        - Entry Point: A feature allowing users to manually delete trips and reservations.
+        - Payload: User-generated trip data, and manually outlined associated reservations based off email content.   
+    
+          ![Alt text](image-6.png)
+
+    - Automated Email 
+        - Entry Point: Automated deletion of trips or reservations by listening to incomping emails.
+        - Payload: System-generated data and automatically outlined associated reservations based off email content.   
+
+          ![Alt text](image-7.png)
+
+    - Third-Party Integration 
+        - Entry Point: Polling of third-party services to scan for removed reservations.
+        - Payload: System-generated data and automatically outlined associated reservations based off polled content.    
+
+          ![Alt text](image-8.png)
+
+
+7. Trip/Reservation Updates:
+
+    - Manual Updates
+        - Entry Point: A feature allowing users to manually update trips and reservations.
+        - Payload: User-generated trip data, and manually outlined associated reservations based off email content.   
+    
+          ![Alt text](image-9.png)
+
+    - Automated Email 
+        - Entry Point: Automated updates of trips or reservations by listening to incomping emails.
+        - Payload: System-generated data and automatically outlined associated reservations based off email content.   
+        
+          ![Alt text](image-10.png)
+
+    - Third-Party Integration 
+        - Entry Point: Polling of third-party services to scan for updates to reservations.
+        - Payload: System-generated data and automatically outlined associated reservations based off polled content.    
+
+          ![Alt text](image-11.png)
+
+8. Itinerary Viewing:
+
+    - Entry Point: The user's dashboard displaying their trip itineraries.
+    - Payload: Itinerary information, aggregating reservations for a specific trip.
+
+9. Trip Sharing:
+
+    - Entry Point: The user shares a trip which is the accessed by other user's who can then join the trip
+    - Payload: Itinerary information, aggregating reservations for a specific trip.
+
+      ![Alt text](image-2.png)
+    
+10. Data Analytics:
+
+    - Entry Point: Backend analytics processes that examine user behaviour and preferences.
+    - Payload: Analytical data, such as usage statistics, user interactions, and travel patterns.
+
+11. Recommendation Engine:
+
+    - Entry Point: The recommendation engine component of the system.
+    - Payload: User data used for analysis, which includes historical travel data, preferences, and behaviour.
+
+By breaking down the requirement into these distinct flows with entry points and their associated payloads, we can ensure that we have a clear understanding of where data enters the system and what information is being processed. This structured approach not only aids in the design and development of the system but also lays the foundation for effective data management, security, and the eventual implementation of analytics and recommendation features.
+
+## Actor to System Boundary Diagram
+
+The below actor to system boundary diagram expands on the detail provided by the High-level Platform Context Diagram (insert link here), by describing communication methods between different components (now broken down into services, providers and external tools) as well as their utilisation of infrastructure components such as databases and messaging/event channels to realise the features offered by the system.
+
+![Actor To System Boundary](/Images/SystemActors/Actor-To-System-Boundary.png)
 
 ## User Interface Mockups
 
-_Insert brief write-up_
+Mock-ups are essential in the development process of the solution since it allows the team to visualise and conceptualise the idea. It also allows us to take a user-centred approach which aligns with the requirements. 
 
-### Manual Wireframing
+### Manual Prototyping
+
+The first approach for prototyping is the traditional pen and paper with the results being show cased hereunder.
 
 ![roadwarriorManual](/Images/ManualWireframing/manualsketches.gif)
 
-### Figma Designs
+### Figma Prototyping
+
+After the manual prototyping the next flow was to do a Figma design of the solution with the results being hereunder.
 
 ![roadwarrior](Images/UI/flow.gif)
 
@@ -208,7 +362,7 @@ The event bus allows different parts of the solution to exchange information in 
 
 Given that the solution will be listening to a Road Warrior's owned mailbox it will be possible for the solution to implement RPA by having a 'when email received' trigger on the mailbox. This action would then allow the core services to work on the parsed email data.
 
-[ADR 8 - Polling vs Webhooks with Email Forwarding Rule](/Resources//ADRs/ADR08-InboxHooks-vs-InboxWebhooksWithEmailForwardingRule.md)
+[ADR 8 - Polling vs Webhooks with Email Forwarding Rule](/Resources//ADRs/ADR08-Polling-vs-InboxWebhooksWithEmailForwardingRule.md)
 
 ### Next JS as a PWA
 
