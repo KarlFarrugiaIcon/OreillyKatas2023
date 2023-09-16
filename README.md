@@ -57,9 +57,9 @@ Team Members:
     - [Azure CDN](#azure-cdn)
     - [Azure Front Door](#azure-front-door) 
   - [Azure Synapse](#azure-synapse)
+- [Overall Architecture](#overall-architecture)
 - [MVP Timeline Proposal](#mvp-timeline-proposal)
   - [Delivery Timeline Composition](#delivery-timeline-composition)
-- [Overall Architecture](#overall-architecture)
 - [Business Plan and Cost Analysis](#business-plan-and-cost-analysis)
 - [Engineering Practices](#engineering-practices)
 - [ADRs](#adrs)
@@ -105,7 +105,7 @@ To comprehensively address the requirement outlined in the brief, it is crucial 
 ### Assumptions
 
 - Start up does not have any technical partners
-- The start up will start maturing with the system MVP roll out thereby allowing the system to grow. It is assumed that if the application is not performing well the owners will take a fail fast approach and may pull the plug. Therefore, the final product while will take into consideration the cost will also assume that the application is now self sustaining.
+- The start up will start maturing with the system MVP roll out thereby allowing the system to grow. It is assumed that if the application is not performing well the owners will take a fail fast approach and may pull the plug. Therefore, the final product will assume that the application will become self sustaining and covers the operational cost. Both MVP roll out and Cost Analysis will be provided at the end of the literature.
 
 ## Overall Platform Context
 
@@ -478,6 +478,12 @@ Azure Front Door acts as a global entry point, combining security and load balan
 
 Azure Synapse serves as the backbone of the app's data analytics and warehousing capabilities. With its powerful data integration, transformation, and analytics tools, Azure Synapse enables the solution to harness the full potential of the collected data. It seamlessly integrates with various data sources and provides a unified platform for data storage, processing, and visualization. Whether it's running complex analytical queries, creating data pipelines, or generating actionable insights, Azure Synapse empowers the solution to make data-driven decisions and deliver a richer, more informed user experience.
 
+## Overall Architecture
+
+Logical and Physical view of the Entire System. The Physical View shows the whole picture of each component shown in [Identifying Architectural Quanta](#identifying-architectural-quanta).
+
+![Technical Architecture](Images/ArchitecturalCharacteristics/TechnicalArchitecture.png)
+
 ## MVP Timeline Proposal
 
 The platform roadmap that has been drafted takes into consideration the infancy of the enterprise, and has therefore been designed in such a way that focuses on introducing streams of revenue as soon as possible to cover necessary funding for the undertaking of this project.
@@ -497,13 +503,9 @@ Four named MVPs are being proposed:
 
 ![image](./Images/MVPs/MVPs.png)
 
-## Overall Architecture
-
-Logical and Physical view of the Entire System. The Physical View shows the whole picture of each component shown in [Identifying Architectural Quanta](#identifying-architectural-quanta).
-
-![Technical Architecture](Images/ArchitecturalCharacteristics/TechnicalArchitecture.png)
-
 ## Business Plan and Cost Analysis
+
+The business plan revolves around strategic partnerships, software development, and infrastructure resources to provide a user-friendly platform with personalised recommendations for travelers. This involves ongoing investments in personnel, software development tools, marketing, and customer support. The revenue streams are diverse, encompassing subscription models, future transaction fees, advertising partnerships, and premium features, which help offset the operational costs and drive profitability. Road Warrior is commited to enhancing user experience and fostering strong customer relationships as part of its onging strategy, this ensures a sustainable and successful business.
 
 ![Business Model Plan](/Images/BusinessPlan/businessmodel.png)
 
