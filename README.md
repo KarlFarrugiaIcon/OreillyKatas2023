@@ -615,4 +615,16 @@ Small, isolated tests that validate the behavior of individual code units (e.g.,
 
 ## Glossary of Terms
 
-*how/what do they support (this will dictate potentially some of our decisions re. the 5 minute)* 
+- MVP (Minimum Viable Product): An initial version of a product with just enough features to satisfy early adopters and gather feedback for future development.
+- PWA (Progressive Web App): A web application that provides a native app-like experience, including offline access and push notifications, while being delivered through a web browser.
+- API (Application Programming Interface): A set of rules and protocols that allows different software applications to communicate and interact with each other.
+- Globally Distributed APIs and Databases: APIs and databases that are spread across multiple geographical locations to improve performance, reliability, and redundancy.
+- Load Balancing: The practice of distributing network traffic or workloads across multiple servers or resources to ensure optimal utilization and prevent overloading.
+- Eventual Consistency: A consistency model in distributed systems where, after a period of time, all replicas of data will be consistent, even if there are temporary inconsistencies.
+- Client-side component: A software component or module that runs and executes within a user's web browser or client application.
+- Server-side component: A software component or module that runs on a remote server and serves requests from client-side components or users.
+- Abstract and Complete implementation: In software design, abstract implementations provide only the necessary functionality, while complete implementations include all the required features and details.
+- HTTPS (Hypertext Transfer Protocol Secure): A secure version of HTTP that encrypts data exchanged between a client and a server, ensuring data confidentiality and integrity.
+- RESTful API (Representational State Transfer): An architectural style for designing networked applications that use HTTP methods and adhere to specific constraints, making them scalable and easy to understand.
+- AMQP (Advanced Message Queuing Protocol): A messaging protocol that enables communication between distributed systems, emphasizing message queuing, routing, and reliability.
+- Publish/Subscribe Pattern: A messaging pattern where senders (publishers) of messages don't specifically target receivers (subscribers); instead, messages are broadcast to all interested subscribers based on topics or interests.
