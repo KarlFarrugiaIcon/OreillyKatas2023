@@ -56,9 +56,9 @@ Team Members:
     - [Azure Traffic Manager](#azure-traffic-manager)
     - [Azure CDN](#azure-cdn)
     - [Azure Front Door](#azure-front-door) 
-- [Overall Architecture](#overall-architecture)
 - [MVP Timeline Proposal](#mvp-timeline-proposal)
   - [Delivery Timeline Composition](#delivery-timeline-composition)
+- [Overall Architecture](#overall-architecture)
 - [Engineering Practices](#engineering-practices)
 - [ADRs](#adrs)
 - [Resources](#resources)
@@ -472,12 +472,6 @@ Azure Front Door acts as a global entry point, combining security and load balan
 
 [ADR 12 - Distribution of Data Globally](/Resources/ADRs/ADR12-Distributing-Data-Globally.md)
 
-## Overall Architecture
-
-*Logical and Physical view of the Entire System. The Physical View shows the whole picture of each component shown in Identifying Architectural Quanta.* 
-
-![Technical Architecture](Images/ArchitecturalCharacteristics/TechnicalArchitecture.png)
-
 ## MVP Timeline Proposal
 
 The platform roadmap that has been drafted takes into consideration the infancy of the enterprise, and has therefore been designed in such a way that focuses on introducing streams of revenue as soon as possible to cover necessary funding for the undertaking of this project.
@@ -496,6 +490,13 @@ Four named MVPs are being proposed:
 *  MVP N+: At this point in time, the project will be in maintenance mode. Bugfixes and performance adjustments will be issued as needed, while new features, covered services and booking agency integrations will be incrementally increased based on community feedback
 
 ![image](./Images/MVPs/MVPs.png)
+
+## Overall Architecture
+
+Logical and Physical view of the Entire System. The Physical View shows the whole picture of each component shown in [Identifying Architectural Quanta](#identifying-architectural-quanta).
+
+![Technical Architecture](Images/ArchitecturalCharacteristics/TechnicalArchitecture.png)
+
 
 ## Engineering Practices
 
