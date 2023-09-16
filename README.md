@@ -68,7 +68,7 @@ Team Members:
   - [Unit Tests](#unit-tests)
 - [ADRs](#adrs)
 - [Resources](#resources)
-- [Our 3rd party integrations](#our-3rd-party-integrations)
+- [Glossary of Terms](#glossary-of-terms)
   
 ## Prelude
 
@@ -586,6 +586,6 @@ Small, isolated tests that validate the behavior of individual code units (e.g.,
 
 [Strategyzer Business Model Canvas](https://www.strategyzer.com/library/the-business-model-canvas)
 
-## Our 3rd party integrations
+## Glossary of Terms
 
 *how/what do they support (this will dictate potentially some of our decisions re. the 5 minute)* 
