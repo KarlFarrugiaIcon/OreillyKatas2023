@@ -318,7 +318,7 @@ The first approach for prototyping is the traditional pen and paper with the res
 
 ### Figma Prototyping
 
-After the manual prototyping the next flow was to do a Figma design of the solution with the results being hereunder.
+After the manual prototyping the next flow was to do a Figma design of the solution with the results being shown hereunder.
 
 ![roadwarrior](Images/UI/flow.gif)
 
