@@ -21,8 +21,16 @@ Team Members:
 - [User Roles](#user-roles)
 - [User Experience](#user-experience)
 - [Context Diagram](#context-diagram)
-  - [Actor to System Boundary Diagram](#actor-to-system-boundary-diagram)
   - [High-level Platform Context Diagram](#high-level-platform-context-diagram)
+  - [Actor to System Boundary Diagram](#actor-to-system-boundary-diagram)
+    - [Deep Dive on System Boundaries](#deep-dive-on-system-boundaries)
+      - [Authentication Service](#authentication-service)
+      - [Trip Management Service](#trip-management-service)
+      - [Email Data Parsing Service](#email-data-parsing-service)
+      - [Social Media Service](#social-media-service)
+      - [Travel Integration Service](#travel-integration-service)
+      - [Notifications Service](#notifications-service)
+      - [Reporting & Analytics Service](#reporting--analytics-service)
 - [User Interface Mockups](#user-interface-mockups)
   - [Manual Wireframing](#manual-wireframing)
   - [Figma Designs](#figma-designs)
@@ -64,7 +72,7 @@ Road Warrior is a startup which is poised to revolutionise the travel industry b
 
 ### Requirements
 
-The provided requirements can be found [here](/Resources/1_RequirementsAnalysis/Requirements.pptx)
+The provided requirements can be found [here](/Resources/RequirementsAnalysis/Requirements.pptx)
 
 #### Breaking down the requirement slides
 
@@ -267,6 +275,36 @@ The below actor to system boundary diagram expands on the detail provided by the
 
 ![Actor To System Boundary](/Images/SystemActors/Actor-To-System-Boundary.png)
 
+#### Deep Dive on System Boundaries 
+
+##### Authentication Service
+
+![Alt text](./Images/DomainBoundaries/AuthenticationService.png)
+
+##### Trip Management Service
+
+![Alt text](./Images/DomainBoundaries/TripManagementService.png)
+
+##### Email Data Parsing Service
+
+![Alt text](./Images/DomainBoundaries/EmailDataParsingService.png)
+
+##### Social Media Service
+
+![Alt text](./Images/DomainBoundaries/SocailMediaSharingService.png)
+
+##### Travel Integration Service
+
+![Alt text](./Images/DomainBoundaries/TravelIntegrationService.png)
+
+##### Notifications Service
+
+![Alt text](./Images/DomainBoundaries/NotificationsService.png)
+
+##### Reporting & Analytics Service
+
+![Alt text](./Images/DomainBoundaries/ReportingAnalyticsService.png)
+
 ## User Interface Mockups
 
 Mock-ups are essential in the development process of the solution since it allows the team to visualise and conceptualise the idea. It also allows us to take a user-centred approach which aligns with the requirements. 
@@ -458,8 +496,6 @@ Four named MVPs are being proposed:
 *  MVP N+: At this point in time, the project will be in maintenance mode. Bugfixes and performance adjustments will be issued as needed, while new features, covered services and booking agency integrations will be incrementally increased based on community feedback
 
 ![image](./Images/MVPs/MVPs.png)
-
-
 
 ## Engineering Practices
 
