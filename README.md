@@ -306,14 +306,17 @@ The component diagram depicts the Social Media Sharing service, responsible for 
 ![Alt text](./Images/DomainBoundaries/SocailMediaSharingService.png)
 
 ##### Travel Integration Service
+The component diagram shows the Travel Integration Service, responsible for processing data from Travel Agencies. It subscribes via AMQP (Advanced Message Queuing Protocol) to configured external travel agencies, processes the data, and publishes messages to a queue infrastructure. These messages are subsequently picked up by the Trip Management Service for further processing.
 
 ![Alt text](./Images/DomainBoundaries/TravelIntegrationService.png)
 
 ##### Notifications Service
+The component diagram illustrates the Notifications Service, responsible for delivering notifications to PWA (Web/Mobile) Applications. It handles multiple types of notifications published to an Event Streaming system, ensuring their proper delivery to the applications.
 
 ![Alt text](./Images/DomainBoundaries/NotificationsService.png)
 
 ##### Reporting & Analytics Service
+The Reporting & Analytics Service uses an external service to generate reports, processes them internally, stores data in a data center, publishes messages to notify other microservices, and allows users to view insights through an external tool.
 
 ![Alt text](./Images/DomainBoundaries/ReportingAnalyticsService.png)
 
