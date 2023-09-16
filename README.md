@@ -99,7 +99,7 @@ _Insert final diagram_
 
 ## Actor Diagram
 
-![Katas - Actor Diagram](https://github.com/KarlFarrugiaIcon/OreillyKatas2023/assets/91567864/58852250-9005-4051-8f56-4e68bf122b9d)
+![Katas - Actor Diagram](Images/actorDiagram.png)
 
 ## Identifying Architectural Quanta
 
@@ -109,7 +109,7 @@ _Insert final diagram_
 
 *Logical and Physical view of the Entire System. The Physical View shows the whole picture of each component shown in Identifying Architectural Quanta.* 
 
-![KatasTechnical Architecture](https://github.com/KarlFarrugiaIcon/OreillyKatas2023/assets/91567864/d3706081-d6ae-4c3c-add9-5c335cdcbee8)
+![KatasTechnical Architecture](Images/architecture.png)
 
 ## Platform Roadmap
 
@@ -137,9 +137,9 @@ _Insert brief write-up_
 
 ![Add screen](Images/UI/05-Add.png)
 
-![roadwarrior](https://github.com/KarlFarrugiaIcon/OreillyKatas2023/assets/91567864/8dbfeea4-c0b4-4a08-9fba-cf3cf6ab7251)
+![roadwarrior](Images/UI/flow.gif)
 
-https://github.com/KarlFarrugiaIcon/OreillyKatas2023/assets/91567864/9935a1ab-a475-47fc-9ee0-072c05fe39a6
+<video src="Images/UI/flow.mp4" controls title="Title"></video>
 
 ## Resources
 
