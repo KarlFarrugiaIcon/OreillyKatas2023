@@ -56,6 +56,7 @@ Team Members:
     - [Azure Traffic Manager](#azure-traffic-manager)
     - [Azure CDN](#azure-cdn)
     - [Azure Front Door](#azure-front-door) 
+  - [Azure Synapse](#azure-synapse)
 - [MVP Timeline Proposal](#mvp-timeline-proposal)
   - [Delivery Timeline Composition](#delivery-timeline-composition)
 - [Overall Architecture](#overall-architecture)
@@ -471,6 +472,10 @@ Azure Front Door acts as a global entry point, combining security and load balan
 
 
 [ADR 12 - Distribution of Data Globally](/Resources/ADRs/ADR12-Distributing-Data-Globally.md)
+
+### Azure Synapse
+
+Azure Synapse serves as the backbone of the app's data analytics and warehousing capabilities. With its powerful data integration, transformation, and analytics tools, Azure Synapse enables the solution to harness the full potential of the collected data. It seamlessly integrates with various data sources and provides a unified platform for data storage, processing, and visualization. Whether it's running complex analytical queries, creating data pipelines, or generating actionable insights, Azure Synapse empowers the solution to make data-driven decisions and deliver a richer, more informed user experience.
 
 ## MVP Timeline Proposal
 
