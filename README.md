@@ -20,7 +20,9 @@ Team Members:
   - [Component Identification (Boundary Analysis)](#component-identification-boundary-analysis)
 - [User Roles](#user-roles)
 - [User Experience](#user-experience)
-- [Actor to System Boundary Diagram](#actor-to-system-boundary-diagram)
+- [Context Diagram](#context-diagram)
+  - [Actor to System Boundary Diagram](#actor-to-system-boundary-diagram)
+  - [High-level Platform Context Diagram](#high-level-platform-context-diagram)
 - [User Interface Mockups](#user-interface-mockups)
   - [Manual Wireframing](#manual-wireframing)
   - [Figma Designs](#figma-designs)
@@ -248,9 +250,19 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
 
 By breaking down the requirement into these distinct flows with entry points and their associated payloads, we can ensure that we have a clear understanding of where data enters the system and what information is being processed. This structured approach not only aids in the design and development of the system but also lays the foundation for effective data management, security, and the eventual implementation of analytics and recommendation features.
 
-## Actor to System Boundary Diagram
+## Context Diagram
 
-The below actor to system boundary diagram expands on the detail provided by the High-level Platform Context Diagram (insert link here), by describing communication methods between different components (now broken down into services, providers and external tools) as well as their utilisation of infrastructure components such as databases and messaging/event channels to realise the features offered by the system.
+To help us visualise the system we use the actors and componenets that were outlined in previous sections and drafter the following context diagrams.
+
+### High-level Platform Context Diagram
+
+The below context diagram provides a high-level introduction into actions that the different User types can perform on the application. The abstractions of the different components (or services) responsible for handling all possible actions triggered by users or external interfaces.
+
+![High-level Platform Context Diagram](/Images/SystemActors/HighLevelContextDiagram.png)
+
+### Actor to System Boundary Diagram
+
+The below actor to system boundary diagram expands on the detail provided by the High-level Platform Context Diagram, by describing communication methods between different components (now broken down into services, providers and external tools) as well as their utilisation of infrastructure components such as databases and messaging/event channels to realise the features offered by the system.
 
 ![Actor To System Boundary](/Images/SystemActors/Actor-To-System-Boundary.png)
 
