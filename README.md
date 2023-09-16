@@ -173,7 +173,8 @@ _Insert brief write-up_
 
 ![roadwarrior](Images/UI/flow.gif)
 
-![roadwarriorvideo](Images/UI/flow.mp4)
+https://github.com/KarlFarrugiaIcon/OreillyKatas2023/assets/91567864/99460df7-7392-4e82-ba34-daa91e1c5cab
+
 ## Resources
 
 *Links to relevant resources.* 
