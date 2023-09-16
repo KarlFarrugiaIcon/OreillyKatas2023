@@ -14,6 +14,13 @@ Team Members:
   - [Technical Constraints](#technical-constraints)
   - [Business Constraints](#business-constraints)
   - [Assumptions](#assumptions)
+- [User Experience](#user-experience)
+- [Assumptions](#assumptions)
+- [User Roles](#user-roles)
+- [Actor Diagram](#actor-diagram)
+- [User Interface Mockups](#user-interface-mockups)
+  - [Manual Wireframing](#manual-wireframing)
+  - [Figma Designs](#figma-designs)
 - [Architecture Characteristics](#architecture-characteristics)
   - [Driving Characteristics](#driving-characteristics)
   - [Implicit Characteristics](#implicit-characteristics)
@@ -24,18 +31,23 @@ Team Members:
   - [Space-Based Architecture](#space-based-architecture)
   - [High Level Combined Architecture](#high-level-combined-architecture)
 - [Overall Platform Context](#overall-platform-context)
-- [User Experience](#user-experience)
-- [Assumptions](#assumptions)
-- [User Roles](#user-roles)
-- [Actor Diagram](#actor-diagram)
 - [Identifying Architectural Quanta](#identifying-architectural-quanta)
+  - [Kubernetes](#kubernetes)
+    - [Container Registry](#container-registry)
+  - [Event Bus](#event-bus)
+  - [RPA - PowerAutomate](#rpa---power-automate)
+  - [Next JS](#next-js)
+  - [Cosmos DB](#cosmos-db)
+  - [Redis](#redis)
+  - [Serverless Functions](#serverless-functions)
+  - [Load Balancing](#load-balancing)
+    - [Azure Traffic Manager](#azure-traffic-manager)
+    - [Azure CDN](#azure-cdn)
+    - [Azure Front Door](#azure-front-door) 
 - [Overall Architecture](#overall-architecture)
 - [Platform Roadmap](#platform-roadmap)
 - [Engineering Practices](#engineering-practices)
 - [ADRs](#adrs)
-- [User Interface Mockups](#user-interface-mockups)
-  - [Manual Wireframing](#manual-wireframing)
-  - [Figma Designs](#figma-designs)
 - [Resources](#resources)
 - [Our 3rd party integrations](#our-3rd-party-integrations)
   
@@ -61,6 +73,36 @@ The provided requirements can be found [here](/Resources/1_RequirementsAnalysis/
 
 - Start up does not have any technical partners
 - The start up will start maturing with the system MVP roll out thereby allowing the system to grow. It is assumed that if the application is not performing well the owners will take a fail fast approach and may pull the plug. Therefore, the final product while will take into consideration the cost will also assume that the application is now self sustaining. 
+
+## User Experience
+
+*Section name a bit misleading, here they submitted linear (happy path) processes of end users going through the process.* 
+
+## Assumptions
+
+*Some general assumptions to take everything into context, and give more sense to the narrative.* 
+
+## User Roles
+
+*System user roles.* 
+
+## Actor Diagram
+
+*Actor Diagram*
+
+## User Interface Mockups
+
+_Insert brief write-up_
+
+### Manual Wireframing
+
+![roadwarriorManual](/Images/ManualWireframing/manualsketches.gif)
+
+### Figma Designs
+
+![roadwarrior](Images/UI/flow.gif)
+
+https://github.com/KarlFarrugiaIcon/OreillyKatas2023/assets/91567864/99460df7-7392-4e82-ba34-daa91e1c5cab
 
 ## Architecture Characteristics
 
@@ -100,8 +142,12 @@ Based off the Characteristics the chosen architecture is based off microservices
 ### Microservices Architecture
 The system will adopt a Microservices Architecture to promote modularity and scalability. Different components of the system, such as user management, reservation handling, and recommendation generation, will be developed as independent microservices. Each microservice will have its own database and will communicate with others through the event bus. This approach allows for agile development, easy maintenance, and the ability to scale specific services independently to meet varying demands. For example, during peak travel booking seasons, we can allocate more resources to the reservation microservice while keeping other services unaffected.
 
+[ADR 4 - Microservice Architecture](/Resources/ADRs/ADR04-Microservices-architecture.md)
+
 ### Event-Driven Architecture
 Event-Driven Architecture will be integral to the system's real-time capabilities. Events, such as user actions (booking a flight, changing an itinerary) or external updates (flight delays, hotel availability), will trigger asynchronous messages that various components can subscribe to and act upon. For instance, when a user adds a new reservation, it generates an event that updates the user's itinerary and triggers the recommendation engine to suggest relevant activities or accommodations. This decoupled and event-driven approach ensures that our system remains responsive, scalable, and capable of handling real-time data updates seamlessly.
+
+[ADR 5 - Event Driven Architecture](/Resources/ADRs/ADR05-Event-driven-architecture.md)
 
 ### Space-Based Architecture
 Space-Based Architecture will be employed for managing distributed, in-memory data caches and ensuring high availability and low-latency access to frequently accessed data. This architecture allows us to store and retrieve data in a distributed and fault-tolerant manner, which is crucial for a system handling real-time travel information. For example, we can use a space-based architecture for caching frequently accessed itinerary data, ensuring that users can quickly access their travel plans regardless of the data's physical location. This architecture also supports data consistency and synchronization across multiple regions for enhanced availability and performance.
@@ -111,7 +157,6 @@ Space-Based Architecture will be employed for managing distributed, in-memory da
 This leads to the following high level solution approach
 
 ![SolutionApproach](/Images/ArchitecturalCharacteristics/ArchitectureDiagram.png)
-
 
 ## Overall Platform Context
 
@@ -127,23 +172,61 @@ In the final step, post-gathering domain events and defining triggering commands
 
 ![Domain Events with Bounded Contexts](Images/DomainEventBoundedContexts.jpg)
 
-## User Experience
-
-*Section name a bit misleading, here they submitted linear (happy path) processes of end users going through the process.* 
-
-## Assumptions
-
-*Some general assumptions to take everything into context, and give more sense to the narrative.* 
-
-## User Roles
-
-*System user roles.* 
-
-## Actor Diagram
-
-*Actor Diagram*
-
 ## Identifying Architectural Quanta
+
+The following section outlines the different components which make up our architecture
+
+### Kubernetes
+
+Kubernetes plays a pivotal role in load balancing the core services of our system, ensuring that they remain highly available, scalable, and responsive to user requests. This is done by:
+
+- Simplifying service deployment of core services as containers within a cluster. Each service is encapsulated in a container, making it easy to manage and scale independently.
+
+- Ability to use Replica Sets to maintain a specified number of replicas (containers) for each core service. This ensures that even if one container fails, a new one is automatically spawned, maintaining the desired level of service availability.
+
+- The usage of the built-in service discovery mechanisms which enables load balancing to ensure that incoming requests are distributed evenly across the available service replicas.
+
+- Management of entry points through the usage of ingress controllers for external traffic into the cluster. These can route incoming requests to the appropriate core service based on defined rules, such as domain names or URL paths.
+
+- Kubernetes enables automatic scaling of core services based on predefined metrics such as CPU utilisation. When traffic increases, Kubernetes can dynamically spin up additional service replicas to handle the load, ensuring optimal performance.
+
+#### Container Registry
+
+The container registry is an essential infrastructure component for Kubernetes. It centralises image management, version control, and distribution, promoting efficient and secure software delivery.
+
+[ADR 10 - Load Balancing](/Resources/ADRs/ADR10-Load-balancing.md)
+
+### Event Bus
+
+The event bus allows different parts of the solution to exchange information in a loosely coupled manner. It enables components or services to publish events and subscribe to events of interest. This approach was chosen since it is widely used in event-driven architectures, microservices, and distributed systems to facilitate seamless communication and data exchange among various system elements.
+
+[ADR 4 - Microservice Architecture](/Resources/ADRs/ADR04-Microservices-architecture.md)
+
+[ADR 5 - Event Driven Architecture](/Resources/ADRs/ADR05-Event-driven-architecture.md)
+
+### RPA - Power Automate
+
+Given that the solution will be listening to a Road Warrior's owned mailbox it will be possible for the solution to implement RPA by having a 'when email received' trigger on the mailbox. This action would then allow the core services to work on the parsed email data.
+
+[ADR 8 - InboxHooks vs Webhooks with Email Forwarding Rule](/Resources//ADRs/ADR08-InboxHooks-vs-InboxWebhooksWithEmailForwardingRule.md)
+
+### Next JS 
+
+### Cosmos DB
+
+### Redis
+
+### Serverless functions
+
+### Load Balancing
+
+#### Azure Traffic Manager
+
+#### Azure CDN
+
+#### Azure Front Door
+
+ADR
 
 *Listing all architecture components and supporting services. For each one, they submitted an architecture diagram, depicting essentially from front-end to back, including external sevices, DB, API/Messaging/Communication style, etcetera.* 
 
@@ -164,20 +247,6 @@ In the final step, post-gathering domain events and defining triggering commands
 ## ADRS
 
 *ADRs*
-
-## User Interface Mockups
-
-_Insert brief write-up_
-
-### Manual Wireframing
-
-![roadwarriorManual](/Images/ManualWireframing/manualsketches.gif)
-
-### Figma Designs
-
-![roadwarrior](Images/UI/flow.gif)
-
-https://github.com/KarlFarrugiaIcon/OreillyKatas2023/assets/91567864/99460df7-7392-4e82-ba34-daa91e1c5cab
 
 ## Resources
 
