@@ -15,4 +15,5 @@ Four named MVPs are being proposed:
 
 *  MVP N+: At this point in time, the project will be in maintenance mode. Bugfixes and performance adjustments will be issued as needed, while new features, covered services and booking agency integrations will be incrementally increased based on community feedback
 
-![image](https://github.com/KarlFarrugiaIcon/OreillyKatas2023/assets/144708540/c1d31b21-b4b3-4c39-8890-1c2167bbee5d)
+![image](https://github.com/KarlFarrugiaIcon/OreillyKatas2023/assets/144708540/3f25de51-0e69-4796-bdf3-049432c98101)
+
