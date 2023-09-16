@@ -23,7 +23,6 @@ Team Members:
   - [Event-Driven Architecture](#event-driven-architecture)
   - [Space-Based Architecture](#space-based-architecture)
   - [High Level Combined Architecture](#high-level-combined-architecture)
-- [Non-functional Requirements](#non-functional-requirements)
 - [Overall Platform Context](#overall-platform-context)
 - [User Experience](#user-experience)
 - [Assumptions](#assumptions)
