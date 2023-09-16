@@ -61,6 +61,9 @@ Team Members:
 - [MVP Timeline Proposal](#mvp-timeline-proposal)
   - [Delivery Timeline Composition](#delivery-timeline-composition)
 - [Business Plan and Cost Analysis](#business-plan-and-cost-analysis)
+  - [Freemium Tier](#freemium-tier)
+  - [Silver Tier](#silver-tier)
+  - [Gold Tier](#gold-tier)
 - [Engineering Practices](#engineering-practices)
   - [Provider Pattern](#provider-pattern)
   - [Deployment Pipelines](#deployment-pipelines)
@@ -511,6 +514,30 @@ Four named MVPs are being proposed:
 The business plan revolves around strategic partnerships, software development, and infrastructure resources to provide a user-friendly platform with personalised recommendations for travelers. This involves ongoing investments in personnel, software development tools, marketing, and customer support. The revenue streams are diverse, encompassing subscription models, future transaction fees, advertising partnerships, and premium features, which help offset the operational costs and drive profitability. Road Warrior is commited to enhancing user experience and fostering strong customer relationships as part of its onging strategy, this ensures a sustainable and successful business.
 
 ![Business Model Plan](/Images/BusinessPlan/businessmodel.png)
+
+### Freemium Tier
+
+1. Single Inbox Integration: Users in the freemium tier can connect one email inbox to import and organize their travel-related information, such as flight bookings, hotel reservations, and itineraries.
+2. Basic Itinerary Management: They can create and manage basic travel itineraries, including flight details, accommodation, and activities. Users can view and edit their trips within the platform.
+Notification Alerts: Receive basic email notifications for trip updates, such as flight delays or gate changes, directly within the platform.
+3. Calendar Integration: Sync their travel itineraries with their preferred calendar application (e.g., Google Calendar or Outlook).
+
+### Silver Tier
+
+1. Multiple Inbox Integration: Silver-tier users can connect and manage multiple email inboxes, making it easier to centralize travel-related information from various accounts.
+2. Trip Sharing: Share trip itineraries with friends, family, or colleagues. Collaboratively plan and coordinate travel with others, and allow others to view and comment on shared trips.
+3. Advanced Notification Alerts: Receive real-time updates for travel-related events, such as flight status changes, gate information, or delays. Customise notification preferences for added convenience.
+4. Customisable Itineraries: Enjoy more advanced itinerary customization options, including adding notes, reminders, and personal preferences for each trip.
+
+### Gold Tier
+
+1. Unlimited Inbox Integration: Gold-tier subscribers can connect an unlimited number of email inboxes, allowing for comprehensive and centralised trip management across multiple email accounts.
+2. Premium Recommendations: Receive personalised travel recommendations based on user preferences and past travel history. These recommendations can include suggested destinations, accommodations, and activities.
+3. Priority Customer Support: Access priority customer support with faster response times and dedicated assistance for any inquiries or issues.
+4. Exclusive Discounts: Enjoy exclusive discounts and offers on travel bookings, such as flights, hotels, or rental cars, through partnerships with travel providers.
+5. Advanced Reporting and Analytics: Gain access to detailed trip analytics, including travel expenses, trip duration, and historical travel trends, helping users make more informed travel decisions.
+6. Premium Content: Access premium travel content, such as destination guides, travel tips, and insider recommendations, to enhance the travel planning experience.
+7. Ad-Free Experience: Navigate the platform without any advertisements or sponsored content for an uninterrupted user experience.
 
 ## Engineering Practices
 
