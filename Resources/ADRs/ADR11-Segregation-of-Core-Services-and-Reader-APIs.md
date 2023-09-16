@@ -1,4 +1,4 @@
-# ADR 13: Segregation of Core Services and Reader APIs
+# ADR 11: Segregation of Core Services and Reader APIs
 
 ## Status  
 Accepted

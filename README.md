@@ -49,7 +49,8 @@ Team Members:
     - [Azure CDN](#azure-cdn)
     - [Azure Front Door](#azure-front-door) 
 - [Overall Architecture](#overall-architecture)
-- [Platform Roadmap](#platform-roadmap)
+- [MVP Timeline Proposal](#mvp-timeline-proposal)
+  - [Delivery Timeline Composition](#delivery-timeline-composition)
 - [Engineering Practices](#engineering-practices)
 - [ADRs](#adrs)
 - [Resources](#resources)
@@ -150,21 +151,21 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
     - Entry Point: The user registration page on the website or mobile app.
     - Payload: User-provided information such as name, email, username, and password.
 
-      ![Alt text](image.png)
+      ![Alt text](./Images/UserFlows/image.png)
 
 2. User Login:
 
     - Entry Point: The login page or API endpoint for authentication.
     - Payload: User credentials, typically comprising a username/email and password.
 
-      ![Alt text](image-1.png)
+      ![Alt text](./Images/UserFlows/image-1.png)
 
 3. Booking Reservations:
 
     - Entry Point: Online reservation systems or APIs for flights, hotels, and activities.
     - Payload: Reservation details including dates, times, locations, and confirmation numbers.
 
-      ![Alt text](image-5.png)
+      ![Alt text](./Images/UserFlows/image-5.png)
 
 4. Profile Updates:
 
@@ -177,13 +178,13 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
         - Entry Point: A feature allowing users to create and organize trips and reservations.
         - Payload: User-generated trip data, which includes trip names, descriptions, and associated reservations.
 
-        ![Alt text](image-3.png)
+        ![Alt text](./Images/UserFlows/image-3.png)
 
     - Automated Creation Email 
         - Entry Point: Automated creation of trips or reservations by listening to incomping emails.
         - Payload: System-generated trip data, which includes trip names, descriptions, and associated reservations based off email content.
 
-        ![Alt text](image-4.png)
+        ![Alt text](./Images/UserFlows/image-4.png)
 
 6. Trip/Reservation Deletion:
 
@@ -191,19 +192,19 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
         - Entry Point: A feature allowing users to manually delete trips and reservations.
         - Payload: User-generated trip data, and manually outlined associated reservations based off email content.   
     
-          ![Alt text](image-6.png)
+          ![Alt text](./Images/UserFlows/image-6.png)
 
     - Automated Email 
         - Entry Point: Automated deletion of trips or reservations by listening to incomping emails.
         - Payload: System-generated data and automatically outlined associated reservations based off email content.   
 
-          ![Alt text](image-7.png)
+          ![Alt text](./Images/UserFlows/image-7.png)
 
     - Third-Party Integration 
         - Entry Point: Polling of third-party services to scan for removed reservations.
         - Payload: System-generated data and automatically outlined associated reservations based off polled content.    
 
-          ![Alt text](image-8.png)
+          ![Alt text](./Images/UserFlows/image-8.png)
 
 
 7. Trip/Reservation Updates:
@@ -212,19 +213,19 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
         - Entry Point: A feature allowing users to manually update trips and reservations.
         - Payload: User-generated trip data, and manually outlined associated reservations based off email content.   
     
-          ![Alt text](image-9.png)
+          ![Alt text](./Images/UserFlows/image-9.png)
 
     - Automated Email 
         - Entry Point: Automated updates of trips or reservations by listening to incomping emails.
         - Payload: System-generated data and automatically outlined associated reservations based off email content.   
         
-          ![Alt text](image-10.png)
+          ![Alt text](./Images/UserFlows/image-10.png)
 
     - Third-Party Integration 
         - Entry Point: Polling of third-party services to scan for updates to reservations.
         - Payload: System-generated data and automatically outlined associated reservations based off polled content.    
 
-          ![Alt text](image-11.png)
+          ![Alt text](./Images/UserFlows/image-11.png)
 
 8. Itinerary Viewing:
 
@@ -236,7 +237,7 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
     - Entry Point: The user shares a trip which is the accessed by other user's who can then join the trip
     - Payload: Itinerary information, aggregating reservations for a specific trip.
 
-      ![Alt text](image-2.png)
+      ![Alt text](./Images/UserFlows/image-2.png)
     
 10. Data Analytics:
 
@@ -386,11 +387,14 @@ SSR offers several advantages namely
 PWAs offer features which allow the application to be much more accessible due to **offline support** which allows for browsing in areas of limited internet, **app experience and packing** which facilitates publishing to mobile stores, **caching strategies** which allow the storage of assets and data on the client's device to ensure fast load times on subsequent visits.
 
 [ADR 1 - Progressive Web App](/Resources/ADRs/ADR01-Progressive-web-app.md)
+
 [ADR 6 - SSR](/Resources/ADRs/ADR06-Server-side-rendering.md)
 
 ### Cosmos DB
 
 CosmosDB is the backbone of the app's data management strategy. With its globally distributed, multi-model database service, CosmosDB enables us to seamlessly handle vast amounts of data, provide low-latency access to users worldwide, and ensure high availability and scalability. Its support for various data models, including document, key-value, graph, and column-family, offers the flexibility needed to store and query diverse types of data efficiently. CosmosDB's built-in global distribution, automatic scaling, and robust consistency options align perfectly with our app's requirements for data resilience, real-time updates, and responsive performance. It's the foundational layer that empowers our app to deliver a seamless and data-rich user experience.
+
+[ADR 3 - Cosmos DB and Redis for Global Data Distribution](/Resources/ADRs/ADR03-Data-Distribution.md)
 
 [ADR 9 - Cosmos DB](/Resources/ADRs/ADR09-CosmosDB-Consistency.md)
 
@@ -400,6 +404,7 @@ CosmosDB is the backbone of the app's data management strategy. With its globall
 
 Redis plays a pivotal role in enhancing the speed and efficiency of our app. As an in-memory data store, Redis excels at caching frequently accessed data, reducing database load, and significantly improving response times for users. Its support for data structures like strings, sets, and hashes makes it versatile for various application needs, such as session management, real-time analytics, and queuing. With Redis, our app can deliver lightning-fast data retrieval and processing, ensuring a snappy and highly responsive user experience. It's a key component that enhances the overall performance and scalability of our application.
 
+[ADR 3 - Cosmos DB and Redis for Global Data Distribution](/Resources/ADRs/ADR03-Data-Distribution.md)
 [ADR 13 - Usage of Serverless Functions with Redis Over APIs](/Resources/ADRs/ADR13-Usage-of-Serverless-Functions-with-Redis-Over-APIs.md)
 
 ### Serverless functions
@@ -435,9 +440,26 @@ Azure Front Door acts as a global entry point, combining security and load balan
 
 ![Technical Architecture](Images/ArchitecturalCharacteristics/TechnicalArchitecture.png)
 
-## Platform Roadmap
+## MVP Timeline Proposal
 
-*Section detailing an ideal roadmap, with their suggestion top provide an MVP and then ultimately expand the project in the long term.* 
+The platform roadmap that has been drafted takes into consideration the infancy of the enterprise, and has therefore been designed in such a way that focuses on introducing streams of revenue as soon as possible to cover necessary funding for the undertaking of this project.
+
+### Delivery Timeline Composition
+
+Four named MVPs are being proposed:
+*  MVP 1: Road Warrior Soft-Launch - As the namesake implies, this MVP will involve launching the product with just the essential, barebones features, suitable enough to introduce the potential of the product to the market. The majority of requirements specified in the initial spec are covered completely, with other less critical requirements being delivered in part or planned for launch in a future MVP. This MVP will help establish 'Road Warrior' into the travelling organisation app market, and potentially even introduce investment opportunities. The inclusion of lightweight advertisements in the barebones version of the application will also introduce a new and immediate stream of revenue, scaling based on the number of users (as will running costs, as a matter of fact).
+
+*  MVP 2: Shared Dashboards - Introduce features that support collaboration/sharing among authenticated users, expanding the social elements of the application. At this point, all baseline requirements from the original specification barring reporting & analytics are implemented to some degree. Expanding integrations with additional booking agencies will also increase traffic on the application, increasing traffic and introducing new opportunities for further investments.
+
+*  MVP 3: Subscription Model, Analytics & Reporting - By the time that the development and planned delivery of MVP3 is underway, the project should have established an audience (this will be assisted through relevant marketing efforts). A larger audience in addition to increased features (and complexity of said features), means that computing costs will increase just as well. Advertisements will cover a portion of these running costs, however, to offer a more seamless experience as well as more advanced (resource intensive) features, a subscription model will be released.
+
+*  MVP 4: Expand Covered Services - This is the last "planned" MVP for the product. Here, the platform will undergo horizontal diversification in the services and data it offers by covering attractions and taxis.
+
+*  MVP N+: At this point in time, the project will be in maintenance mode. Bugfixes and performance adjustments will be issued as needed, while new features, covered services and booking agency integrations will be incrementally increased based on community feedback
+
+![image](./Images/MVPs/MVPs.png)
+
+
 
 ## Engineering Practices
 
@@ -445,13 +467,43 @@ Azure Front Door acts as a global entry point, combining security and load balan
 
 ## ADRS
 
-*ADRs*
+[ADR 1 - Progressive Web App](/Resources/ADRs/ADR01-Progressive-web-app.md)
+
+[ADR 2 - Choosing REST and CQRS over GraphQL](/Resources/ADRs/ADR02-RESTful-APIs.md)
+
+[ADR 3 - Cosmos DB and Redis for Global Data Distribution](/Resources/ADRs/ADR03-Data-Distribution.md)
+
+[ADR 4 - Microservice Architecture](/Resources/ADRs/ADR04-Microservices-architecture.md)
+
+[ADR 5 - Event Driven Architecture](/Resources/ADRs/ADR05-Event-driven-architecture.md)
+
+[ADR 6 - SSR](/Resources/ADRs/ADR06-Server-side-rendering.md)
+
+[ADR 7 - Provider Pattern](/Resources/ADRs/ADR07-Provider-pattern.md)
+
+[ADR 8 - Polling vs Webhooks with Email Forwarding Rule](/Resources//ADRs/ADR08-Polling-vs-InboxWebhooksWithEmailForwardingRule.md)
+
+[ADR 9 - Cosmos DB](/Resources/ADRs/ADR09-CosmosDB-Consistency.md)
+
+[ADR 10 - Load Balancing of Core Services](/Resources/ADRs/ADR10-Load-balancing-Core-Services.md)
+
+[ADR 11 - Segregation of Core Services and Reader APIs](/Resources/ADRs/ADR11-Segregation-of-Core-Services-and-Reader-APIs.md)
+
+[ADR 12 - Distribution of Data Globally](/Resources/ADRs/ADR12-Distributing-Data-Globally.md)
+
+[ADR 13 - Usage of Serverless Functions with Redis Over APIs](/Resources/ADRs/ADR13-Usage-of-Serverless-Functions-with-Redis-Over-APIs.md)
 
 ## Resources
 
-*Links to relevant resources.* 
-
 [Introducing event storming](http://ziobrando.blogspot.com/2013/11/introducing-event-storming.html)
+
+[Fundamentals of Software Architecture](https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/)
+
+[Software Architecture Patterns](https://learning.oreilly.com/library/view/software-architecture-patterns/9781098134280/)
+
+[Software Architecture: The Hard Parts](https://learning.oreilly.com/library/view/software-architecture-the/9781492086888/)
+
+[Developer to Architect Architecture Resources](https://developertoarchitect.com/resources.html)
 
 ## Our 3rd party integrations
 

@@ -1,1 +1,0 @@
-https://github.com/tekiegirl/SoftwareArchitectureResources/blob/main/Resources/OReillyKata.md#content
