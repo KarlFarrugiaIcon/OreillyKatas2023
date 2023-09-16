@@ -38,15 +38,22 @@ Road Warrior is a startup which is poised to revolutionise the travel industry b
 
 ## Business Case
 
-The provided requirements can be found [here](/Resources/1_RequirementsAnalysis/Requirements.pptx) and the planned breakdown can be seen [here](/Resources/1_RequirementsAnalysis/Requirements.md)
-
 ### Requirements
+
+The provided requirements can be found [here](/Resources/1_RequirementsAnalysis/Requirements.pptx) and the planned breakdown can be seen [here](/Resources/1_RequirementsAnalysis/Requirements.md)
 
 ### Technical Constraints
 
+- The startup excels in its business domain but lacks the technical expertise needed for its ambitious projects. Therefore, as technical supplier we have a blank slate to start from.
+
 ### Business Constraints
 
+- This is a start up therefore funds may be limited and have to be generated from the application itself.
+
 ### Assumptions
+
+- Start up does not have any technical partners
+- The start up will start maturing with the system MVP roll out thereby allowing the system to grow. It is assumed that if the application is not performing well the owners will take a fail fast approach and may pull the plug. Therefore, the final product while will take into consideration the cost will also assume that the application is now self sustaining. 
 
 ## Architecture Characteristics
 

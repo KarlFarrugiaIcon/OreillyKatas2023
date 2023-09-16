@@ -95,7 +95,53 @@ Delving deeper into this process:
 
 By breaking down the requirement into these distinct entry points and their associated payloads, we can ensure that we have a clear understanding of where data enters the system and what information is being processed. This structured approach not only aids in the design and development of the system but also lays the foundation for effective data management, security, and the eventual implementation of analytics and recommendation features.
 
+## Performance Characteristics
+
 ![Requirements Breakdown 2](../../Images/Requirements/RequirementsBreakdown2.png)
+
+- Updates must be in the app within 5 minutes of an update (better than the competition). This may be tackled with having the latest updates locally and at the core but have eventual consistency across different regions.
+- The system may be composed in 2: 
+    - Core services - A stand alone kubernetes cluster which is hosted in the region of the business' core user base.
+        - Different components have different loads
+    - Globally distributed APIs to service read/write operations to their user base.
+        - Different loads in different regions
+        - Each region will have its own peak, which may be seasonal (summer holidays) or on weekly trends (weekend getaways)
+
+## Component Identification (Boundary Analysis)
 ![Requirements Breakdown 3](../../Images/Requirements/RequirementsBreakdown3.png)
+
+Our solution adheres to a boundary analysis that encompasses several key components to ensure its functionality and effectiveness:
+
+- Trips and Reservations: At the core of our system lies the ability to manage trips and reservations seamlessly. Users can create, update, and view their travel itineraries, which include flights, hotels, and activity reservations.
+
+- Polling Mechanism: To keep information up-to-date, our solution employs a polling mechanism. It regularly checks external sources such as booking platforms for any changes or updates to reservations and synchronizes them with the user's itinerary.
+
+- Email Webhooks: For real-time communication and updates, our system integrates with email webhooks. Users receive notifications and updates about their reservations directly in their email, ensuring they stay informed and can make timely adjustments to their plans.
+
+- Data Analytics: The solution incorporates data analytics to derive insights from user interactions, helping to improve user experiences and provide personalized recommendations based on historical travel data.
+
+- Recommendation Engine: Utilizing a recommendation engine, our system offers tailored suggestions to users based on their travel history, preferences, and current bookings, enhancing their travel planning and decision-making process.
+
+- User Authentication: Security is paramount, and our system includes robust user authentication mechanisms to protect user data and ensure only authorized access to accounts and itineraries.
+
+- Third-party Integrations: We integrate with various third-party services and APIs for booking and reservation data, enabling users to seamlessly import and manage their travel information.
+
+By adhering to this boundary analysis, our solution provides a comprehensive and user-centric travel management experience, ensuring efficiency, accuracy, and user satisfaction throughout the journey planning process.
+
+## Actor & Action Analysis
+
+The identified actors and their actions are as follows:
+
+| Actor          | Actions |
+| -------------- | ------- |
+| Customer (Authenticated)      | - Registers on the platform<br /> - Logs in the platform<br /> - Consent to email forwarding<br /> - View upcoming trips<br /> - Manage upcoming trips<br /> - View trip reservations<br /> - Manage trip reservations<br /> - Receives notifications regarding upcoming trips<br /> - View personalised analytics<br /> - Request for help from agency<br /> - Share trip details on preferred social media platform<br /> - Share trip details with platform<br /> - Share trip details with anonymous user<br /> |
+| Customer (Not Authenticated) | - View shared Trip Summary|
+| System Admin   | - Registers on the platform<br /> - Logs in the platform<br /> - Add multi-lingual translations <br /> - View regional analystics<br />  |
+
+
+## Workflow Approach 
 ![Requirements Breakdown 4](../../Images/Requirements/RequirementsBreakdown4.png)
+
+## Merging Users and workflows 
+
 ![Requirements Breakdown 5](../../Images/Requirements/RequirementsBreakdown5.png)
