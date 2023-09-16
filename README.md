@@ -38,7 +38,7 @@ Road Warrior is a startup which is poised to revolutionise the travel industry b
 
 ## Business Case
 
-
+The provided requirements can be found [here](/Resources/1_RequirementsAnalysis/Requirements.pptx) and the planned breakdown can be seen [here](/Resources/1_RequirementsAnalysis/Requirements.md)
 
 ### Requirements
 
