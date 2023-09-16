@@ -286,18 +286,22 @@ The below actor to system boundary diagram expands on the detail provided by the
 #### Deep Dive on System Boundaries 
 
 ##### Authentication Service
+The component diagram illustrates the Authentication Microservice, responsible for user authentication through social media Single Sign-On (SSO). It utilizes multiple AKS clusters orchestrated for scalability and communicates with a Data Center Orchestrator across multiple data centers for data operations, ensuring secure and reliable authentication.
 
 ![Alt text](./Images/DomainBoundaries/AuthenticationService.png)
 
 ##### Trip Management Service
+The component diagram represents a Trip Management Microservice that users interact with through an API gateway. It utilizes multiple AKS clusters orchestrated for scalability and utilizes a centralized event streaming infrastructure for event publishing and subscription. Data is stored using a Data Center Orchestrator spanning multiple data centers. Additionally, it leverages a centralized queue infrastructure to publish messages for social media sharing activities.
 
 ![Alt text](./Images/DomainBoundaries/TripManagementService.png)
 
 ##### Email Data Parsing Service
+The component diagram illustrates a Data Parsing Microservice responsible for email data parsing. External automation tools forward emails to the event streaming infrastructure. This microservice acts as a subscriber to the event streaming, processes the email data, and publishes new messages that are picked up by other microservices for further processing
 
 ![Alt text](./Images/DomainBoundaries/EmailDataParsingService.png)
 
 ##### Social Media Service
+The component diagram depicts the Social Media Sharing service, responsible for sharing content on configured social media platforms. It receives messages from the Trip Management Service via a message queue. To communicate with social media platforms, it utilizes concrete providers and Single Sign-On (SSO) authentications for secure access
 
 ![Alt text](./Images/DomainBoundaries/SocailMediaSharingService.png)
 
