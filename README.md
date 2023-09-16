@@ -60,6 +60,7 @@ Team Members:
 - [MVP Timeline Proposal](#mvp-timeline-proposal)
   - [Delivery Timeline Composition](#delivery-timeline-composition)
 - [Overall Architecture](#overall-architecture)
+- [Business Plan and Cost Analysis](#business-plan-and-cost-analysis)
 - [Engineering Practices](#engineering-practices)
 - [ADRs](#adrs)
 - [Resources](#resources)
@@ -502,6 +503,9 @@ Logical and Physical view of the Entire System. The Physical View shows the whol
 
 ![Technical Architecture](Images/ArchitecturalCharacteristics/TechnicalArchitecture.png)
 
+## Business Plan and Cost Analysis
+
+![Business Model Plan](/Images/BusinessPlan/businessmodel.png)
 
 ## Engineering Practices
 
@@ -546,6 +550,8 @@ Logical and Physical view of the Entire System. The Physical View shows the whol
 [Software Architecture: The Hard Parts](https://learning.oreilly.com/library/view/software-architecture-the/9781492086888/)
 
 [Developer to Architect Architecture Resources](https://developertoarchitect.com/resources.html)
+
+[Strategyzer Business Model Canvas](https://www.strategyzer.com/library/the-business-model-canvas)
 
 ## Our 3rd party integrations
 
