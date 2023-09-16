@@ -19,7 +19,10 @@ Team Members:
   - [Implicit Characteristics](#implicit-characteristics)
   - [Other Considerations](#other-considerations)
 - [Architecture Implementation Styles](#architecture-implementation-styles)
-  - [Solution Approach](#solution-approach)
+  - [Microservices Architecture](#microservices-architecture)
+  - [Event-Driven Architecture](#event-driven-architecture)
+  - [Space-Based Architecture](#space-based-architecture)
+  - [High Level Combined Architecture](#high-level-combined-architecture)
 - [Non-functional Requirements](#non-functional-requirements)
 - [Overall Platform Context](#overall-platform-context)
 - [User Experience](#user-experience)
@@ -79,26 +82,34 @@ This section takes into consideration how the architecture is to be split using 
 
 | Characteristics | Reason |
 | ----------- | ----------- |
-| Feasibility / Cost | it's a start up |
-| Maintainability | |
-| Observabilitiy | |
+| Feasibility / Cost | This implicit characteristic comes as a result of the start up nature of the client and revolves around the financial aspects of a software project. Feasibility analysis assesses whether the project is financially viable and if the expected benefits outweigh the costs. It also considers factors like budget constraints, resource availability, and potential return on investment. Addressing this may require some early on concensions when designing MVPs which will eventually be made less cost effective and more efficient once the solution becomes self sustaining. |
+| Maintainability | Maintainability refers to the software's ease of modification, enhancement, and long-term sustainability. Implicitly, it underscores the importance of writing clean, modular, and well-documented code. It involves practices such as code refactoring, version control, and adherence to coding standards such as abstraction. A maintainable software system is more cost-effective to update and extend over time, reducing the risk of technical debt and ensuring that the software remains adaptable to changing requirements. |
+| Observabilitiy | Observability is focused on a software system's ability to provide insights into its behavior, performance, and issues. It involves implementing logging, monitoring, and error tracking mechanisms. Observability allows developers and operators to gain visibility into the system's internal workings, making it easier to diagnose and resolve problems, optimize performance, and ensure that the software meets its operational objectives. Implicitly, observability emphasizes proactive system health management and continuous improvement through data-driven insights. |
 
 ### Other Considerations 
 
-Availability in different global regions
+Ensuring availability in different global regions is a complex yet critical aspect of modern digital services. It involves deploying redundant infrastructure, global distribution of data and leveraging Content Delivery Networks (CDNs) to minimize latency and downtime. Factors such as geographical diversity, local regulations, and varying network conditions must be considered. Achieving high availability means that users, regardless of their location, can access services reliably and consistently. This global approach to availability not only enhances user experiences but also strengthens disaster recovery capabilities, ensuring that services remain resilient even in the face of regional disruptions.
 
 ## Architecture Implementation Styles
 
 Based off the Characteristics the chosen architecture is based off microservices, event-driven and space-based architecture.
 ![ArchitecutreImplementation](/Images//ArchitecturalCharacteristics/ArchitectureStyles.PNG)
 
-### Solution Approach
+### Microservices Architecture
+The system will adopt a Microservices Architecture to promote modularity and scalability. Different components of the system, such as user management, reservation handling, and recommendation generation, will be developed as independent microservices. Each microservice will have its own database and will communicate with others through the event bus. This approach allows for agile development, easy maintenance, and the ability to scale specific services independently to meet varying demands. For example, during peak travel booking seasons, we can allocate more resources to the reservation microservice while keeping other services unaffected.
+
+### Event-Driven Architecture
+Event-Driven Architecture will be integral to the system's real-time capabilities. Events, such as user actions (booking a flight, changing an itinerary) or external updates (flight delays, hotel availability), will trigger asynchronous messages that various components can subscribe to and act upon. For instance, when a user adds a new reservation, it generates an event that updates the user's itinerary and triggers the recommendation engine to suggest relevant activities or accommodations. This decoupled and event-driven approach ensures that our system remains responsive, scalable, and capable of handling real-time data updates seamlessly.
+
+### Space-Based Architecture
+Space-Based Architecture will be employed for managing distributed, in-memory data caches and ensuring high availability and low-latency access to frequently accessed data. This architecture allows us to store and retrieve data in a distributed and fault-tolerant manner, which is crucial for a system handling real-time travel information. For example, we can use a space-based architecture for caching frequently accessed itinerary data, ensuring that users can quickly access their travel plans regardless of the data's physical location. This architecture also supports data consistency and synchronization across multiple regions for enhanced availability and performance.
+
+### High Level Combined Architecture
+
+This leads to the following high level solution approach
 
 ![SolutionApproach](/Images/ArchitecturalCharacteristics/ArchitectureDiagram.png)
 
-## Non-functional Requirements
-
-*The team performed an analysis of business requirements (listed down requirement by requirement, and their observations), NFR for each one, and then in the main section just submitted a list of NFRs encompassing all of them. The team did some additional research on the background of the business entities involved, to finetune the NFRs for their needs (e.g. the business case concerned non-profit organisations, so it made sense to focus on feasibility all throughout the system).*
 
 ## Overall Platform Context
 
@@ -142,7 +153,7 @@ _Insert final diagram_
 
 *Logical and Physical view of the Entire System. The Physical View shows the whole picture of each component shown in Identifying Architectural Quanta.* 
 
-![KatasTechnical Architecture](Images/architecture.png)
+![KatasTechnical Architecture](Images/ArchitecturalCharacteristics/TechnicalArchitecture.png)
 
 ## Platform Roadmap
 
