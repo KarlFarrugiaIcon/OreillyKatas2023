@@ -33,6 +33,9 @@ Team Members:
 - [Platform Roadmap](#platform-roadmap)
 - [Engineering Practices](#engineering-practices)
 - [ADRs](#adrs)
+- [User Interface Mockups](#user-interface-mockups)
+  - [Manual Wireframing](#manual-wireframing)
+  - [Figma Designs](#figma-designs)
 - [Resources](#resources)
 - [Our 3rd party integrations](#our-3rd-party-integrations)
   
@@ -170,6 +173,12 @@ _Insert final diagram_
 
 _Insert brief write-up_
 
+### Manual Wireframing
+
+![roadwarriorManual](/Images/ManualWireframing/manualsketches.gif)
+
+### Figma Designs
+
 ![roadwarrior](Images/UI/flow.gif)
 
 https://github.com/KarlFarrugiaIcon/OreillyKatas2023/assets/91567864/99460df7-7392-4e82-ba34-daa91e1c5cab
@@ -180,6 +189,6 @@ https://github.com/KarlFarrugiaIcon/OreillyKatas2023/assets/91567864/99460df7-73
 
 [Introducing event storming](http://ziobrando.blogspot.com/2013/11/introducing-event-storming.html)
 
-### Our 3rd party integrations
+## Our 3rd party integrations
 
 *how/what do they support (this will dictate potentially some of our decisions re. the 5 minute)* 
