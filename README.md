@@ -62,6 +62,10 @@ Team Members:
   - [Delivery Timeline Composition](#delivery-timeline-composition)
 - [Business Plan and Cost Analysis](#business-plan-and-cost-analysis)
 - [Engineering Practices](#engineering-practices)
+  - [Provider Pattern](#provider-pattern)
+  - [Deployment Pipelines](#deployment-pipelines)
+  - [SOLID Principles](#solid-principles)
+  - [Unit Tests](#unit-tests)
 - [ADRs](#adrs)
 - [Resources](#resources)
 - [Our 3rd party integrations](#our-3rd-party-integrations)
@@ -215,7 +219,6 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
         - Payload: System-generated data and automatically outlined associated reservations based off polled content.    
 
           ![Alt text](./Images/UserFlows/image-8.png)
-
 
 7. Trip/Reservation Updates:
 
@@ -513,12 +516,14 @@ The business plan revolves around strategic partnerships, software development, 
 
 The following are some software engineering practices that will be adhered to during the undertaking of the project:
 
-### Provider Pattern:
+### Provider Pattern
 A design pattern used to abstract the creation of objects or services. This pattern decouples client code from the specific implementation and is commonly used in dependency injection and inversion of control.
 
 This pattern will be used thoroughly within the solution in areas where common code can be used to cover features which are fed inputs from different sources which need to undergo the same business logic, as is the case with supporting different SSO authentication providers, different travel agency integrations and so on.
 
-### Deployment Pipelines:
+[ADR 7 - Provider Pattern](/Resources/ADRs/ADR07-Provider-pattern.md)
+
+### Deployment Pipelines
 Deployment pipelines refer to an automated series of steps for deploying changes to the product. This is in line with the chosen idea to produce MVPs that increment on top of eachother with new features. It helps ensure consistent and reliable software delivery, void of human errors caused by mistakes in the deployment process.
 
 This practice is supplemented by CI/CD (Continuous Integration/Continuous Deployment):
@@ -527,7 +532,7 @@ This practice is supplemented by CI/CD (Continuous Integration/Continuous Deploy
 
 The combination of Deployment Pipelines and CI/CD practices promotes rapid development, testing, and deployment of software.
 
-### SOLID Principles:
+### SOLID Principles
 The SOLID principles are a series of guidelines for writing maintainable and extensible code. When followed, they help improve code design, readability, and maintainability.
 
 1. **Single Responsibility Principle (SRP):** A class should have only one reason to change, meaning it should have a single responsibility or job.
@@ -536,7 +541,7 @@ The SOLID principles are a series of guidelines for writing maintainable and ext
 4. **Interface Segregation Principle (ISP):** Clients should not be forced to depend on interfaces they do not use; it promotes the creation of smaller, more focused interfaces.
 5. **Dependency Inversion Principle (DIP):** High-level modules should not depend on low-level modules, both should depend on abstractions, and abstractions should not depend on details; it encourages the use of interfaces or abstract classes to decouple components.
 
-### Unit Tests:
+### Unit Tests
 Small, isolated tests that validate the behavior of individual code units (e.g., modifications of trips/reservations). Unit tests help ensure that each piece of code works correctly in isolation and keep a contribute towards consistent code quality assurance.
 
 ## ADRS
