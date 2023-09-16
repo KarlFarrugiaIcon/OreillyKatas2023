@@ -139,7 +139,7 @@ _Insert brief write-up_
 
 ![roadwarrior](Images/UI/flow.gif)
 
-<video src="Images/UI/flow.mp4" controls title="Title"></video>
+https://github.com/KarlFarrugiaIcon/OreillyKatas2023/assets/91567864/9935a1ab-a475-47fc-9ee0-072c05fe39a6
 
 ## Resources
 
