@@ -379,6 +379,8 @@ Event-Driven Architecture will be integral to the system's real-time capabilitie
 ### Space-Based Architecture
 Space-Based Architecture will be employed for managing distributed, in-memory data caches and ensuring high availability and low-latency access to frequently accessed data. This architecture allows us to store and retrieve data in a distributed and fault-tolerant manner, which is crucial for a system handling real-time travel information. For example, we can use a space-based architecture for caching frequently accessed itinerary data, ensuring that users can quickly access their travel plans regardless of the data's physical location. This architecture also supports data consistency and synchronization across multiple regions for enhanced availability and performance.
 
+[ADR 14 - Space-Based Architecture](/Resources/ADRs/ADR14-Space-Based-architecture.md)
+
 ### High Level Combined Architecture
 
 This leads to the following high level solution approach
@@ -451,6 +453,7 @@ CosmosDB is the backbone of the app's data management strategy. With its globall
 Redis plays a pivotal role in enhancing the speed and efficiency of our app. As an in-memory data store, Redis excels at caching frequently accessed data, reducing database load, and significantly improving response times for users. Its support for data structures like strings, sets, and hashes makes it versatile for various application needs, such as session management, real-time analytics, and queuing. With Redis, our app can deliver lightning-fast data retrieval and processing, ensuring a snappy and highly responsive user experience. It's a key component that enhances the overall performance and scalability of our application.
 
 [ADR 3 - Cosmos DB and Redis for Global Data Distribution](/Resources/ADRs/ADR03-Data-Distribution.md)
+
 [ADR 13 - Usage of Serverless Functions with Redis Over APIs](/Resources/ADRs/ADR13-Usage-of-Serverless-Functions-with-Redis-Over-APIs.md)
 
 ### Serverless functions
@@ -598,6 +601,8 @@ Small, isolated tests that validate the behavior of individual code units (e.g.,
 [ADR 12 - Distribution of Data Globally](/Resources/ADRs/ADR12-Distributing-Data-Globally.md)
 
 [ADR 13 - Usage of Serverless Functions with Redis Over APIs](/Resources/ADRs/ADR13-Usage-of-Serverless-Functions-with-Redis-Over-APIs.md)
+
+[ADR 14 - Space-Based Architecture](/Resources/ADRs/ADR14-Space-Based-architecture.md)
 
 ## Resources
 

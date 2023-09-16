@@ -1,8 +1,7 @@
-
 # ADR 7: Provider Pattern
 
 ## Status  
-Proposed
+Approved
 
 ## Rationale
 To connect multiple agencies and to implement multiple authentication providers in The Road Warrior, ensuring both extensibility and consistency is paramount. Recognizing this need, we have decided to implement the Provider Pattern following a thorough evaluation of design patterns and approaches
