@@ -286,12 +286,12 @@ The below actor to system boundary diagram expands on the detail provided by the
 #### Deep Dive on System Boundaries 
 
 ##### Authentication Service
-The component diagram illustrates the Authentication Microservice, responsible for user authentication through social media Single Sign-On (SSO). It utilizes multiple AKS clusters orchestrated for scalability and communicates with a Data Center Orchestrator across multiple data centers for data operations, ensuring secure and reliable authentication.
+The component diagram illustrates the Authentication Microservice, responsible for user authentication through social media Single Sign-On (SSO).
 
 ![Alt text](./Images/DomainBoundaries/AuthenticationService.png)
 
 ##### Trip Management Service
-The component diagram represents a Trip Management Microservice that users interact with through an API gateway. It utilizes multiple AKS clusters orchestrated for scalability and utilizes a centralized event streaming infrastructure for event publishing and subscription. Data is stored using a Data Center Orchestrator spanning multiple data centers. Additionally, it leverages a centralized queue infrastructure to publish messages for social media sharing activities.
+The component diagram represents a Trip Management Microservice that users interact with through an API gateway. Additionally, it leverages a centralized queue infrastructure to publish messages for social media sharing activities.
 
 ![Alt text](./Images/DomainBoundaries/TripManagementService.png)
 
@@ -311,12 +311,12 @@ The component diagram shows the Travel Integration Service, responsible for proc
 ![Alt text](./Images/DomainBoundaries/TravelIntegrationService.png)
 
 ##### Notifications Service
-The component diagram illustrates the Notifications Service, responsible for delivering notifications to PWA (Web/Mobile) Applications. It handles multiple types of notifications published to an Event Streaming system, ensuring their proper delivery to the applications.
+The component diagram illustrates the Notifications Service, responsible for delivering notifications to the PWA Application. It is mainly responsible for handling push notifications and email notifications.
 
 ![Alt text](./Images/DomainBoundaries/NotificationsService.png)
 
 ##### Reporting & Analytics Service
-The Reporting & Analytics Service uses an external service to generate reports, processes them internally, stores data in a data center, publishes messages to notify other microservices, and allows users to view insights through an external tool.
+The Reporting & Analytics Service uses an external service to generate reports, processes them internally, stores data in a data warehouse, publishes messages to notify other microservices, and allows users to view insights through an external tool.
 
 ![Alt text](./Images/DomainBoundaries/ReportingAnalyticsService.png)
 
