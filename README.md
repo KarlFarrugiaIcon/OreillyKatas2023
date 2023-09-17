@@ -286,12 +286,12 @@ The below actor to system boundary diagram expands on the detail provided by the
 #### Deep Dive on System Boundaries 
 
 ##### Authentication Service
-The component diagram illustrates the Authentication Microservice, responsible for user authentication through social media Single Sign-On (SSO).
+The component diagram illustrates the Authentication Microservice, responsible for user authentication through username password or social media.
 
 ![Alt text](./Images/DomainBoundaries/AuthenticationService.png)
 
 ##### Trip Management Service
-The component diagram represents a Trip Management Microservice that users interact with through an API gateway. Additionally, it leverages a centralized queue infrastructure to publish messages for social media sharing activities.
+The component diagram represents a Trip Management Microservice that users interact with through an API gateway. Additionally, it leverages a centralised queue infrastructure to subscribe to trip updates.
 
 ![Alt text](./Images/DomainBoundaries/TripManagementService.png)
 
@@ -301,7 +301,7 @@ The component diagram illustrates a Data Parsing Microservice responsible for em
 ![Alt text](./Images/DomainBoundaries/EmailDataParsingService.png)
 
 ##### Social Media Service
-The component diagram depicts the Social Media Sharing service, responsible for sharing content on configured social media platforms. It receives messages from the Trip Management Service via a message queue. To communicate with social media platforms, it utilizes concrete providers and Single Sign-On (SSO) authentications for secure access
+The component diagram depicts the Social Media Sharing service, responsible for sharing content on configured social media platforms. It receives messages from the Trip Management Service via a message queue.
 
 ![Alt text](./Images/DomainBoundaries/SocailMediaSharingService.png)
 
