@@ -286,7 +286,7 @@ The below actor to system boundary diagram expands on the detail provided by the
 #### Deep Dive on System Boundaries 
 
 ##### Authentication Service
-The component diagram illustrates the Authentication Microservice, responsible for user authentication through username password or social media.
+The component diagram illustrates the Authentication Microservice, responsible for user authentication through username and password or social media.
 
 ![Alt text](./Images/DomainBoundaries/AuthenticationService.png)
 
@@ -306,7 +306,7 @@ The component diagram depicts the Social Media Sharing service, responsible for 
 ![Alt text](./Images/DomainBoundaries/SocailMediaSharingService.png)
 
 ##### Travel Integration Service
-The component diagram shows the Travel Integration Service, responsible for processing data from Travel Agencies. It subscribes via AMQP (Advanced Message Queuing Protocol) to configured external travel agencies, processes the data, and publishes messages to a queue infrastructure. These messages are subsequently picked up by the Trip Management Service for further processing.
+The component diagram shows the Travel Integration Service, responsible for processing data from Travel Agencies. It subscribes via AMQP (Advanced Message Queuing Protocol) to configured external travel agencies, processes the data, and publishes messages to a queue. These messages are subsequently picked up by the Trip Management Service for further processing.
 
 ![Alt text](./Images/DomainBoundaries/TravelIntegrationService.png)
 
