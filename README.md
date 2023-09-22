@@ -43,6 +43,12 @@ Team Members:
   - [Event-Driven Architecture](#event-driven-architecture)
   - [Space-Based Architecture](#space-based-architecture)
   - [High Level Combined Architecture](#high-level-combined-architecture)
+- [Business Plan](#business-plan)
+  - [Freemium Tier](#freemium-tier)
+  - [Silver Tier](#silver-tier)
+  - [Gold Tier](#gold-tier)
+- [MVP Timeline Proposal](#mvp-timeline-proposal)
+  - [Delivery Timeline Composition](#delivery-timeline-composition)
 - [Identifying Architectural Quanta](#identifying-architectural-quanta)
   - [Kubernetes](#kubernetes)
     - [Container Registry](#container-registry)
@@ -58,14 +64,10 @@ Team Members:
     - [Azure Front Door](#azure-front-door) 
   - [Azure Synapse](#azure-synapse)
 - [Overall Architecture](#overall-architecture)
-- [MVP Timeline Proposal](#mvp-timeline-proposal)
-  - [Delivery Timeline Composition](#delivery-timeline-composition)
-- [Business Plan and Cost Analysis](#business-plan-and-cost-analysis)
-  - [Freemium Tier](#freemium-tier)
-  - [Silver Tier](#silver-tier)
-  - [Gold Tier](#gold-tier)
+- [Cost Analysis](#cost-analysis)
 - [Engineering Practices](#engineering-practices)
   - [Provider Pattern](#provider-pattern)
+  - [Domain Driven Design (DDD) with Command Query Responsibility Segregation (CQRS)](#domain-driven-design-ddd-with-command-query-responsibility-segregation-cqrs)
   - [Deployment Pipelines](#deployment-pipelines)
   - [SOLID Principles](#solid-principles)
   - [Unit Tests](#unit-tests)
@@ -131,23 +133,23 @@ In the final step, post-gathering domain events and defining triggering commands
 ### Component Identification (Boundary Analysis)
 ![Requirements Breakdown 3](Images/Requirements/RequirementsBreakdown3.png)
 
-Our solution adheres to a boundary analysis that encompasses several key components to ensure its functionality and effectiveness:
+The solution adheres to a boundary analysis that encompasses several key components to ensure its functionality and effectiveness:
 
-- Trips and Reservations: At the core of our system lies the ability to manage trips and reservations seamlessly. Users can create, update, and view their travel itineraries, which include flights, hotels, and activity reservations.
+- Trips and Reservations: At the core of the system lies the ability to manage trips and reservations seamlessly. Users can create, update, and view their travel itineraries, which include flights, hotels, and activity reservations.
 
-- Polling Mechanism: To keep information up-to-date, our solution employs a polling mechanism. It regularly checks external sources such as booking platforms for any changes or updates to reservations and synchronizes them with the user's itinerary.
+- Polling Mechanism: To keep information up-to-date, the solution employs a polling mechanism. It regularly checks external sources such as booking platforms for any changes or updates to reservations and synchronises them with the user's itinerary.
 
-- Email Webhooks: For real-time communication and updates, our system integrates with email webhooks. Users receive notifications and updates about their reservations directly in their email, ensuring they stay informed and can make timely adjustments to their plans.
+- Email Webhooks: For real-time communication and updates, the system integrates with email webhooks. Users receive notifications and updates about their reservations directly in their email, ensuring they stay informed and can make timely adjustments to their plans.
 
-- Data Analytics: The solution incorporates data analytics to derive insights from user interactions, helping to improve user experiences and provide personalized recommendations based on historical travel data.
+- Data Analytics: The solution incorporates data analytics to derive insights from user interactions, helping to improve user experiences and provide personalised recommendations based on historical travel data.
 
-- Recommendation Engine: Utilizing a recommendation engine, our system offers tailored suggestions to users based on their travel history, preferences, and current bookings, enhancing their travel planning and decision-making process.
+- Recommendation Engine: Utilizing a recommendation engine, the system offers tailored suggestions to users based on their travel history, preferences, and current bookings, enhancing their travel planning and decision-making process.
 
-- User Authentication: Security is paramount, and our system includes robust user authentication mechanisms to protect user data and ensure only authorized access to accounts and itineraries.
+- User Authentication: Security is paramount, and the system includes robust user authentication mechanisms to protect user data and ensure only authorised access to accounts and itineraries.
 
 - Third-party Integrations: We integrate with various third-party services and APIs for booking and reservation data, enabling users to seamlessly import and manage their travel information.
 
-By adhering to this boundary analysis, our solution provides a comprehensive and user-centric travel management experience, ensuring efficiency, accuracy, and user satisfaction throughout the journey planning process.
+By adhering to this boundary analysis, the solution provides a comprehensive and user-centric travel management experience, ensuring efficiency, accuracy, and user satisfaction throughout the journey planning process.
 
 ## User Roles
 
@@ -192,13 +194,13 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
 5. Trip/Reservation Creation:
 
     - Manual Creation
-        - Entry Point: A feature allowing users to create and organize trips and reservations.
+        - Entry Point: A feature allowing users to create and organise trips and reservations.
         - Payload: User-generated trip data, which includes trip names, descriptions, and associated reservations.
 
         ![Alt text](./Images/UserFlows/image-3.png)
 
     - Automated Creation Email 
-        - Entry Point: Automated creation of trips or reservations by listening to incomping emails.
+        - Entry Point: Automated creation of trips or reservations by listening to incoming emails.
         - Payload: System-generated trip data, which includes trip names, descriptions, and associated reservations based off email content.
 
         ![Alt text](./Images/UserFlows/image-4.png)
@@ -212,7 +214,7 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
           ![Alt text](./Images/UserFlows/image-6.png)
 
     - Automated Email 
-        - Entry Point: Automated deletion of trips or reservations by listening to incomping emails.
+        - Entry Point: Automated deletion of trips or reservations by listening to incoming emails.
         - Payload: System-generated data and automatically outlined associated reservations based off email content.   
 
           ![Alt text](./Images/UserFlows/image-7.png)
@@ -232,7 +234,7 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
           ![Alt text](./Images/UserFlows/image-9.png)
 
     - Automated Email 
-        - Entry Point: Automated updates of trips or reservations by listening to incomping emails.
+        - Entry Point: Automated updates of trips or reservations by listening to incoming emails.
         - Payload: System-generated data and automatically outlined associated reservations based off email content.   
         
           ![Alt text](./Images/UserFlows/image-10.png)
@@ -352,7 +354,7 @@ This section takes into consideration how the architecture is to be split using 
 | [X] | Elasticity | Elasticity takes the concept of scalability a step further by not only allowing the system to grow but also contract when demand decreases. The solution needs to be designed with elasticity in mind, enabling it to automatically adjust its resource allocation based on real-time demand. For instance, during periods of lower user activity, the system can scale down to conserve resources, reducing operational costs. Conversely, when demand surges, it can quickly scale up to meet the increased load. This elasticity ensures cost-efficiency and optimal resource utilisation, making the solution adaptable and financially sustainable over time. |
 | [] | Data Integrity & Consistency | Ensuring the integrity and consistency of data is paramount in this system. There is a need to implement robust data validation mechanisms, error handling processes, and transaction management to prevent data corruption or discrepancies. By maintaining data integrity and consistency, we guarantee that users can rely on accurate information throughout their travel planning and management processes. |
 | [] | Abstraction | Abstraction is a foundational element of the system's architecture. It allows us to shield users and developers from unnecessary complexities by presenting simplified and user-friendly interfaces. By abstracting the underlying technical intricacies, we enhance usability and reduce the complexities of integrating future applications of similar types of existing implementations. |
-| [] | Availability |  The solution has to be built with high availability in mind due to the requirement of a maximum of 5 minutes downtime per month. There is the need to employ redundancy, failover mechanisms, and disaster recovery strategies to minimize downtime and ensure that users can access their travel information 24/7. Availability is critical in the travel industry, where users may require access to their itineraries and bookings at any time. |
+| [] | Availability |  The solution has to be built with high availability in mind due to the requirement of a maximum of 5 minutes downtime per month. There is the need to employ redundancy, failover mechanisms, and disaster recovery strategies to minimise downtime and ensure that users can access their travel information 24/7. Availability is critical in the travel industry, where users may require access to their itineraries and bookings at any time. |
 | [X] | Performance |  Performance optimisation is a key focus in of the architectural design. Therefore, the system needs to employ efficient algorithms, caching mechanisms, and load balancing to deliver fast response times and smooth user interactions. Whether users are viewing their itineraries or receiving real-time recommendations, the system will need to consistently delivers high-performance results. |
 | [] | Interoperability | Interoperability to facilitate seamless communication with external systems and services. This needs to adhere to industry standards and implement standardised data exchange protocols to ensure that our platform can integrate with various third-party providers, booking systems, and travel-related services. This interoperability enhances the user experience by offering comprehensive access to travel-related resources. |
 
@@ -362,11 +364,11 @@ This section takes into consideration how the architecture is to be split using 
 | ----------- | ----------- |
 | Feasibility / Cost | This implicit characteristic comes as a result of the start up nature of the client and revolves around the financial aspects of a software project. Feasibility analysis assesses whether the project is financially viable and if the expected benefits outweigh the costs. It also considers factors like budget constraints, resource availability, and potential return on investment. Addressing this may require some early on concensions when designing MVPs which will eventually be made less cost effective and more efficient once the solution becomes self sustaining. |
 | Maintainability | Maintainability refers to the software's ease of modification, enhancement, and long-term sustainability. Implicitly, it underscores the importance of writing clean, modular, and well-documented code. It involves practices such as code refactoring, version control, and adherence to coding standards such as abstraction. A maintainable software system is more cost-effective to update and extend over time, reducing the risk of technical debt and ensuring that the software remains adaptable to changing requirements. |
-| Observabilitiy | Observability is focused on a software system's ability to provide insights into its behavior, performance, and issues. It involves implementing logging, monitoring, and error tracking mechanisms. Observability allows developers and operators to gain visibility into the system's internal workings, making it easier to diagnose and resolve problems, optimize performance, and ensure that the software meets its operational objectives. Implicitly, observability emphasizes proactive system health management and continuous improvement through data-driven insights. |
+| Observabilitiy | Observability is focused on a software system's ability to provide insights into its behavior, performance, and issues. It involves implementing logging, monitoring, and error tracking mechanisms. Observability allows developers and operators to gain visibility into the system's internal workings, making it easier to diagnose and resolve problems, optimise performance, and ensure that the software meets its operational objectives. Implicitly, observability emphasises proactive system health management and continuous improvement through data-driven insights. |
 
 ### Other Considerations 
 
-Ensuring availability in different global regions is a complex yet critical aspect of modern digital services. It involves deploying redundant infrastructure, global distribution of data and leveraging Content Delivery Networks (CDNs) to minimize latency and downtime. Factors such as geographical diversity, local regulations, and varying network conditions must be considered. Achieving high availability means that users, regardless of their location, can access services reliably and consistently. This global approach to availability not only enhances user experiences but also strengthens disaster recovery capabilities, ensuring that services remain resilient even in the face of regional disruptions.
+Ensuring availability in different global regions is a complex yet critical aspect of modern digital services. It involves deploying redundant infrastructure, global distribution of data and leveraging Content Delivery Networks (CDNs) to minimise latency and downtime. Factors such as geographical diversity, local regulations, and varying network conditions must be considered. Achieving high availability means that users, regardless of their location, can access services reliably and consistently. This global approach to availability not only enhances user experiences but also strengthens disaster recovery capabilities, ensuring that services remain resilient even in the face of regional disruptions.
 
 ## Architecture Implementation Styles
 
@@ -381,7 +383,7 @@ While there might be a performance trade-off associated with microservices, it's
 [ADR 4 - Microservice Architecture](/Resources/ADRs/ADR04-Microservices-architecture.md)
 
 ### Event-Driven Architecture
-Event-Driven Architecture will be integral to the system's real-time capabilities. Events, such as user actions (booking a flight, changing an itinerary) or external updates (flight delays, hotel availability), will trigger asynchronous messages that various components can subscribe to and act upon. For instance, when a user adds a new reservation, it generates an event that updates the user's itinerary and triggers the recommendation engine to suggest relevant activities or accommodations. This decoupled and event-driven approach ensures that our system remains responsive, scalable, and capable of handling real-time data updates seamlessly.
+Event-Driven Architecture will be integral to the system's real-time capabilities. Events, such as user actions (booking a flight, changing an itinerary) or external updates (flight delays, hotel availability), will trigger asynchronous messages that various components can subscribe to and act upon. For instance, when a user adds a new reservation, it generates an event that updates the user's itinerary and triggers the recommendation engine to suggest relevant activities or accommodations. This decoupled and event-driven approach ensures that the system remains responsive, scalable, and capable of handling real-time data updates seamlessly.
 
 [ADR 5 - Event Driven Architecture](/Resources/ADRs/ADR05-Event-driven-architecture.md)
 
@@ -396,13 +398,62 @@ This leads to the following high level solution approach
 
 ![SolutionApproach](/Images/ArchitecturalCharacteristics/ArchitectureDiagram.png)
 
+## Business Plan
+
+The business plan revolves around strategic partnerships, software development, and infrastructure resources to provide a user-friendly platform with personalised recommendations for travellers. This involves ongoing investments in personnel, software development tools, marketing, and customer support. The revenue streams are diverse, encompassing subscription models, future transaction fees, advertising partnerships, and premium features, which help offset the operational costs and drive profitability. Road Warrior is commited to enhancing user experience and fostering strong customer relationships as part of its onging strategy, this ensures a sustainable and successful business.
+
+![Business Model Plan](/Images/BusinessPlan/businessmodel.png)
+
+### Freemium Tier
+
+1. Single Inbox Integration: Users in the freemium tier can connect one email inbox to import and organise their travel-related information, such as flight bookings, hotel reservations, and itineraries.
+2. Basic Itinerary Management: They can create and manage basic travel itineraries, including flight details, accommodation, and activities. Users can view and edit their trips within the platform.
+Notification Alerts: Receive basic email notifications for trip updates, such as flight delays or gate changes, directly within the platform.
+3. Calendar Integration: Sync their travel itineraries with their preferred calendar application (e.g., Google Calendar or Outlook).
+
+### Silver Tier
+
+1. Multiple Inbox Integration: Silver-tier users can connect and manage multiple email inboxes, making it easier to centralise travel-related information from various accounts.
+2. Trip Sharing: Share trip itineraries with friends, family, or colleagues. Collaboratively plan and coordinate travel with others, and allow others to view and comment on shared trips.
+3. Advanced Notification Alerts: Receive real-time updates for travel-related events, such as flight status changes, gate information, or delays. Customise notification preferences for added convenience.
+4. Customisable Itineraries: Enjoy more advanced itinerary customization options, including adding notes, reminders, and personal preferences for each trip.
+
+### Gold Tier
+
+1. Unlimited Inbox Integration: Gold-tier subscribers can connect an unlimited number of email inboxes, allowing for comprehensive and centralised trip management across multiple email accounts.
+2. Premium Recommendations: Receive personalised travel recommendations based on user preferences and past travel history. These recommendations can include suggested destinations, accommodations, and activities.
+3. Priority Customer Support: Access priority customer support with faster response times and dedicated assistance for any inquiries or issues.
+4. Exclusive Discounts: Enjoy exclusive discounts and offers on travel bookings, such as flights, hotels, or rental cars, through partnerships with travel providers.
+5. Advanced Reporting and Analytics: Gain access to detailed trip analytics, including travel expenses, trip duration, and historical travel trends, helping users make more informed travel decisions.
+6. Premium Content: Access premium travel content, such as destination guides, travel tips, and insider recommendations, to enhance the travel planning experience.
+7. Ad-Free Experience: Navigate the platform without any advertisements or sponsored content for an uninterrupted user experience.
+
+## MVP Timeline Proposal
+
+The platform roadmap that has been drafted takes into consideration the infancy of the enterprise, and has therefore been designed in such a way that focuses on introducing streams of revenue as soon as possible to cover necessary funding for the undertaking of this project.
+
+### Delivery Timeline Composition
+
+Four named MVPs are being proposed:
+*  MVP 1: Road Warrior Soft-Launch - As the namesake implies, this MVP will involve launching the product with just the essential, barebones features, suitable enough to introduce the potential of the product to the market. The majority of requirements specified in the initial spec are covered completely, with other less critical requirements being delivered in part or planned for launch in a future MVP. This MVP will help establish 'Road Warrior' into the travelling organisation app market, and potentially even introduce investment opportunities. The inclusion of lightweight advertisements in the barebones version of the application will also introduce a new and immediate stream of revenue, scaling based on the number of users (as will running costs, as a matter of fact).
+
+*  MVP 2: Shared Dashboards - Introduce features that support collaboration/sharing among authenticated users, expanding the social elements of the application. At this point, all baseline requirements from the original specification barring reporting & analytics are implemented to some degree. Expanding integrations with additional booking agencies will also increase traffic on the application, increasing traffic and introducing new opportunities for further investments.
+
+*  MVP 3: Subscription Model, Analytics & Reporting - By the time that the development and planned delivery of MVP3 is underway, the project should have established an audience (this will be assisted through relevant marketing efforts). A larger audience in addition to increased features (and complexity of said features), means that computing costs will increase just as well. Advertisements will cover a portion of these running costs, however, to offer a more seamless experience as well as more advanced (resource intensive) features, a subscription model will be released.
+
+*  MVP 4: Expand Covered Services - This is the last "planned" MVP for the product. Here, the platform will undergo horizontal diversification in the services and data it offers by covering attractions and taxis.
+
+*  MVP N+: At this point in time, the project will be in maintenance mode. Bugfixes and performance adjustments will be issued as needed, while new features, covered services and booking agency integrations will be incrementally increased based on community feedback
+
+![image](./Images/MVPs/MVPs.png)
+
 ## Identifying Architectural Quanta
 
-The following section outlines the different components which make up our architecture
+The following section outlines the different components which make up the architecture
 
 ### Kubernetes
 
-Kubernetes plays a pivotal role in load balancing the core services of our system, ensuring that they remain highly available, scalable, and responsive to user requests. This is done by:
+Kubernetes plays a pivotal role in load balancing the core services of the system, ensuring that they remain highly available, scalable, and responsive to user requests. This is done by:
 
 - Simplifying service deployment of core services as containers within a cluster. Each service is encapsulated in a container, making it easy to manage and scale independently.
 
@@ -451,7 +502,7 @@ PWAs offer features which allow the application to be much more accessible due t
 
 ### Cosmos DB
 
-CosmosDB is the backbone of the app's data management strategy. With its globally distributed, multi-model database service, CosmosDB enables us to seamlessly handle vast amounts of data, provide low-latency access to users worldwide, and ensure high availability and scalability. Its support for various data models, including document, key-value, graph, and column-family, offers the flexibility needed to store and query diverse types of data efficiently. CosmosDB's built-in global distribution, automatic scaling, and robust consistency options align perfectly with our app's requirements for data resilience, real-time updates, and responsive performance. It's the foundational layer that empowers our app to deliver a seamless and data-rich user experience.
+CosmosDB is the backbone of the app's data management strategy. With its globally distributed, multi-model database service, CosmosDB enables us to seamlessly handle vast amounts of data, provide low-latency access to users worldwide, and ensure high availability and scalability. Its support for various data models, including document, key-value, graph, and column-family, offers the flexibility needed to store and query diverse types of data efficiently. CosmosDB's built-in global distribution, automatic scaling, and robust consistency options align perfectly with the app's requirements for data resilience, real-time updates, and responsive performance. It's the foundational layer that empowers the app to deliver a seamless and data-rich user experience.
 
 [ADR 3 - Cosmos DB and Redis for Global Data Distribution](/Resources/ADRs/ADR03-Data-Distribution.md)
 
@@ -461,7 +512,7 @@ CosmosDB is the backbone of the app's data management strategy. With its globall
 
 ### Redis
 
-Redis plays a pivotal role in enhancing the speed and efficiency of our app. As an in-memory data store, Redis excels at caching frequently accessed data, reducing database load, and significantly improving response times for users. Its support for data structures like strings, sets, and hashes makes it versatile for various application needs, such as session management, real-time analytics, and queuing. With Redis, our app can deliver lightning-fast data retrieval and processing, ensuring a snappy and highly responsive user experience. It's a key component that enhances the overall performance and scalability of our application.
+Redis plays a pivotal role in enhancing the speed and efficiency of the app. As an in-memory data store, Redis excels at caching frequently accessed data, reducing database load, and significantly improving response times for users. Its support for data structures like strings, sets, and hashes makes it versatile for various application needs, such as session management, real-time analytics, and queuing. With Redis, the app can deliver fast data retrieval and processing, ensuring a snappy and highly responsive user experience. It's a key component that enhances the overall performance and scalability of the application.
 
 [ADR 3 - Cosmos DB and Redis for Global Data Distribution](/Resources/ADRs/ADR03-Data-Distribution.md)
 
@@ -504,54 +555,9 @@ Logical and Physical view of the Entire System. The Physical View shows the whol
 
 ![Technical Architecture](Images/ArchitecturalCharacteristics/TechnicalArchitecture.png)
 
-## MVP Timeline Proposal
+## Cost Analysis
 
-The platform roadmap that has been drafted takes into consideration the infancy of the enterprise, and has therefore been designed in such a way that focuses on introducing streams of revenue as soon as possible to cover necessary funding for the undertaking of this project.
-
-### Delivery Timeline Composition
-
-Four named MVPs are being proposed:
-*  MVP 1: Road Warrior Soft-Launch - As the namesake implies, this MVP will involve launching the product with just the essential, barebones features, suitable enough to introduce the potential of the product to the market. The majority of requirements specified in the initial spec are covered completely, with other less critical requirements being delivered in part or planned for launch in a future MVP. This MVP will help establish 'Road Warrior' into the travelling organisation app market, and potentially even introduce investment opportunities. The inclusion of lightweight advertisements in the barebones version of the application will also introduce a new and immediate stream of revenue, scaling based on the number of users (as will running costs, as a matter of fact).
-
-*  MVP 2: Shared Dashboards - Introduce features that support collaboration/sharing among authenticated users, expanding the social elements of the application. At this point, all baseline requirements from the original specification barring reporting & analytics are implemented to some degree. Expanding integrations with additional booking agencies will also increase traffic on the application, increasing traffic and introducing new opportunities for further investments.
-
-*  MVP 3: Subscription Model, Analytics & Reporting - By the time that the development and planned delivery of MVP3 is underway, the project should have established an audience (this will be assisted through relevant marketing efforts). A larger audience in addition to increased features (and complexity of said features), means that computing costs will increase just as well. Advertisements will cover a portion of these running costs, however, to offer a more seamless experience as well as more advanced (resource intensive) features, a subscription model will be released.
-
-*  MVP 4: Expand Covered Services - This is the last "planned" MVP for the product. Here, the platform will undergo horizontal diversification in the services and data it offers by covering attractions and taxis.
-
-*  MVP N+: At this point in time, the project will be in maintenance mode. Bugfixes and performance adjustments will be issued as needed, while new features, covered services and booking agency integrations will be incrementally increased based on community feedback
-
-![image](./Images/MVPs/MVPs.png)
-
-## Business Plan and Cost Analysis
-
-The business plan revolves around strategic partnerships, software development, and infrastructure resources to provide a user-friendly platform with personalised recommendations for travellers. This involves ongoing investments in personnel, software development tools, marketing, and customer support. The revenue streams are diverse, encompassing subscription models, future transaction fees, advertising partnerships, and premium features, which help offset the operational costs and drive profitability. Road Warrior is commited to enhancing user experience and fostering strong customer relationships as part of its onging strategy, this ensures a sustainable and successful business.
-
-![Business Model Plan](/Images/BusinessPlan/businessmodel.png)
-
-### Freemium Tier
-
-1. Single Inbox Integration: Users in the freemium tier can connect one email inbox to import and organize their travel-related information, such as flight bookings, hotel reservations, and itineraries.
-2. Basic Itinerary Management: They can create and manage basic travel itineraries, including flight details, accommodation, and activities. Users can view and edit their trips within the platform.
-Notification Alerts: Receive basic email notifications for trip updates, such as flight delays or gate changes, directly within the platform.
-3. Calendar Integration: Sync their travel itineraries with their preferred calendar application (e.g., Google Calendar or Outlook).
-
-### Silver Tier
-
-1. Multiple Inbox Integration: Silver-tier users can connect and manage multiple email inboxes, making it easier to centralize travel-related information from various accounts.
-2. Trip Sharing: Share trip itineraries with friends, family, or colleagues. Collaboratively plan and coordinate travel with others, and allow others to view and comment on shared trips.
-3. Advanced Notification Alerts: Receive real-time updates for travel-related events, such as flight status changes, gate information, or delays. Customise notification preferences for added convenience.
-4. Customisable Itineraries: Enjoy more advanced itinerary customization options, including adding notes, reminders, and personal preferences for each trip.
-
-### Gold Tier
-
-1. Unlimited Inbox Integration: Gold-tier subscribers can connect an unlimited number of email inboxes, allowing for comprehensive and centralised trip management across multiple email accounts.
-2. Premium Recommendations: Receive personalised travel recommendations based on user preferences and past travel history. These recommendations can include suggested destinations, accommodations, and activities.
-3. Priority Customer Support: Access priority customer support with faster response times and dedicated assistance for any inquiries or issues.
-4. Exclusive Discounts: Enjoy exclusive discounts and offers on travel bookings, such as flights, hotels, or rental cars, through partnerships with travel providers.
-5. Advanced Reporting and Analytics: Gain access to detailed trip analytics, including travel expenses, trip duration, and historical travel trends, helping users make more informed travel decisions.
-6. Premium Content: Access premium travel content, such as destination guides, travel tips, and insider recommendations, to enhance the travel planning experience.
-7. Ad-Free Experience: Navigate the platform without any advertisements or sponsored content for an uninterrupted user experience.
+Cost at each MVP stage
 
 ## Engineering Practices
 
@@ -563,6 +569,20 @@ A design pattern used to abstract the creation of objects or services. This patt
 This pattern will be used thoroughly within the solution in areas where common code can be used to cover features which are fed inputs from different sources which need to undergo the same business logic, as is the case with supporting different SSO authentication providers, different travel agency integrations and so on.
 
 [ADR 7 - Provider Pattern](/Resources/ADRs/ADR07-Provider-pattern.md)
+
+### Domain Driven Design (DDD) with Command Query Responsibility Segregation (CQRS)
+
+Given the usage of domain boundary analysis in the event storming phase it comes natural that the solution will adopt DDD with CQRS as an engineering pattern. This combination allows building complex, scalable, and maintainable software systems. All of which are identified as key architectural characteristics which the solution requires as key pillars of its foundation.
+
+This methodology empowers the creation of a shared understanding of the complex travel management domain and craft a software solution that truly aligns with the real-world intricacies of travel, reservations, and user interactions. In this context, DDD is not just an engineering strategy but allows the creation of a user-centric travel management platform.
+
+By combining CQRS with DDD, we achieve a robust and flexible architecture. The write side of CQRS aligns well with DDD's focus on modeling the domain, encapsulating business logic, and enforcing consistency.
+
+The read side of CQRS complements DDD by providing optimised query paths, making it easier to retrieve data in a format that matches the user's needs.
+
+Events can be leveraged to communicate changes between bounded contexts, facilitating loose coupling and flexibility in our application's architecture.
+
+[ADR 15 - DDD with CQRS Pattern](/Resources/ADRs/ADR15-DDD-with-CQRS-pattern.md)
 
 ### Deployment Pipelines
 Deployment pipelines refer to an automated series of steps for deploying changes to the product. This is in line with the chosen idea to produce MVPs that increment on top of eachother with new features. It helps ensure consistent and reliable software delivery, void of human errors caused by mistakes in the deployment process.
@@ -615,6 +635,8 @@ Small, isolated tests that validate the behavior of individual code units (e.g.,
 
 [ADR 14 - Space-Based Architecture](/Resources/ADRs/ADR14-Space-Based-architecture.md)
 
+[ADR 15 - DDD with CQRS Pattern](/Resources/ADRs/ADR15-DDD-with-CQRS-pattern.md)
+
 ## Resources
 
 [Introducing event storming](http://ziobrando.blogspot.com/2013/11/introducing-event-storming.html)
@@ -644,3 +666,5 @@ Small, isolated tests that validate the behavior of individual code units (e.g.,
 - RESTful API (Representational State Transfer): An architectural style for designing networked applications that use HTTP methods and adhere to specific constraints, making them scalable and easy to understand.
 - AMQP (Advanced Message Queuing Protocol): A messaging protocol that enables communication between distributed systems, emphasizing message queuing, routing, and reliability.
 - Publish/Subscribe Pattern: A messaging pattern where senders (publishers) of messages don't specifically target receivers (subscribers); instead, messages are broadcast to all interested subscribers based on topics or interests.
+- Domain-Driven Design (DDD): A software development approach that focuses on creating a shared understanding of the problem domain (the real-world subject area relevant to the software) among technical and non-technical stakeholders. 
+- Command Query Responsibility Segregation (CQRS): An architectural pattern that separates the handling of commands (write operations) from queries (read operations). 
