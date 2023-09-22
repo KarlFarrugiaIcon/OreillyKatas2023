@@ -62,9 +62,10 @@ Team Members:
     - [Azure Traffic Manager](#azure-traffic-manager)
     - [Azure CDN](#azure-cdn)
     - [Azure Front Door](#azure-front-door) 
+  - [Privatelink](#privatelink)
   - [Azure Synapse](#azure-synapse)
-- [Overall Architecture](#overall-architecture)
-- [Cost Analysis](#cost-analysis)
+- [Overall Architecture and Cost Analysis](#overall-architecture-and-cost-analysise)
+  - [Final Overall Architecture](#final-overall-architecture)
 - [Engineering Practices](#engineering-practices)
   - [Provider Pattern](#provider-pattern)
   - [Domain Driven Design (DDD) with Command Query Responsibility Segregation (CQRS)](#domain-driven-design-ddd-with-command-query-responsibility-segregation-cqrs)
@@ -437,7 +438,7 @@ The platform roadmap that has been drafted takes into consideration the infancy 
 Four named MVPs are being proposed:
 *  MVP 1: Road Warrior Soft-Launch - As the namesake implies, this MVP will involve launching the product with just the essential, barebones features, suitable enough to introduce the potential of the product to the market. The majority of requirements specified in the initial spec are covered completely, with other less critical requirements being delivered in part or planned for launch in a future MVP. This MVP will help establish 'Road Warrior' into the travelling organisation app market, and potentially even introduce investment opportunities. The inclusion of lightweight advertisements in the barebones version of the application will also introduce a new and immediate stream of revenue, scaling based on the number of users (as will running costs, as a matter of fact).
 
-*  MVP 2: Shared Dashboards - Introduce features that support collaboration/sharing among authenticated users, expanding the social elements of the application. At this point, all baseline requirements from the original specification barring reporting & analytics are implemented to some degree. Expanding integrations with additional booking agencies will also increase traffic on the application, increasing traffic and introducing new opportunities for further investments.
+*  MVP 2: Shared Dashboards - Introduce features that support collaboration/sharing among authenticated users, expanding the social elements of the application. At this point, all baseline requirements from the original specification barring reporting & analytics are implemented to some degree. Expanding integrations with user's mailboxes, additional booking agencies will also increase traffic on the application, increasing traffic and introducing new opportunities for further investments.
 
 *  MVP 3: Subscription Model, Analytics & Reporting - By the time that the development and planned delivery of MVP3 is underway, the project should have established an audience (this will be assisted through relevant marketing efforts). A larger audience in addition to increased features (and complexity of said features), means that computing costs will increase just as well. Advertisements will cover a portion of these running costs, however, to offer a more seamless experience as well as more advanced (resource intensive) features, a subscription model will be released.
 
@@ -449,7 +450,7 @@ Four named MVPs are being proposed:
 
 ## Identifying Architectural Quanta
 
-The following section outlines the different components which make up the architecture
+The following section outlines the different components which make up the architecture. While this section outlines concrete implementation's to a specific cloud provider the solution will still be abstracted in a way that we'll create a vendor agnostic solution without the risk of a vendor lock in.
 
 ### Kubernetes
 
@@ -545,19 +546,51 @@ Azure Front Door acts as a global entry point, combining security and load balan
 
 [ADR 12 - Distribution of Data Globally](/Resources/ADRs/ADR12-Distributing-Data-Globally.md)
 
+### Privatelink
+
+In order to improve security, reliability, and performance for the main cluster and the geographically dispersed API endpoints, the solution will employ the usage of privatelinks. This is a service that enables secure and private communication between the application and services, like databases, storage, and other resources, without traversing the public internet. 
+
+This approach will be utilised to improve:
+
+- **Security** since this approach ensures that data transfer between the application and cloud services remains within the private network, isolated from the public internet. This significantly reduces the attack surface and minimizes the risk of unauthorized access or data breaches.
+
+- **Data Privacy** through the establishment of a private, dedicated connection, ensuring that sensitive data does not leave the private network during transit. This is critical for maintaining the privacy and confidentiality of user information, travel itineraries, and other travel-related data.
+
+- **Improved Performance** by eliminating the need for data to traverse the public internet.
+
+Overall this approach is expectected to create an isolated environment for the application's backbone thereby reducing exposure to external threats and ensuring that our application's dependencies are accessible only through a private, secure channel.
+
 ### Azure Synapse
 
 Azure Synapse serves as the backbone of the app's data analytics and warehousing capabilities. With its powerful data integration, transformation, and analytics tools, Azure Synapse enables the solution to harness the full potential of the collected data. It seamlessly integrates with various data sources and provides a unified platform for data storage, processing, and visualization. Whether it's running complex analytical queries, creating data pipelines, or generating actionable insights, Azure Synapse empowers the solution to make data-driven decisions and deliver a richer, more informed user experience.
 
-## Overall Architecture
+## Overall Architecture and Cost Analysis
+
+Having gone over the [MVP Timeline Proposal](#mvp-timeline-proposal) and identified the core components that will make the system in [Identifying Architectural Quanta](#identifying-architectural-quanta) we will start to outline how the solution will physically be built vis-a-vis the MVP roll out and the expected cost at each phase of the architecture.
+
+### MVP 1 - Road Warrior Soft-Launch
+
+Bare bones - k8, event bus, pwa and api
+
+### MVP 2 - Integrations
+
+Integrations and mailboxes / PWA
+
+### MVP 3 - Power BI
+
+Analytics and Reporting
+
+### MVP 4 - Geographical Distribution 
+
+Cosmos DB and geographical distribution
+
+### Final Overall Architecture
+
+Load balancing 
 
 Logical and Physical view of the Entire System. The Physical View shows the whole picture of each component shown in [Identifying Architectural Quanta](#identifying-architectural-quanta).
 
 ![Technical Architecture](Images/ArchitecturalCharacteristics/TechnicalArchitecture.png)
-
-## Cost Analysis
-
-Cost at each MVP stage
 
 ## Engineering Practices
 
