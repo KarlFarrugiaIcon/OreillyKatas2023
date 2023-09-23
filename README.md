@@ -65,7 +65,10 @@ Team Members:
   - [Privatelink](#privatelink)
   - [Azure Synapse](#azure-synapse)
 - [Overall Architecture and Cost Analysis](#overall-architecture-and-cost-analysise)
-  - [Final Overall Architecture](#final-overall-architecture)
+  - [MVP 1 - Soft Launch](#mvp-1---road-warrior-soft-launch)
+  - [MVP 2 - Integrations](#mvp-2---integrations)
+  - [MVP 3 - Reporting and Analytics](#mvp-3---reporting-and-analytics)
+  - [MVP 4 - Geographical Distribution](#mvp-4---geographical-distribution)
 - [Engineering Practices](#engineering-practices)
   - [Provider Pattern](#provider-pattern)
   - [Domain Driven Design (DDD) with Command Query Responsibility Segregation (CQRS)](#domain-driven-design-ddd-with-command-query-responsibility-segregation-cqrs)
@@ -572,25 +575,27 @@ Having gone over the [MVP Timeline Proposal](#mvp-timeline-proposal) and identif
 
 Bare bones - k8, event bus, pwa and api
 
+![Technical Architecture MVP 1](Images/TechnicalImplementation/MVP1-Katas.png)
+
 ### MVP 2 - Integrations
 
 Integrations and mailboxes / PWA
 
-### MVP 3 - Power BI
+![Technical Architecture MVP 2](Images/TechnicalImplementation/MVP2-Katas.png)
+
+### MVP 3 - Reporting and Analytics
 
 Analytics and Reporting
 
+![Technical Architecture MVP 3](Images/TechnicalImplementation/MVP3-Katas.png)
+
 ### MVP 4 - Geographical Distribution 
 
-Cosmos DB and geographical distribution
+Cosmos DB and geographical distribution Load balancing 
 
-### Final Overall Architecture
+This leads to the final overall architecture
 
-Load balancing 
-
-Logical and Physical view of the Entire System. The Physical View shows the whole picture of each component shown in [Identifying Architectural Quanta](#identifying-architectural-quanta).
-
-![Technical Architecture](Images/ArchitecturalCharacteristics/TechnicalArchitecture.png)
+![Technical Architecture MVP 4](Images/TechnicalImplementation/MVP4-Katas.png)
 
 ## Engineering Practices
 
