@@ -64,7 +64,7 @@ Team Members:
     - [Azure Front Door](#azure-front-door) 
   - [Privatelink](#privatelink)
   - [Azure Synapse](#azure-synapse)
-- [Overall Architecture and Cost Analysis](#overall-architecture-and-cost-analysise)
+- [Overall Architecture and Cost Analysis](#overall-architecture-and-cost-analysis)
   - [MVP 1 - Soft Launch](#mvp-1---road-warrior-soft-launch)
   - [MVP 2 - Integrations](#mvp-2---integrations)
   - [MVP 3 - Reporting and Analytics](#mvp-3---reporting-and-analytics)
