@@ -586,7 +586,7 @@ In order to improve security, reliability, and performance for the main cluster 
 
 This approach will be utilised to improve:
 
-- **Security** since this approach ensures that data transfer between the application and cloud services remains within the private network, isolated from the public internet. This significantly reduces the attack surface and minimizes the risk of unauthorized access or data breaches.
+- **Security** since this approach ensures that data transfer between the application and cloud services remains within the private network, isolated from the public internet. This significantly reduces the attack surface and minimises the risk of unauthorised access or data breaches.
 
 - **Data Privacy** through the establishment of a private, dedicated connection, ensuring that sensitive data does not leave the private network during transit. This is critical for maintaining the privacy and confidentiality of user information, travel itineraries, and other travel-related data.
 
