@@ -441,7 +441,7 @@ The platform roadmap that has been drafted takes into consideration the infancy 
 Four named MVPs are being proposed:
 *  MVP 1: Road Warrior Soft-Launch - As the namesake implies, this MVP will involve launching the product with just the essential, barebones features, suitable enough to introduce the potential of the product to the market. The majority of requirements specified in the initial spec are covered completely, with other less critical requirements being delivered in part or planned for launch in a future MVP. This MVP will help establish 'Road Warrior' into the travelling organisation app market, and potentially even introduce investment opportunities. The inclusion of lightweight advertisements in the barebones version of the application will also introduce a new and immediate stream of revenue, scaling based on the number of users (as will running costs, as a matter of fact).
 
-*  MVP 2: Shared Dashboards - Introduce features that support collaboration/sharing among authenticated users, expanding the social elements of the application. At this point, all baseline requirements from the original specification barring reporting & analytics are implemented to some degree. Expanding integrations with user's mailboxes, additional booking agencies will also increase traffic on the application, increasing traffic and introducing new opportunities for further investments.
+*  MVP 2: Shared Dashboards and Integrations - Introduce features that support collaboration/sharing among authenticated users, expanding the social elements of the application. At this point, all baseline requirements from the original specification barring reporting & analytics are implemented to some degree. Expanding integrations with user's mailboxes, additional booking agencies will also increase traffic on the application, increasing traffic and introducing new opportunities for further investments.
 
 *  MVP 3: Subscription Model, Analytics & Reporting - By the time that the development and planned delivery of MVP3 is underway, the project should have established an audience (this will be assisted through relevant marketing efforts). A larger audience in addition to increased features (and complexity of said features), means that computing costs will increase just as well. Advertisements will cover a portion of these running costs, however, to offer a more seamless experience as well as more advanced (resource intensive) features, a subscription model will be released.
 
@@ -449,7 +449,7 @@ Four named MVPs are being proposed:
 
 *  MVP N+: At this point in time, the project will be in maintenance mode. Bugfixes and performance adjustments will be issued as needed, while new features, covered services and booking agency integrations will be incrementally increased based on community feedback
 
-![image](./Images/MVPs/MVPs.png)
+![image](./Images/MVPs/MVPRoadmap.jpg)
 
 ## Identifying Architectural Quanta
 
@@ -569,7 +569,7 @@ Azure Synapse serves as the backbone of the app's data analytics and warehousing
 
 ## Overall Architecture and Cost Analysis
 
-Having gone over the [MVP Timeline Proposal](#mvp-timeline-proposal) and identified the core components that will make the system in [Identifying Architectural Quanta](#identifying-architectural-quanta) we will start to outline how the solution will physically be built vis-a-vis the MVP roll out and the expected cost at each phase of the architecture.
+Having gone over the [MVP Timeline Proposal](#mvp-timeline-proposal) and identified the core components that will make the system in [Identifying Architectural Quanta](#identifying-architectural-quanta) we will start to outline how the solution will physically be built vis-a-vis the MVP roll out and the expected cost at each phase of the architecture. Azure has been used as an example platform to reference specific managed services and calculate a baseline cost. As previously mentioned the system is to be built in an abstract way that allows all managed services to be swapped out to any other Cloud managed services. Azure will however be used for us to be able to come up with a base price for the platform.
 
 ### MVP 1 - Road Warrior Soft-Launch
 
