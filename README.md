@@ -294,6 +294,7 @@ The below actor to system boundary diagram expands on the detail provided by the
 ##### Authentication Service
 The component diagram illustrates the Authentication Microservice, responsible for user authentication through username and password or social media.
 
+The system boundary encompasses an Authentication Service meticulously divided into numerous distributed service instances. These instances serve as the entry point for incoming requests from a front-end application, channeling them through an API Gateway. Within this intricate architecture, the Authentication Service assumes dual roles, capable of either conducting platform-specific authentication by directly interfacing with distributed databases, each mirroring the service's decentralized nature, or engaging with external Single Sign-On (SSO) providers for authentication, thus affording a versatile and resilient approach to user verification.
 ![Alt text](./Images/DomainBoundaries/AuthenticationService.png)
 
 ##### Trip Management Service
@@ -309,7 +310,7 @@ The component diagram illustrates a Data Parsing Microservice responsible for em
 ##### Social Media Service
 The component diagram depicts the Social Media Sharing service, responsible for sharing content on configured social media platforms. It receives messages from the Trip Management Service via a message queue.
 
-![Alt text](./Images/DomainBoundaries/SocailMediaSharingService.png)
+![Alt text](./Images/DomainBoundaries/SocialMediaSharingService.png)
 
 ##### Travel Integration Service
 The component diagram shows the Travel Integration Service, responsible for processing data from Travel Agencies. It subscribes via AMQP (Advanced Message Queuing Protocol) to configured external travel agencies, processes the data, and publishes messages to a queue. These messages are subsequently picked up by the Trip Management Service for further processing.
@@ -319,12 +320,12 @@ The component diagram shows the Travel Integration Service, responsible for proc
 ##### Notifications Service
 The component diagram illustrates the Notifications Service, responsible for delivering notifications to the PWA Application. It is mainly responsible for handling push notifications and email notifications.
 
-![Alt text](./Images/DomainBoundaries/NotificationsService.png)
+![Alt text](./Images/DomainBoundaries/NotificationService.png)
 
 ##### Reporting & Analytics Service
 The Reporting & Analytics Service uses an external service to generate reports, processes them internally, stores data in a data warehouse, publishes messages to notify other microservices, and allows users to view insights through an external tool.
 
-![Alt text](./Images/DomainBoundaries/ReportingAnalyticsService.png)
+![Alt text](./Images/DomainBoundaries/ReportingAndAnalyticsService.png)
 
 ## User Interface Mockups
 
