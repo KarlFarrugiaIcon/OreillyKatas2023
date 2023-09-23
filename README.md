@@ -201,13 +201,13 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
         - Entry Point: A feature allowing users to create and organise trips and reservations.
         - Payload: User-generated trip data, which includes trip names, descriptions, and associated reservations.
 
-        ![Alt text](./Images/UserFlows/image-3.png)
+          ![Alt text](./Images/UserFlows/image-3.png)
 
     - Automated Creation Email 
         - Entry Point: Automated creation of trips or reservations by listening to incoming emails.
         - Payload: System-generated trip data, which includes trip names, descriptions, and associated reservations based off email content.
 
-        ![Alt text](./Images/UserFlows/image-4.png)
+          ![Alt text](./Images/UserFlows/image-4.png)
 
 6. Trip/Reservation Deletion:
 
@@ -597,12 +597,20 @@ Azure Synapse serves as the backbone of the app's data analytics and warehousing
 
 Having gone over the [MVP Timeline Proposal](#mvp-timeline-proposal) and identified the core components that will make the system in [Identifying Architectural Quanta](#identifying-architectural-quanta) we will start to outline how the solution will physically be built vis-a-vis the MVP roll out and the expected cost at each phase of the architecture. Azure has been used as an example platform to reference specific managed services and calculate a baseline cost. As previously mentioned the system is to be built in an abstract way that allows all managed services to be swapped out to any other Cloud managed services. Azure will however be used for us to be able to come up with a base price for the platform.
 
+Throughout the technical build up we constantly kept in mind the following requirements: 
+
+- 2 million active users per week
+- 15 million total users within the system
+- Maximum of 5 minutes downtime per month
+- Updates must be within the app within 5 minutes
+- Response time should be 800ms and first contentful paint under 1.4 seconds.
+
 ### MVP 1 - Road Warrior Soft-Launch
 
-Given that Road Warrior is a start up it is critical to ensure a cost-effective MVP rollout that does not cripple the start up. Therefore, we'll concentrate on delivering a lean and focused version of our product. Utilising cloud services, and taking a scale as you go approach, we'll optimise development costs. Our design will be minimalistic yet functional, and we'll follow an agile development approach for rapid iteration based on user feedback. We'll continuously monitor costs and performance to make data-driven decisions. This approach will enable us to validate our concept while effectively managing our startup's financial resources.
+Given that Road Warrior is a start up it is critical to ensure a cost-effective MVP rollout that does not cripple the start up. Therefore, we will concentrate on delivering a lean and focused version of our product. Utilising cloud services, and taking a scale as you go approach, we will optimise development costs. Our design will be minimalistic yet functional, and we will follow an agile development approach for rapid iteration based on user feedback. We'll continuously monitor costs and performance to make data-driven decisions. This approach will enable us to validate our concept while effectively managing our startup's financial resources.
 
 To this end the first MVP is a bare bones deployment consisting of:
-- Standard Kubernetes cluster
+- Standard Kubernetes Cluster
 - Standard Container Registry
 - Standard Event Grid
 - Standard Cosmos DB
@@ -610,7 +618,7 @@ To this end the first MVP is a bare bones deployment consisting of:
 - General Purpose Storage Account
 - Azure DNS
 
-While this is not the most performant for the forecasted user base, we do not expect a huge amount of traffic in the initial roll out either.Therefore, we foresee this to be viable in the beginning.
+While this is not the most performant for the forecasted user base, we do not expect a huge amount of traffic in the initial roll out either.Therefore, we foresee this to be viable in the beginning.The below diagram depicts the infrastructure set up at this point
 
 ![Technical Architecture MVP 1](Images/TechnicalImplementation/MVP1-Katas.png)
 
@@ -628,18 +636,18 @@ While this is not the most performant for the forecasted user base, we do not ex
 | IP Addresses | Global ARM 1 Static IP | $16.06 |
 | | | $496.95 |
 
-Our proposed initial commitment to Road Warriors is $496.95 per month. This infrastructure is expected to handle a good workload but not the expected 2 million monthly active users. However we do not expect to have this workload in the initial phases. However, if the system metrics show strain it will be possible for us to alleviate the cloud's potential and scale accordingly. 
+Our proposed initial commitment to Road Warriors is $496.95 per month. This infrastructure is expected to handle a good workload but not the expected 2 million monthly active users. However, we do not expect to have this workload in the initial phases, notwithstanding the expectations if the system metrics show strain it will be possible for us to alleviate the cloud's potential and scale accordingly. 
 
 ### MVP 2 - Integrations
 
-This iteration will continue on building on MVP 1 and start to add integrations with third party vendors and users' mailboxes. This means that apart from the usage of our existing Event Grid we also need to start utilising RPA for the _when mail received_ trigger.
+This iteration will continue on building on MVP 1 and start to add core functionality through integrations with third-party vendors and users' mailboxes. This means that apart from further alleviating the usage of our existing Event Grid we also need to start utilising RPA for the **when mail received** trigger. It would also be expected that the initial load from MVP 1 will now be strained and therefore the infrastructure will be scaled up. At this moment we do not believe that committing to reserved instances will be beneficial since the system would still be undergoing rapid growth.
 
 The MVP 2 iteration will see the following changes:
 
-- Upgraded Cluster
+- Upgraded Kubernetes Cluster
 - Upgraded Cosmos DB
 - Upgraded App Service instance
-- RPA 
+- RPA - Power Automate
 
 ![Technical Architecture MVP 2](Images/TechnicalImplementation/MVP2-Katas.png)
 
@@ -658,13 +666,11 @@ The MVP 2 iteration will see the following changes:
 | Power Automate | 1 Standard User | $15.00 | 
 | | | $912.41 |
 
-MVP 2 will cost us $912.41 pre month
+The cost at this stage is expected to go up to $912.41 per month. While this is almost double the cost of MVP 1 it can be noted that the core services' Cluster, Database and front facing App Service have also been significantly upgraded. These upgrades are due to the additional load that the third-party integration will start introducing and with the expectations that the system would have started to generate traction and more users' are onboarding.
 
 ### MVP 3 - Reporting and Analytics
 
-Analytics and Reporting
-
-The MVP 3 iteration will see the following changes:
+This iteration focuses mainly on the Analytics and Reporting aspect of the system which will be expected to feature greatly in the application's forecasted growth. At this point we are also assuming that the amount of active users per week is starting to approach the 2 million mark. Therefore, this MVP iteration will see the following changes:
 
 - Upgraded Cluster
 - Azure Synapse Analytics
@@ -691,13 +697,11 @@ The MVP 3 iteration will see the following changes:
 | Power BI | 1 Premium User | $20.00 | 
 | | | $1,829.64 |
 
-MVP 3 will cost us $1,829.64 per month including the foundation of the analytics engine.
+The cost has once more double from MVP 2 to MVP 3 with the new forecasted cost being at $1,829.64 per month. However, this iteration, apart from more upgrades to the cluster starts setting the foundation of the analytics engine. While this is costly it is also an essential part of the application and has therefore started to feature.
 
 ### MVP 4 - Geographical Distribution 
 
-Cosmos DB and geographical distribution Load balancing 
-
-The MVP 4 will focus on geographical distribution and loadbalancing by adding:
+The final main iteration will consist of geographical expansion through replication of Cosmos DB via geographical distribution and the usage of better load balancing techniques. This iteration will also used to gathered usage metric data to commit to reserved instances for 3 years to bring down the cost of infrastructure. While this means that Road Warriors is committed to 3 years with the same minimum cluster size we are assuming that the start-up has now stabilised and has prospects of more growth going forward. To this end, MVP 4 will focus on geographical distribution and loadbalancing by adding:
 
   - Upgraded Cluster (with reserved instances)
   - Cosmos DB Geographical Distribution
@@ -705,7 +709,7 @@ The MVP 4 will focus on geographical distribution and loadbalancing by adding:
   - Azure Front Door
   - Azure Traffic Manager
 
-This leads to the final overall architecture
+This leads to the below final overall architecture
 
 ![Technical Architecture MVP 4](Images/TechnicalImplementation/MVP4-Katas.png)
 
@@ -720,11 +724,11 @@ This leads to the final overall architecture
 | Storage Account | General Purpose v2 | $23.88 |
 | App Service | Premium V2 (P1V2) to be used by PWA in 4 regions | $584.00 |
 | Serverless Functions | Consumption assuming up to 100,000,000 requests per month in 4 regions | $157.60 |
-| Azure DNS | Zone 1 Public DNS | $0.90 |
 | Traffic Manager | 10,000,000 DNS queries per month | $5.40 |
 | Azure CDN | Static Data in 4 zones | $ 3.66 |
 | Azure Front Door | Entry point for PWA | $35.51 |
 | Azure Redis Cache | Standard C2 Cache in 4 regions | $654.08 |
+| Azure DNS | Zone 1 Public DNS | $0.90 |
 | IP Addresses | Global ARM 1 Static IP | $16.06 |
 | Power Automate | 1 Standard User | $15.00 | 
 | Azure Synapse | Compute Optimised Gen2 with 100 DWU Blocks and a 3 year reserve instance |  $397.30 | 
@@ -732,7 +736,10 @@ This leads to the final overall architecture
 | Power BI | 1 Premium User | $20.00 | 
 | | | $3,404.13 |
 
-The final iteration is expected to cost us $3,404.13 per month including the foundation of the analytics engine.
+While once more we are seeing a steep cost when compared to MVP 3 with the new monthly cost going to $3,404.13 per month we have managed to make our application more accessible and responsive in different parts of the globe. 
+This is critical since the nature of the application makes it required to be performant globally since even the if the user base are focused in a specific country, the same users will largely be consuming the contents of the application while actively on a trip.
+
+The final cost of $3,404.13 per month should not be taken as a fixed number since we would continuously continue to monitor the application to see if we need to scale up or down. Such scaling will have an affect on the cost in respect to the scaling direction.
 
 ## Engineering Practices
 
