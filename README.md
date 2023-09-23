@@ -310,11 +310,19 @@ Through the use of the provider pattern, the authentication service leverages ab
 ![Alt text](./Images/DomainBoundaries/AuthenticationService.png)
 
 ##### Trip Management Service
-The component diagram represents a Trip Management Microservice that users interact with through an API gateway. Additionally, it leverages a centralised queue infrastructure to subscribe to trip updates.
+
+The Trip Management service is responsible for allowing users to view and manage trips and reservations. 
+
+The Trip Management Service is subscribed to the Event Streaming Infrastructure to listen for incoming events from the Travel Integration and the Email Data Parsing Service for new records and/or changes to existing Trip or Reservation Records.
+
+If changes to locally persisted Trip or Reservation records are made, messages are published through the Event Streaming infrastructure to notify interested parties of said changes.
+
+When use of the 'Share trip to social media' feature is done, a message is published to the Queue Infrastructure, which is being listened to by the Social Media Sharing Service.
 
 ![Alt text](./Images/DomainBoundaries/TripManagementService.png)
 
 ##### Email Data Parsing Service
+
 The component diagram illustrates a Data Parsing Microservice responsible for email data parsing. External automation tools forward emails to the event streaming infrastructure. This microservice acts as a subscriber to the event streaming, processes the email data, and publishes new messages that are picked up by other microservices for further processing
 
 ![Alt text](./Images/DomainBoundaries/EmailDataParsingService.png)
