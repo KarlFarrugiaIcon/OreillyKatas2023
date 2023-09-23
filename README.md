@@ -303,7 +303,7 @@ The following are some characteristics that are present for every module, and th
 
 ##### Authentication Service
 
-The Authentication Microservice is responsible for facilitating authentication mechanisms through username and password or social media Single Sign-On (SSO).
+The Authentication Service is responsible for facilitating authentication mechanisms through username and password or social media Single Sign-On (SSO).
 
 Through the use of the provider pattern, the authentication service leverages abstraction to provide a default implementation of the standard authentication operations, and then uses the provider pattern to differentiate between the concrete implementation of the internal username/password implementation or external social media SSO APIs.
 
@@ -311,7 +311,7 @@ Through the use of the provider pattern, the authentication service leverages ab
 
 ##### Trip Management Service
 
-The Trip Management service is responsible for allowing users to view and manage trips and reservations. 
+The Trip Management Service is responsible for allowing users to view and manage trips and reservations. 
 
 The Trip Management Service is subscribed to the Event Streaming Infrastructure to listen for incoming events from the Travel Integration and the Email Data Parsing Service for new records and/or changes to existing Trip or Reservation Records.
 
@@ -323,12 +323,17 @@ When use of the 'Share trip to social media' feature is done, a message is publi
 
 ##### Email Data Parsing Service
 
-The component diagram illustrates a Data Parsing Microservice responsible for email data parsing. External automation tools forward emails to the event streaming infrastructure. This microservice acts as a subscriber to the event streaming, processes the email data, and publishes new messages that are picked up by other microservices for further processing
+The Email Data Parsing Service is responsible for collecting trip and reservation data from Email sources. 
+
+As indicated in other areas of the solution documentation, Users will be given instructions on how to create rules for forwarding travel related emails to the service mailbox. Emails received by the service mailbox are observed by an External Automation Tool (such as Power Automate), and are then published to the Event Streaming infrastructure as JSON objects detailing the email data. The Email Data Parsing service is Subscribed to the Event Streaming Infrastructure so that it can consume and break down email data objects, and then publish them through the same Event Streaming Infrastructure so that the Trip Management Service can ultimately persist them.
 
 ![Alt text](./Images/DomainBoundaries/EmailDataParsingService.png)
 
-##### Social Media Service
-The component diagram depicts the Social Media Sharing service, responsible for sharing content on configured social media platforms. It receives messages from the Trip Management Service via a message queue.
+##### Social Media Sharing Service
+
+The Social Media Sharing Service is responsible for sharing content to social media platforms. 
+
+It receives prompts from the Trip Management Service via a Queue infrastructure, and utilises external Social Media providers for Authentication and Sharing to successfully share content to said platforms.
 
 ![Alt text](./Images/DomainBoundaries/SocialMediaSharingService.png)
 
