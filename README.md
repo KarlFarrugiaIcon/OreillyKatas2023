@@ -291,10 +291,22 @@ The below actor to system boundary diagram expands on the detail provided by the
 
 #### Deep Dive on System Boundaries 
 
-##### Authentication Service
-The component diagram illustrates the Authentication Microservice, responsible for user authentication through username and password or social media.
+The following section provides a description of the interactions with neighbouring systems module is subject to(scoped at a Microservice level) and its corresponding interactions with neighbouring systems.
 
-The system boundary encompasses an Authentication Service meticulously divided into numerous distributed service instances. These instances serve as the entry point for incoming requests from a front-end application, channeling them through an API Gateway. Within this intricate architecture, the Authentication Service assumes dual roles, capable of either conducting platform-specific authentication by directly interfacing with distributed databases, each mirroring the service's decentralized nature, or engaging with external Single Sign-On (SSO) providers for authentication, thus affording a versatile and resilient approach to user verification.
+##### Common Characteristics for All System Boundaries
+The following are some characteristics that are present for every module, and thus are described prior to the service-specific descriptions.
+
+- The entry-point for all requests going downstream from the Client-facing applications is always through an Application Gateway which acts as a security mechanism for validating that requests towards the backend services come from an accepted origin.
+- Each Microservice is provisioned within a Kubernetes Cluster, and is designed to scale horizontally based on the load on the system. A minimum of one service instance will be made available in different regions. 
+- A load balancer will be configured within the Kubernetes Cluster to handle redirection of requests based on proximity and availability.
+- Standard database operations occur against a data center with the closest proximity to the originating request. To support eventual consistency, the updated/deleted records are replicated across the distributed database instances in near real-time.
+
+##### Authentication Service
+
+The Authentication Microservice is responsible for facilitating authentication mechanisms through username and password or social media Single Sign-On (SSO).
+
+Through the use of the provider pattern, the authentication service leverages abstraction to provide a default implementation of the standard authentication operations, and then uses the provider pattern to differentiate between the concrete implementation of the internal username/password implementation or external social media SSO APIs.
+
 ![Alt text](./Images/DomainBoundaries/AuthenticationService.png)
 
 ##### Trip Management Service
