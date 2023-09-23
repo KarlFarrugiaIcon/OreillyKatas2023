@@ -594,29 +594,140 @@ Having gone over the [MVP Timeline Proposal](#mvp-timeline-proposal) and identif
 
 ### MVP 1 - Road Warrior Soft-Launch
 
-Bare bones - k8, event bus, pwa and api
+Given that Road Warrior is a start up it is critical to ensure a cost-effective MVP rollout that does not cripple the start up. Therefore, we'll concentrate on delivering a lean and focused version of our product. Utilising cloud services, and taking a scale as you go approach, we'll optimise development costs. Our design will be minimalistic yet functional, and we'll follow an agile development approach for rapid iteration based on user feedback. We'll continuously monitor costs and performance to make data-driven decisions. This approach will enable us to validate our concept while effectively managing our startup's financial resources.
+
+To this end the first MVP is a bare bones deployment consisting of:
+- Standard Kubernetes cluster
+- Standard Container Registry
+- Standard Event Grid
+- Standard Cosmos DB
+- Premium App Services for PWA and API
+- General Purpose Storage Account
+- Azure DNS
+
+While this is not the most performant for the forecasted user base, we do not expect a huge amount of traffic in the initial roll out either.Therefore, we foresee this to be viable in the beginning.
 
 ![Technical Architecture MVP 1](Images/TechnicalImplementation/MVP1-Katas.png)
 
+#### Cost Analysis
+
+| Service | Specifications | Cost |
+| ----------- | ----------- | ----------- |
+| Azure Kubernetes Service (AKS) | 1 Linux D4a v4 Node (no reserved instances) with S4 - 32GB of OS Disk | $238.06 |
+| Azure Container Registry | Standard | $20.00 |
+| Azure Cosmos DB | Serverless with 200GB of storage | $50.25 |
+| Event Grid | Standard - Event Grid Namespace (Assuming up to 5 million monthly operations) | $1.80 |
+| Storage Account | General Purpose v2 | $23.88 |
+| App Service | Premium V2 (P1V2) to be used by API and PWA | $146.00 |
+| Azure DNS | Zone 1 Public DNS | $0.90 |
+| IP Addresses | Global ARM 1 Static IP | $16.06 |
+| | | $496.95 |
+
+Our proposed initial commitment to Road Warriors is $496.95 per month. This infrastructure is expected to handle a good workload but not the expected 2 million monthly active users. However we do not expect to have this workload in the initial phases. However, if the system metrics show strain it will be possible for us to alleviate the cloud's potential and scale accordingly. 
+
 ### MVP 2 - Integrations
 
-Integrations and mailboxes / PWA
+This iteration will continue on building on MVP 1 and start to add integrations with third party vendors and users' mailboxes. This means that apart from the usage of our existing Event Grid we also need to start utilising RPA for the _when mail received_ trigger.
+
+The MVP 2 iteration will see the following changes:
+
+- Upgraded Cluster
+- Upgraded Cosmos DB
+- Upgraded App Service instance
+- RPA 
 
 ![Technical Architecture MVP 2](Images/TechnicalImplementation/MVP2-Katas.png)
+
+#### Cost Analysis
+
+| Service | Specifications | Cost |
+| ----------- | ----------- | ----------- |
+| Azure Kubernetes Service (AKS) | 1 Linux D8a v4 Node (no reserved instances) with S4 - 32GB of OS Disk | $401.58 |
+| Azure Container Registry | Standard | $20.00 |
+| Azure Cosmos DB | Autoscale Provisioned Throughput with 200GB of storage | $137.60 |
+| Event Grid | Standard - Event Grid Namespace  (Assuming up to 10 million monthly operations)  | $5.40 |
+| Storage Account | General Purpose v2 | $23.88 |
+| App Service | Premium V2 (P2V2) to be used by API and PWA | $292.00 |
+| Azure DNS | Zone 1 Public DNS | $0.90 |
+| IP Addresses | Global ARM 1 Static IP | $16.06 |
+| Power Automate | 1 Standard User | $15.00 | 
+| | | $912.41 |
+
+MVP 2 will cost us $912.41 pre month
 
 ### MVP 3 - Reporting and Analytics
 
 Analytics and Reporting
 
+The MVP 3 iteration will see the following changes:
+
+- Upgraded Cluster
+- Azure Synapse Analytics
+- Apache Spark
+- Power BI 
+
 ![Technical Architecture MVP 3](Images/TechnicalImplementation/MVP3-Katas.png)
+
+#### Cost Analysis
+
+| Service | Specifications | Cost |
+| ----------- | ----------- | ----------- |
+| Azure Kubernetes Service (AKS) | 2 Linux D8a v4 Node (no reserved instances) with S4 - 32GB of OS Disk | $728.62 |
+| Azure Container Registry | Standard | $20.00 |
+| Azure Cosmos DB | Autoscale Provisioned Throughput with 200GB of storage | $137.60 |
+| Event Grid | Standard - Event Grid Namespace  (Assuming up to 20 million monthly operations)  | $11.40 |
+| Storage Account | General Purpose v2 | $23.88 |
+| App Service | Premium V2 (P2V2) to be used by API and PWA | $292.00 |
+| Azure DNS | Zone 1 Public DNS | $0.90 |
+| IP Addresses | Global ARM 1 Static IP | $16.06 |
+| Power Automate | 1 Standard User | $15.00 | 
+| Azure Synapse | Compute Optimised Gen2 with 100 DWU Blocks and a 3 year reserve instance |  $397.30 | 
+| Apache Spark Pool | Small Memory Optimised (4 vCores with 32 GB) | $166.92 |
+| Power BI | 1 Premium User | $20.00 | 
+| | | $1,829.64 |
+
+MVP 3 will cost us $1,829.64 per month including the foundation of the analytics engine.
 
 ### MVP 4 - Geographical Distribution 
 
 Cosmos DB and geographical distribution Load balancing 
 
+The MVP 4 will focus on geographical distribution and loadbalancing by adding:
+
+  - Upgraded Cluster (with reserved instances)
+  - Cosmos DB Geographical Distribution
+  - Azure CDN
+  - Azure Front Door
+  - Azure Traffic Manager
+
 This leads to the final overall architecture
 
 ![Technical Architecture MVP 4](Images/TechnicalImplementation/MVP4-Katas.png)
+
+#### Cost Analysis
+
+| Service | Specifications | Cost |
+| ----------- | ----------- | ----------- |
+| Azure Kubernetes Service (AKS) | 2 Linux E16-8as v5 Node (3 year reserved instances) with S4 - 32GB of OS Disk | $774.02 |
+| Azure Container Registry | Standard | $20.00 |
+| Azure Cosmos DB | Autoscale Provisioned Throughput with 200GB of storage with availability in West Europe, East US, East Asia and Southeast Asia and a maximum of 2000 Requests per second | $500.40 |
+| Event Grid | Standard - Event Grid Namespace  (Assuming up to 50 million monthly events)  | $29.40 |
+| Storage Account | General Purpose v2 | $23.88 |
+| App Service | Premium V2 (P1V2) to be used by PWA in 4 regions | $584.00 |
+| Serverless Functions | Consumption assuming up to 100,000,000 requests per month in 4 regions | $157.60 |
+| Azure DNS | Zone 1 Public DNS | $0.90 |
+| Traffic Manager | 10,000,000 DNS queries per month | $5.40 |
+| Azure CDN | Static Data in 4 zones | $ 3.66 |
+| Azure Front Door | Entry point for PWA | $35.51 |
+| Azure Redis Cache | Standard C2 Cache in 4 regions | $654.08 |
+| IP Addresses | Global ARM 1 Static IP | $16.06 |
+| Power Automate | 1 Standard User | $15.00 | 
+| Azure Synapse | Compute Optimised Gen2 with 100 DWU Blocks and a 3 year reserve instance |  $397.30 | 
+| Apache Spark Pool | Small Memory Optimised (4 vCores with 32 GB) | $166.92 |
+| Power BI | 1 Premium User | $20.00 | 
+| | | $3,404.13 |
+
+The final iteration is expected to cost us $3,404.13 per month including the foundation of the analytics engine.
 
 ## Engineering Practices
 
