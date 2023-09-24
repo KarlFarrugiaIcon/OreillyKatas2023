@@ -353,12 +353,18 @@ Successfully parsed incoming records are then subsequently published to the Even
 ![Alt text](./Images/DomainBoundaries/TravelIntegrationService.png)
 
 ##### Notifications Service
-The component diagram illustrates the Notifications Service, responsible for delivering notifications to the PWA Application. It is mainly responsible for handling push notifications and email notifications.
+
+The Notifications Service is responsible for pushing notifications to the Public-facing appliocations.
+
+It subscribes via AMQP to the Event Streaming Infrastructure, listening in to messages concerning new or adjusted Trips/Reservations coming in from the Trip Management Service, and then subsequently raises notifications to active users on the Web or Mobile users with the PWA installed via a Publish/Subscribe mechanism.
 
 ![Alt text](./Images/DomainBoundaries/NotificationService.png)
 
 ##### Reporting & Analytics Service
-The Reporting & Analytics Service uses an external service to generate reports, processes them internally, stores data in a data warehouse, publishes messages to notify other microservices, and allows users to view insights through an external tool.
+
+The Reporting & Analytics Service is used to generate reports and store data in a format suitable for reporting within the data warehouse.
+
+The service is subscribed to the Event Streaming Infrastructure for updates stemming from the Trip Management Service, so that changes can be propagated to the data warehouse (and stored in an unstructured way). It uses restful APIs to communicate with an external reporting & analytics service (such as PowerBI), to generate and embed reports and statistics. The external reporting & analytics service is configured to read from the data warehouse, and can also be consumed via an External Tool (such as PowerBI Desktop), for system admins to access reporting for the entire platform.
 
 ![Alt text](./Images/DomainBoundaries/ReportingAndAnalyticsService.png)
 
