@@ -263,13 +263,19 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
     
 10. Data Analytics:
 
-    - Entry Point: Backend analytics processes that examine user behaviour and preferences.
-    - Payload: Analytical data, such as usage statistics, user interactions, and travel patterns.
+    - User Analytics
+      - Entry Point: Backend analytics processes that examine specific user's behaviour and preferences.
+      - Payload: Analytical data, such as usage statistics, user interactions, and travel patterns.
 
       ![Alt Text](./Images/UserFlows/user-analytics-flow.PNG)
+
+    - System Analytics
+      - Entry Point: Backend analytics processes that examine users' behaviours across different countries and regions.
+      - Payload: Analytical data, such as usage statistics, user interactions, travel patterns and trends across different regions.
+        
       ![Alt Text](./Images/UserFlows/System-Analytics-flow.PNG)
 
-11. Recommendation Engine:
+12. Recommendation Engine:
 
     - Entry Point: The recommendation engine component of the system.
     - Payload: User data used for analysis, which includes historical travel data, preferences, and behaviour.
