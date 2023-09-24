@@ -181,21 +181,14 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
     - Entry Point: The login page or API endpoint for authentication.
     - Payload: User credentials, typically comprising a username/email and password.
 
-      ![Alt text](./Images/UserFlows/image-1.png)
+      ![Alt text](./Images/UserFlows/image-1.png)    
 
-3. Booking Reservations:
-
-    - Entry Point: Online reservation systems or APIs for flights, hotels, and activities.
-    - Payload: Reservation details including dates, times, locations, and confirmation numbers.
-
-      ![Alt text](./Images/UserFlows/image-5.png)
-
-4. Profile Updates:
+3. Profile Updates:
 
     - Entry Point: User profile settings in the app or website.
     - Payload: User-modified data, such as profile picture, contact information, or travel preferences.
 
-5. Trip/Reservation Creation:
+4. Trip/Reservation Creation:
 
     - Manual Creation
         - Entry Point: A feature allowing users to create and organise trips and reservations.
@@ -209,9 +202,15 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
 
           ![Alt text](./Images/UserFlows/image-4.png)
 
-6. Trip/Reservation Deletion:
+      - Third-Party Creation
+        - Entry Point: Online reservation systems or APIs for flights, hotels, and activities.
+        - Payload: Reservation details including dates, times, locations, and confirmation numbers.
 
-    - Deleate Updates
+        ![Alt text](./Images/UserFlows/image-5.png)
+
+5. Trip/Reservation Deletion:
+
+    - Manual Delete
         - Entry Point: A feature allowing users to manually delete trips and reservations.
         - Payload: User-generated trip data, and manually outlined associated reservations based off email content.   
     
@@ -229,7 +228,7 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
 
           ![Alt text](./Images/UserFlows/image-8.png)
 
-7. Trip/Reservation Updates:
+6. Trip/Reservation Updates:
 
     - Manual Updates
         - Entry Point: A feature allowing users to manually update trips and reservations.
@@ -249,19 +248,19 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
 
           ![Alt text](./Images/UserFlows/image-11.png)
 
-8. Itinerary Viewing:
+7. Itinerary Viewing:
 
     - Entry Point: The user's dashboard displaying their trip itineraries.
     - Payload: Itinerary information, aggregating reservations for a specific trip.
 
-9. Trip Sharing:
+8. Trip Sharing:
 
     - Entry Point: The user shares a trip which is the accessed by other user's who can then join the trip
     - Payload: Itinerary information, aggregating reservations for a specific trip.
 
       ![Alt text](./Images/UserFlows/image-2.png)
     
-10. Data Analytics:
+9. Data Analytics:
 
     - User Analytics
       - Entry Point: Backend analytics processes that examine specific user's behaviour and preferences.
@@ -275,7 +274,7 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
         
       ![Alt Text](./Images/UserFlows/System-Analytics-flow.PNG)
 
-12. Recommendation Engine:
+10. Recommendation Engine:
 
     - Entry Point: The recommendation engine component of the system.
     - Payload: User data used for analysis, which includes historical travel data, preferences, and behaviour.
