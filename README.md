@@ -343,7 +343,12 @@ It receives prompts from the Trip Management Service via a Queue infrastructure,
 ![Alt text](./Images/DomainBoundaries/SocialMediaSharingService.png)
 
 ##### Travel Integration Service
-The component diagram shows the Travel Integration Service, responsible for processing data from Travel Agencies. It subscribes via AMQP (Advanced Message Queuing Protocol) to configured external travel agencies, processes the data, and publishes messages to a queue. These messages are subsequently picked up by the Trip Management Service for further processing.
+
+The Travel Integration Service is responsible for collecting trip and reservation data from Travel Agency Integrations. 
+
+It subscribes via AMQP (Advanced Message Queuing Protocol) to configured external travel agencies, processes the data, and publishes messages to a queue. Abstraction features are used to cover baseline processing operations, and then uses the provider pattern to integrate with different external travel agency integration services.
+
+Successfully parsed incoming records are then subsequently published to the Event Streaming Infrastructure for further processing and local persistence by the Trip Management Service.
 
 ![Alt text](./Images/DomainBoundaries/TravelIntegrationService.png)
 
