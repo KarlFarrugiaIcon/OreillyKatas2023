@@ -305,6 +305,14 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
 
       ![Alt Text](./Images/UserFlows/recommendations-flow.PNG)
 
+12. Help Engine:
+<br/>**Original Requirement**: '_Must integrate with preferred travel agency for quick problem resolution_'
+
+    - Entry Point: User requests for help for a specific trip or reservation.
+    - Payload: User's help message detailing the information needed.
+
+      ![Alt Text](./Images/UserFlows/Help-me-flow.jpg)
+
 By breaking down the requirement into these distinct flows with entry points and their associated payloads, we can ensure that we have a clear understanding of where data enters the system and what information is being processed. This structured approach not only aids in the design and development of the system but also lays the foundation for effective data management, security, and the eventual implementation of analytics and recommendation features.
 
 ## Context Diagram
