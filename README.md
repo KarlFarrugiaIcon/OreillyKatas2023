@@ -191,18 +191,24 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
 4. Trip/Reservation Creation:
 
     - Manual Creation
+    <br/>**Original Requirement**: '_Customers should be able to add, update, or delete existing reservations manually as well_'
+
         - Entry Point: A feature allowing users to create and organise trips and reservations.
         - Payload: User-generated trip data, which includes trip names, descriptions, and associated reservations.
 
           ![Alt text](./Images/UserFlows/image-3.png)
 
-    - Automated Creation Email 
+    - Automated Creation Email
+    <br/>**Original Requirement**: '_Poll email looking for travel-related emails. Filter and whitelist certain emails_'
+
         - Entry Point: Automated creation of trips or reservations by listening to incoming emails.
         - Payload: System-generated trip data, which includes trip names, descriptions, and associated reservations based off email content.
 
           ![Alt text](./Images/UserFlows/image-4.png)
 
       - Third-Party Creation
+      <br/>**Original Requirement**: '_The system must interface with the agency’s existing airline, hotel, and car rental interface system to update travel details_'
+
         - Entry Point: Online reservation systems or APIs for flights, hotels, and activities.
         - Payload: Reservation details including dates, times, locations, and confirmation numbers.
 
@@ -211,18 +217,24 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
 5. Trip/Reservation Deletion:
 
     - Manual Delete
+     <br/>**Original Requirement**: '_Customers should be able to add, update, or delete existing reservations manually as well_'
+
         - Entry Point: A feature allowing users to manually delete trips and reservations.
         - Payload: User-generated trip data, and manually outlined associated reservations based off email content.   
     
           ![Alt text](./Images/UserFlows/image-6.png)
 
-    - Automated Email 
+    - Automated Email
+     <br/>**Original Requirement**: '_Poll email looking for travel-related emails. Filter and whitelist certain emails_'
+
         - Entry Point: Automated deletion of trips or reservations by listening to incoming emails.
         - Payload: System-generated data and automatically outlined associated reservations based off email content.   
 
           ![Alt text](./Images/UserFlows/image-7.png)
 
-    - Third-Party Integration 
+    - Third-Party Integration
+    <br/>**Original Requirement**: '_The system must interface with the agency’s existing airline, hotel, and car rental interface system to update travel details_'
+
         - Entry Point: Polling of third-party services to scan for removed reservations.
         - Payload: System-generated data and automatically outlined associated reservations based off polled content.    
 
@@ -231,50 +243,62 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
 6. Trip/Reservation Updates:
 
     - Manual Updates
+     <br/>**Original Requirement**: '_Customers should be able to add, update, or delete existing reservations manually as well_'
+
         - Entry Point: A feature allowing users to manually update trips and reservations.
         - Payload: User-generated trip data, and manually outlined associated reservations based off email content.   
     
           ![Alt text](./Images/UserFlows/image-9.png)
 
-    - Automated Email 
+    - Automated Email
+    <br/>**Original Requirement**: '_Poll email looking for travel-related emails. Filter and whitelist certain emails_'
+      
         - Entry Point: Automated updates of trips or reservations by listening to incoming emails.
         - Payload: System-generated data and automatically outlined associated reservations based off email content.   
         
           ![Alt text](./Images/UserFlows/image-10.png)
 
-    - Third-Party Integration 
+    - Third-Party Integration
+    <br/>**Original Requirement**: '_The system must interface with the agency’s existing airline, hotel, and car rental interface system to update travel details_'
+
         - Entry Point: Polling of third-party services to scan for updates to reservations.
         - Payload: System-generated data and automatically outlined associated reservations based off polled content.    
 
           ![Alt text](./Images/UserFlows/image-11.png)
 
 7. Itinerary Viewing:
+<br/>**Original Requirement**: '_Items in the dashboard should be able to be grouped by trip, and once the trip is complete, the items should automatically be removed from the dashboard_'
 
     - Entry Point: The user's dashboard displaying their trip itineraries.
     - Payload: Itinerary information, aggregating reservations for a specific trip.
 
 8. Trip Sharing:
+<br/>**Original Requirement**: '_Users should also be able to share their trip information by interfacing with standard social media sites or allowing targeted people to view your trip_'
 
-    - Entry Point: The user shares a trip which is the accessed by other user's who can then join the trip
+    - Entry Point: The user shares a trip which is accessed by other users who can then join the trip
     - Payload: Itinerary information, aggregating reservations for a specific trip.
 
       ![Alt text](./Images/UserFlows/image-2.png)
     
-9. Data Analytics:
+10. Data Analytics:
 
     - User Analytics
+    <br/>**Original Requirement**: '_Provide end-of-year summary reports for users with a wide range of metrics about their travel usage_'
+
       - Entry Point: Backend analytics processes that examine specific user's behaviour and preferences.
       - Payload: Analytical data, such as usage statistics, user interactions, and travel patterns.
 
       ![Alt Text](./Images/UserFlows/user-analytics-flow.PNG)
 
     - System Analytics
+    <br/>**Original Requirement**: '_Road Warrior gathers analytical data from users trips for various purposes - travel trends, locations, airline and hotel vendor preferences, cancellation and update frequency, and so on_'
+
       - Entry Point: Backend analytics processes that examine users' behaviours across different countries and regions.
       - Payload: Analytical data, such as usage statistics, user interactions, travel patterns and trends across different regions.
         
       ![Alt Text](./Images/UserFlows/System-Analytics-flow.PNG)
 
-10. Recommendation Engine:
+11. Recommendation Engine:
 
     - Entry Point: The recommendation engine component of the system.
     - Payload: User data used for analysis, which includes historical travel data, preferences, and behaviour.
