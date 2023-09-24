@@ -81,7 +81,7 @@ Team Members:
   
 ## Prelude
 
-Road Warrior is a startup poised to revolutionise the travel industry by developing a cutting-edge online trip management platform dedicated to providing travellers with dynamic and manual itinerary management capabilities. This innovative dashboard will empower travellers to effortlessly access and organise all their existing reservations, ensuring a seamless and hassle-free travel experience. Whether users prefer to access it through a web interface or on their mobile devices, this platform will serve as the go-to solution for travellers seeking comprehensive trip management solutions. With this pioneering tool, travellers can look forward to a more organised, convenient, and enjoyable journey, making it the next generation's must-have travel companion. In addition to its user-centric features, this platform will also harness the wealth of data it collects for invaluable reporting purposes. By leveraging this data, travellers will gain insights into their travel patterns, preferences, and spending habits, allowing them to make more informed decisions for future trips. As the platform continues to accumulate user data, it will lay the foundation for a future suggestion engine. 
+Road Warrior is a startup poised to revolutionise the travel industry by developing a cutting-edge online trip management platform dedicated to providing travelers with dynamic and manual itinerary management capabilities. This innovative dashboard will empower travelers to effortlessly access and organise all their existing reservations, ensuring a seamless and hassle-free travel experience. Whether users prefer to access it through a web interface or on their mobile devices, this platform will serve as the go-to solution for travelers seeking comprehensive trip management solutions. With this pioneering tool, travelers can look forward to a more organised, convenient, and enjoyable journey, making it the next generation's must-have travel companion. In addition to its user-centric features, this platform will also harness the wealth of data it collects for invaluable reporting purposes. By leveraging this data, travelers will gain insights into their travel patterns, preferences, and spending habits, allowing them to make more informed decisions for future trips. As the platform continues to accumulate user data, it will lay the foundation for a future suggestion engine. 
 
 ## Business Case
 
@@ -99,9 +99,9 @@ To comprehensively address the requirement outlined in the brief, it is crucial 
 
 ![Requirements Breakdown 2](Images/Requirements/RequirementsBreakdown2.png)
 
-- Updates must be in the app within 5 minutes of an update (better than the competition). This may be tackled with having the latest updates locally and at the core, but have eventual consistency across different regions.
-- The system may be composed in 2: 
-    - Core services - A stand alone kubernetes cluster which is hosted in the region of the business' core user base.
+- Updates must be in the app within 5 minutes of an update (better than the competition). This may be tackled by having the latest updates locally and at the core, but have eventual consistency across different regions.
+- The system may be composed of 2: 
+    - Core services - A stand-alone Kubernetes cluster that is hosted in the region of the business' core user base.
         - Different components have different loads
     - Globally distributed APIs to service read/write operations to their user base.
         - Different loads in different regions
@@ -109,20 +109,20 @@ To comprehensively address the requirement outlined in the brief, it is crucial 
 
 ### Technical Constraints
 
-- The startup excels in its business domain but lacks the technical expertise needed for its ambitious projects. Therefore, as technical supplier we have a blank slate to start from.
+- The startup excels in its business domain but lacks the technical expertise needed for its ambitious projects. Therefore, as the technical supplier, we have a blank slate to start from.
 
 ### Business Constraints
 
-- This is a start up, therefore, funds may be limited and have to be generated from the application itself.
+- This is a start-up, therefore, funds may be limited and have to be generated from the application itself.
 
 ### Assumptions
 
-- Start up does not have any technical partners
-- The start up will start maturing with the system MVP roll out thereby allowing the system to grow. It is assumed that if the application is not performing well the owners will take a fail fast approach and may pull the plug. Therefore, the final product will assume that the application will become self sustaining and covers the operational cost. Both MVP roll out and Cost Analysis will be provided at the end of the literature.
+- Start-up does not have any technical partners
+- The start-up will start maturing with the system MVP rollout thereby allowing the system to grow. It is assumed that if the application is not performing well the owners will take a fail-fast approach and may pull the plug. Therefore, the final product will assume that the application will become self-sustaining and cover the operational cost. Both MVP rollout and Cost Analysis will be provided at the end of the literature.
 
 ## Overall Platform Context
 
-The event storming process was employed to identify essential "domain events" within a system, where each event represents an action related to a business entity. It's a crucial initial step as these events configure the central artifact for the system. Event storming meetings start with participants noting domain events, foundational for defining business rules. The team wrote down domain events, each represented on an orange sticky note on a virtual whiteboard. This collaborative approach facilitates comprehensive understanding and mapping of system events for stakeholders.
+The event storming process was employed to identify essential "domain events" within a system, where each event represents an action related to a business entity. It's a crucial initial step as these events configure the central artifact for the system. Event storming meetings start with participants noting domain events, foundational for defining business rules. The team wrote down domain events, each represented on an orange sticky note on a virtual whiteboard. This collaborative approach facilitates a comprehensive understanding and mapping of system events for stakeholders.
 
 ![Domain Events](Images/DomainBoundaries/DomainEvents.jpg)
 
@@ -202,7 +202,7 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
     <br/>**Original Requirement**: '_Poll email looking for travel-related emails. Filter and whitelist certain emails_'
 
         - Entry Point: Automated creation of trips or reservations by listening to incoming emails.
-        - Payload: System-generated trip data, which includes trip names, descriptions, and associated reservations based off email content.
+        - Payload: System-generated trip data, which includes trip names, descriptions, and associated reservations based on email content.
 
           ![Alt text](./Images/UserFlows/image-4.png)
 
@@ -220,7 +220,7 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
      <br/>**Original Requirement**: '_Customers should be able to add, update, or delete existing reservations manually as well_'
 
         - Entry Point: A feature allowing users to manually delete trips and reservations.
-        - Payload: User-generated trip data, and manually outlined associated reservations based off email content.   
+        - Payload: User-generated trip data, and manually outlined associated reservations based on email content.   
     
           ![Alt text](./Images/UserFlows/image-6.png)
 
@@ -228,7 +228,7 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
      <br/>**Original Requirement**: '_Poll email looking for travel-related emails. Filter and whitelist certain emails_'
 
         - Entry Point: Automated deletion of trips or reservations by listening to incoming emails.
-        - Payload: System-generated data and automatically outlined associated reservations based off email content.   
+        - Payload: System-generated data and automatically outlined associated reservations based on email content.   
 
           ![Alt text](./Images/UserFlows/image-7.png)
 
@@ -236,7 +236,7 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
     <br/>**Original Requirement**: '_The system must interface with the agency’s existing airline, hotel, and car rental interface system to update travel details_'
 
         - Entry Point: Polling of third-party services to scan for removed reservations.
-        - Payload: System-generated data and automatically outlined associated reservations based off polled content.    
+        - Payload: System-generated data and automatically outlined associated reservations based on polled content.    
 
           ![Alt text](./Images/UserFlows/image-8.png)
 
@@ -246,7 +246,7 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
      <br/>**Original Requirement**: '_Customers should be able to add, update, or delete existing reservations manually as well_'
 
         - Entry Point: A feature allowing users to manually update trips and reservations.
-        - Payload: User-generated trip data, and manually outlined associated reservations based off email content.   
+        - Payload: User-generated trip data, and manually outlined associated reservations based on email content.   
     
           ![Alt text](./Images/UserFlows/image-9.png)
 
@@ -254,7 +254,7 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
     <br/>**Original Requirement**: '_Poll email looking for travel-related emails. Filter and whitelist certain emails_'
       
         - Entry Point: Automated updates of trips or reservations by listening to incoming emails.
-        - Payload: System-generated data and automatically outlined associated reservations based off email content.   
+        - Payload: System-generated data and automatically outlined associated reservations based on email content.   
         
           ![Alt text](./Images/UserFlows/image-10.png)
 
@@ -262,7 +262,7 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
     <br/>**Original Requirement**: '_The system must interface with the agency’s existing airline, hotel, and car rental interface system to update travel details_'
 
         - Entry Point: Polling of third-party services to scan for updates to reservations.
-        - Payload: System-generated data and automatically outlined associated reservations based off polled content.    
+        - Payload: System-generated data and automatically outlined associated reservations based on polled content.    
 
           ![Alt text](./Images/UserFlows/image-11.png)
 
@@ -294,7 +294,7 @@ Delving deeper into the process outlined in [Breaking down the Requirements](#br
     <br/>**Original Requirement**: '_Road Warrior gathers analytical data from users trips for various purposes - travel trends, locations, airline and hotel vendor preferences, cancellation and update frequency, and so on_'
 
       - Entry Point: Backend analytics processes that examine users' behaviours across different countries and regions.
-      - Payload: Analytical data, such as usage statistics, user interactions, travel patterns and trends across different regions.
+      - Payload: Analytical data, such as usage statistics, user interactions, travel patterns, and trends across different regions.
         
       ![Alt Text](./Images/UserFlows/System-Analytics-flow.PNG)
 
@@ -309,29 +309,29 @@ By breaking down the requirement into these distinct flows with entry points and
 
 ## Context Diagram
 
-To help us visualise the system we use the actors and componenets that were outlined in previous sections and drafted the following context diagrams.
+To help us visualise the system we use the actors and components that were outlined in previous sections and drafted the following context diagrams.
 
 ### High-level Platform Context Diagram
 
-The below context diagram provides a high-level introduction into actions that the different User types can perform on the application. The abstractions of the different components (or services) responsible for handling all possible actions triggered by users or external interfaces.
+The below context diagram provides a high-level introduction to actions that the different User types can perform on the application. The abstractions of the different components (or services) responsible for handling all possible actions triggered by users or external interfaces.
 
 ![High-level Platform Context Diagram](/Images/SystemActors/HighLevelContextDiagram.png)
 
 ### Actor to System Boundary Diagram
 
-The below actor to system boundary diagram expands on the detail provided by the High-level Platform Context Diagram, by describing communication methods between different components (now broken down into services, providers and external tools) as well as their utilisation of infrastructure components such as databases and messaging/event channels to realise the features offered by the system.
+The below actor-to-system boundary diagram expands on the detail provided by the High-level Platform Context Diagram, by describing communication methods between different components (now broken down into services, providers, and external tools) as well as their utilisation of infrastructure components such as databases and messaging/event channels to realise the features offered by the system.
 
 ![Actor To System Boundary](/Images/SystemActors/Actor-To-System-Boundary.png)
 
 #### Deep Dive on System Boundaries 
 
-The following section provides a description of the interactions with neighbouring systems module is subject to(scoped at a Microservice level) and its corresponding interactions with neighbouring systems.
+The following section provides a description of the interactions with the neighbouring systems module is subject to (scoped at a Microservice level) and its corresponding interactions with neighbouring systems.
 
 ##### Common Characteristics for All System Boundaries
-The following are some characteristics that are present for every module, and thus are described prior to the service-specific descriptions.
+The following are some characteristics that are present for every module and thus are described prior to the service-specific descriptions.
 
 - The entry-point for all requests going downstream from the Client-facing applications is always through an Application Gateway which acts as a security mechanism for validating that requests towards the backend services come from an accepted origin.
-- Each Microservice is provisioned within a Kubernetes Cluster, and is designed to scale horizontally based on the load on the system. A minimum of one service instance will be made available in different regions. 
+- Each Microservice is provisioned within a Kubernetes Cluster and is designed to scale horizontally based on the load on the system. A minimum of one service instance will be made available in different regions. 
 - A load balancer will be configured within the Kubernetes Cluster to handle redirection of requests based on proximity and availability.
 - Standard database operations occur against a data center with the closest proximity to the originating request. To support eventual consistency, the updated/deleted records are replicated across the distributed database instances in near real-time.
 
@@ -339,7 +339,7 @@ The following are some characteristics that are present for every module, and th
 
 The Authentication Service is responsible for facilitating authentication mechanisms through username and password or social media Single Sign-On (SSO).
 
-Through the use of the provider pattern, the authentication service leverages abstraction to provide a default implementation of the standard authentication operations, and then uses the provider pattern to differentiate between the concrete implementation of the internal username/password implementation or external social media SSO APIs.
+Through the use of the provider pattern, the authentication service leverages abstraction to provide a default implementation of the standard authentication operations and then uses the provider pattern to differentiate between the concrete implementation of the internal username/password implementation or external social media SSO APIs.
 
 ![Alt text](./Images/DomainBoundaries/AuthenticationService.png)
 
@@ -359,13 +359,13 @@ When use of the 'Share trip to social media' feature is done, a message is publi
 
 The Email Data Parsing Service is responsible for collecting trip and reservation data from Email sources. 
 
-As indicated in other areas of the solution documentation, Users will be given instructions on how to create rules for forwarding travel related emails to the service mailbox. Emails received by the service mailbox are observed by an External Automation Tool (such as Power Automate), and are then published to the Event Streaming infrastructure as JSON objects detailing the email data. The Email Data Parsing service is Subscribed to the Event Streaming Infrastructure so that it can consume and break down email data objects, and then publish them through the same Event Streaming Infrastructure so that the Trip Management Service can ultimately persist them.
+As indicated in other areas of the solution documentation, Users will be given instructions on how to create rules for forwarding travel-related emails to the service mailbox. Emails received by the service mailbox are observed by an External Automation Tool (such as Power Automate) and are then published to the Event Streaming infrastructure as JSON objects detailing the email data. The Email Data Parsing service is Subscribed to the Event Streaming Infrastructure so that it can consume and break down email data objects, and then publish them through the same Event Streaming Infrastructure so that the Trip Management Service can ultimately persist them.
 
 ![Alt text](./Images/DomainBoundaries/EmailDataParsingService.png)
 
 ##### Social Media Sharing Service
 
-The Social Media Sharing Service is responsible for sharing content to social media platforms. 
+The Social Media Sharing Service is responsible for sharing content on social media platforms. 
 
 It receives prompts from the Trip Management Service via a Queue infrastructure, and utilises external Social Media providers for Authentication and Sharing to successfully share content to said platforms.
 
@@ -375,7 +375,7 @@ It receives prompts from the Trip Management Service via a Queue infrastructure,
 
 The Travel Integration Service is responsible for collecting trip and reservation data from Travel Agency Integrations. 
 
-It subscribes via AMQP (Advanced Message Queuing Protocol) to configured external travel agencies, processes the data, and publishes messages to a queue. Abstraction features are used to cover baseline processing operations, and then uses the provider pattern to integrate with different external travel agency integration services.
+It subscribes via AMQP (Advanced Message Queuing Protocol) to configure external travel agencies, processes the data, and publishes messages to a queue. Abstraction features are used to cover baseline processing operations and then use the provider pattern to integrate with different external travel agency integration services.
 
 Successfully parsed incoming records are then subsequently published to the Event Streaming Infrastructure for further processing and local persistence by the Trip Management Service.
 
@@ -383,7 +383,7 @@ Successfully parsed incoming records are then subsequently published to the Even
 
 ##### Notifications Service
 
-The Notifications Service is responsible for pushing notifications to the Public-facing appliocations.
+The Notifications Service is responsible for pushing notifications to the Public-facing applications.
 
 It subscribes via AMQP to the Event Streaming Infrastructure, listening in to messages concerning new or adjusted Trips/Reservations coming in from the Trip Management Service, and then subsequently raises notifications to active users on the Web or Mobile users with the PWA installed via a Publish/Subscribe mechanism.
 
@@ -393,13 +393,13 @@ It subscribes via AMQP to the Event Streaming Infrastructure, listening in to me
 
 The Reporting & Analytics Service is used to generate reports and store data in a format suitable for reporting within the data warehouse.
 
-The service is subscribed to the Event Streaming Infrastructure for updates stemming from the Trip Management Service, so that changes can be propagated to the data warehouse (and stored in an unstructured way). It uses restful APIs to communicate with an external reporting & analytics service (such as PowerBI), to generate and embed reports and statistics. The external reporting & analytics service is configured to read from the data warehouse, and can also be consumed via an External Tool (such as PowerBI Desktop), for system admins to access reporting for the entire platform.
+The service is subscribed to the Event Streaming Infrastructure for updates stemming from the Trip Management Service so that changes can be propagated to the data warehouse (and stored in an unstructured way). It uses restful APIs to communicate with an external reporting & analytics service (such as PowerBI), to generate and embed reports and statistics. The external reporting & analytics service is configured to read from the data warehouse, and can also be consumed via an External Tool (such as PowerBI Desktop), for system admins to access reporting for the entire platform.
 
 ![Alt text](./Images/DomainBoundaries/ReportingAndAnalyticsService.png)
 
 ## User Interface Mockups
 
-Mock-ups are essential in the development process of the solution since it allows the team to visualise and conceptualise the idea. It also allows us to take a user-centred approach which aligns with the requirements. 
+Mock-ups are essential in the development process of the solution since it allows the team to visualise and conceptualise the idea. It also allows us to take a user-centered approach that aligns with the requirements. 
 
 ### Manual Prototyping
 
@@ -409,7 +409,7 @@ The first approach for prototyping is the traditional pen and paper with the res
 
 ### Figma Prototyping
 
-After the manual prototyping the next flow was to do a Figma design of the solution with the results being shown hereunder.
+After the manual prototyping, the next flow was to do a Figma design of the solution with the results being shown hereunder.
 
 ![roadwarrior](Images/UI/flow.gif)
 
@@ -417,7 +417,7 @@ https://github.com/KarlFarrugiaIcon/OreillyKatas2023/assets/91567864/99460df7-73
 
 ## Architecture Characteristics
 
-This section takes into consideration how the architecture is to be split using the [Developer to Architect Architecture Resource](https://developertoarchitect.com/resources.html). This is intend to outline key architectural attributes we deem essential for a successful system implementation.
+This section takes into consideration how the architecture is to be split using the [Developer to Architect Architecture Resource](https://developertoarchitect.com/resources.html). This is intended to outline key architectural attributes we deem essential for a successful system implementation.
 
 ![ArchitectureCharacteristics](/Images/ArchitecturalCharacteristics/ArchitectureCharacteristics.PNG)
 
@@ -427,27 +427,27 @@ This section takes into consideration how the architecture is to be split using 
 | ----------- | ----------- | ----------- |
 | [X] | Scalability | The system needs to be highly scalable since it needs to grow to accommodate increased demand and workload. This scalability is essential in the context of the solution, as travel-related services often experience fluctuations in user traffic, especially during peak seasons or special events. Whether it's a sudden surge in users making reservations or an uptick in concurrent users accessing their itineraries, the system can efficiently allocate additional resources to handle the increased load. This scalability ensures that users experience uninterrupted service and swift response times, regardless of the system's level of demand.  |
 | [X] | Elasticity | Elasticity takes the concept of scalability a step further by not only allowing the system to grow but also contract when demand decreases. The solution needs to be designed with elasticity in mind, enabling it to automatically adjust its resource allocation based on real-time demand. For instance, during periods of lower user activity, the system can scale down to conserve resources, reducing operational costs. Conversely, when demand surges, it can quickly scale up to meet the increased load. This elasticity ensures cost-efficiency and optimal resource utilisation, making the solution adaptable and financially sustainable over time. |
-| [] | Data Integrity & Consistency | Ensuring the integrity and consistency of data is paramount in this system. There is a need to implement robust data validation mechanisms, error handling processes, and transaction management to prevent data corruption or discrepancies. By maintaining data integrity and consistency, we guarantee that users can rely on accurate information throughout their travel planning and management processes. |
+| [] | Data Integrity & Consistency | Ensuring the integrity and consistency of data is paramount in this system. There is a need to implement robust data validation mechanisms, error-handling processes, and transaction management to prevent data corruption or discrepancies. By maintaining data integrity and consistency, we guarantee that users can rely on accurate information throughout their travel planning and management processes. |
 | [] | Abstraction | Abstraction is a foundational element of the system's architecture. It allows us to shield users and developers from unnecessary complexities by presenting simplified and user-friendly interfaces. By abstracting the underlying technical intricacies, we enhance usability and reduce the complexities of integrating future applications of similar types of existing implementations. |
-| [] | Availability |  The solution has to be built with high availability in mind due to the requirement of a maximum of 5 minutes downtime per month. There is the need to employ redundancy, failover mechanisms, and disaster recovery strategies to minimise downtime and ensure that users can access their travel information 24/7. Availability is critical in the travel industry, where users may require access to their itineraries and bookings at any time. |
-| [X] | Performance |  Performance optimisation is a key focus in of the architectural design. Therefore, the system needs to employ efficient algorithms, caching mechanisms, and load balancing to deliver fast response times and smooth user interactions. Whether users are viewing their itineraries or receiving real-time recommendations, the system will need to consistently delivers high-performance results. |
+| [] | Availability |  The solution has to be built with high availability in mind due to the requirement of a maximum of 5 minutes of downtime per month. There is a need to employ redundancy, failover mechanisms, and disaster recovery strategies to minimise downtime and ensure that users can access their travel information 24/7. Availability is critical in the travel industry, where users may require access to their itineraries and bookings at any time. |
+| [X] | Performance |  Performance optimisation is a key focus in the architectural design. Therefore, the system needs to employ efficient algorithms, caching mechanisms, and load balancing to deliver fast response times and smooth user interactions. Whether users are viewing their itineraries or receiving real-time recommendations, the system will need to consistently deliver high-performance results. |
 | [] | Interoperability | Interoperability to facilitate seamless communication with external systems and services. This needs to adhere to industry standards and implement standardised data exchange protocols to ensure that our platform can integrate with various third-party providers, booking systems, and travel-related services. This interoperability enhances the user experience by offering comprehensive access to travel-related resources. |
 
 ### Implicit Characteristics
 
 | Characteristics | Reason |
 | ----------- | ----------- |
-| Feasibility / Cost | This implicit characteristic comes as a result of the start up nature of the client and revolves around the financial aspects of a software project. Feasibility analysis assesses whether the project is financially viable and if the expected benefits outweigh the costs. It also considers factors like budget constraints, resource availability, and potential return on investment. Addressing this may require some early on concensions when designing MVPs which will eventually be made less cost effective and more efficient once the solution becomes self sustaining. |
+| Feasibility / Cost | This implicit characteristic comes as a result of the start-up nature of the client and revolves around the financial aspects of a software project. Feasibility analysis assesses whether the project is financially viable and if the expected benefits outweigh the costs. It also considers factors like budget constraints, resource availability, and potential return on investment. Addressing this may require some early-on concessions when designing MVPs which will eventually be made less cost effective and more efficient once the solution becomes self-sustaining. |
 | Maintainability | Maintainability refers to the software's ease of modification, enhancement, and long-term sustainability. Implicitly, it underscores the importance of writing clean, modular, and well-documented code. It involves practices such as code refactoring, version control, and adherence to coding standards such as abstraction. A maintainable software system is more cost-effective to update and extend over time, reducing the risk of technical debt and ensuring that the software remains adaptable to changing requirements. |
-| Observabilitiy | Observability is focused on a software system's ability to provide insights into its behavior, performance, and issues. It involves implementing logging, monitoring, and error tracking mechanisms. Observability allows developers and operators to gain visibility into the system's internal workings, making it easier to diagnose and resolve problems, optimise performance, and ensure that the software meets its operational objectives. Implicitly, observability emphasises proactive system health management and continuous improvement through data-driven insights. |
+| Observability | Observability is focused on a software system's ability to provide insights into its behavior, performance, and issues. It involves implementing logging, monitoring, and error-tracking mechanisms. Observability allows developers and operators to gain visibility into the system's internal workings, making it easier to diagnose and resolve problems, optimise performance, and ensure that the software meets its operational objectives. Implicitly, observability emphasises proactive system health management and continuous improvement through data-driven insights. |
 
 ### Other Considerations 
 
-Ensuring availability in different global regions is a complex yet critical aspect of modern digital services. It involves deploying redundant infrastructure, global distribution of data and leveraging Content Delivery Networks (CDNs) to minimise latency and downtime. Factors such as geographical diversity, local regulations, and varying network conditions must be considered. Achieving high availability means that users, regardless of their location, can access services reliably and consistently. This global approach to availability not only enhances user experiences but also strengthens disaster recovery capabilities, ensuring that services remain resilient even in the face of regional disruptions.
+Ensuring availability in different global regions is a complex yet critical aspect of modern digital services. It involves deploying redundant infrastructure, global distribution of data, and leveraging Content Delivery Networks (CDNs) to minimise latency and downtime. Factors such as geographical diversity, local regulations, and varying network conditions must be considered. Achieving high availability means that users, regardless of their location, can access services reliably and consistently. This global approach to availability not only enhances user experiences but also strengthens disaster recovery capabilities, ensuring that services remain resilient even in the face of regional disruptions.
 
 ## Architecture Implementation Styles
 
-Based off the Characteristics the chosen architecture is based off microservices, event-driven and space-based architecture.
+Based on the Characteristics the chosen architecture is based on microservices, event-driven and space-based architecture.
 ![ArchitecutreImplementation](/Images//ArchitecturalCharacteristics/ArchitectureStyles.PNG)
 
 ### Microservices Architecture
@@ -458,24 +458,24 @@ While there might be a performance trade-off associated with microservices, it's
 [ADR 4 - Microservice Architecture](/Resources/ADRs/ADR04-Microservices-architecture.md)
 
 ### Event-Driven Architecture
-Event-Driven Architecture will be integral to the system's real-time capabilities. Events, such as user actions (booking a flight, changing an itinerary) or external updates (flight delays, hotel availability), will trigger asynchronous messages that various components can subscribe to and act upon. For instance, when a user adds a new reservation, it generates an event that updates the user's itinerary and triggers the recommendation engine to suggest relevant activities or accommodations. This decoupled and event-driven approach ensures that the system remains responsive, scalable, and capable of handling real-time data updates seamlessly.
+Event-driven architecture will be integral to the system's real-time capabilities. Events, such as user actions (booking a flight, changing an itinerary) or external updates (flight delays, hotel availability), will trigger asynchronous messages that various components can subscribe to and act upon. For instance, when a user adds a new reservation, it generates an event that updates the user's itinerary and triggers the recommendation engine to suggest relevant activities or accommodations. This decoupled and event-driven approach ensures that the system remains responsive, scalable, and capable of handling real-time data updates seamlessly.
 
 [ADR 5 - Event Driven Architecture](/Resources/ADRs/ADR05-Event-driven-architecture.md)
 
 ### Space-Based Architecture
-Space-Based Architecture will be employed for managing distributed, in-memory data caches and ensuring high availability and low-latency access to frequently accessed data. This architecture allows us to store and retrieve data in a distributed and fault-tolerant manner, which is crucial for a system handling real-time travel information. For example, we can use a space-based architecture for caching frequently accessed itinerary data, ensuring that users can quickly access their travel plans regardless of the data's physical location. This architecture also supports data consistency and synchronization across multiple regions for enhanced availability and performance.
+Space-based architecture will be employed for managing distributed, in-memory data caches and ensuring high availability and low-latency access to frequently accessed data. This architecture allows us to store and retrieve data in a distributed and fault-tolerant manner, which is crucial for a system handling real-time travel information. For example, we can use a space-based architecture for caching frequently accessed itinerary data, ensuring that users can quickly access their travel plans regardless of the data's physical location. This architecture also supports data consistency and synchronization across multiple regions for enhanced availability and performance.
 
 [ADR 14 - Space-Based Architecture](/Resources/ADRs/ADR14-Space-Based-architecture.md)
 
-### High Level Combined Architecture
+### High-Level Combined Architecture
 
-This leads to the following high level solution approach
+This leads to the following high-level solution approach
 
 ![SolutionApproach](/Images/ArchitecturalCharacteristics/ArchitectureDiagram.png)
 
 ## Business Plan
 
-The business plan revolves around strategic partnerships, software development, and infrastructure resources to provide a user-friendly platform with personalised recommendations for travellers. This involves ongoing investments in personnel, software development tools, marketing, and customer support. The revenue streams are diverse, encompassing subscription models, future transaction fees, advertising partnerships, and premium features, which help offset the operational costs and drive profitability. Road Warrior is commited to enhancing user experience and fostering strong customer relationships as part of its onging strategy, this ensures a sustainable and successful business.
+The business plan revolves around strategic partnerships, software development, and infrastructure resources to provide a user-friendly platform with personalised recommendations for travelers. This involves ongoing investments in personnel, software development tools, marketing, and customer support. The revenue streams are diverse, encompassing subscription models, future transaction fees, advertising partnerships, and premium features, which help offset operational costs and drive profitability. Road Warrior is committed to enhancing user experience and fostering strong customer relationships as part of its ongoing strategy, this ensures a sustainable and successful business.
 
 ![Business Model Plan](/Images/BusinessPlan/businessmodel.png)
 
@@ -505,16 +505,16 @@ Notification Alerts: Receive basic email notifications for trip updates, such as
 
 ## MVP Timeline Proposal
 
-The platform roadmap that has been drafted takes into consideration the infancy of the enterprise, and has therefore been designed in such a way that focuses on introducing streams of revenue as soon as possible to cover necessary funding for the undertaking of this project.
+The platform roadmap that has been drafted takes into consideration the infancy of the enterprise and has therefore been designed in such a way that focuses on introducing streams of revenue as soon as possible to cover necessary funding for the undertaking of this project.
 
 ### Delivery Timeline Composition
 
 Four named MVPs are being proposed:
-*  MVP 1: Road Warrior Soft-Launch - As the namesake implies, this MVP will involve launching the product with just the essential, barebones features, suitable enough to introduce the potential of the product to the market. The majority of requirements specified in the initial spec are covered completely, with other less critical requirements being delivered in part or planned for launch in a future MVP. This MVP will help establish 'Road Warrior' into the travelling organisation app market, and potentially even introduce investment opportunities. The inclusion of lightweight advertisements in the barebones version of the application will also introduce a new and immediate stream of revenue, scaling based on the number of users (as will running costs, as a matter of fact).
+*  MVP 1: Road Warrior Soft-Launch - As the namesake implies, this MVP will involve launching the product with just the essential, barebones features, suitable enough to introduce the potential of the product to the market. The majority of requirements specified in the initial spec are covered completely, with other less critical requirements being delivered in part or planned for launch in a future MVP. This MVP will help establish 'Road Warrior' in the traveling organisation app market and potentially even introduce investment opportunities. The inclusion of lightweight advertisements in the barebones version of the application will also introduce a new and immediate stream of revenue, scaling based on the number of users (as will running costs, as a matter of fact).
 
-*  MVP 2: Shared Dashboards and Integrations - Introduce features that support collaboration/sharing among authenticated users, expanding the social elements of the application. At this point, all baseline requirements from the original specification barring reporting & analytics are implemented to some degree. Expanding integrations with user's mailboxes, additional booking agencies will also increase traffic on the application, increasing traffic and introducing new opportunities for further investments.
+*  MVP 2: Shared Dashboards and Integrations - Introduce features that support collaboration/sharing among authenticated users, expanding the social elements of the application. At this point, all baseline requirements from the original specification barring reporting & analytics are implemented to some degree. Expanding integrations with users' mailboxes, and additional booking agencies will also increase traffic on the application, increasing traffic and introducing new opportunities for further investments.
 
-*  MVP 3: Subscription Model, Analytics & Reporting - By the time that the development and planned delivery of MVP3 is underway, the project should have established an audience (this will be assisted through relevant marketing efforts). A larger audience in addition to increased features (and complexity of said features), means that computing costs will increase just as well. Advertisements will cover a portion of these running costs, however, to offer a more seamless experience as well as more advanced (resource intensive) features, a subscription model will be released.
+*  MVP 3: Subscription Model, Analytics & Reporting - By the time that the development and planned delivery of MVP3 is underway, the project should have established an audience (this will be assisted through relevant marketing efforts). A larger audience in addition to increased features (and complexity of said features), means that computing costs will increase just as well. Advertisements will cover a portion of these running costs, however, to offer a more seamless experience as well as more advanced (resource-intensive) features, a subscription model will be released.
 
 *  MVP 4: Expand Covered Services - This is the last "planned" MVP for the product. Here, the platform will undergo horizontal diversification in the services and data it offers by covering attractions and taxis.
 
@@ -524,11 +524,11 @@ Four named MVPs are being proposed:
 
 ## Identifying Architectural Quanta
 
-The following section outlines the different components which make up the architecture. While this section outlines concrete implementation's to a specific cloud provider the solution will still be abstracted in a way that we'll create a vendor agnostic solution without the risk of a vendor lock in.
+The following section outlines the different components which make up the architecture. While this section outlines concrete implementations to a specific cloud provider the solution will still be abstracted in a way that we'll create a vendor-agnostic solution without the risk of a vendor lock-in.
 
 ### Kubernetes
 
-Kubernetes plays a pivotal role in load balancing the core services of the system, ensuring that they remain highly available, scalable, and responsive to user requests. This is done by:
+Kubernetes plays a pivotal role in load-balancing the core services of the system, ensuring that they remain highly available, scalable, and responsive to user requests. This is done by:
 
 - Simplifying service deployment of core services as containers within a cluster. Each service is encapsulated in a container, making it easy to manage and scale independently.
 
@@ -567,9 +567,9 @@ Given that the solution will be listening to a Road Warrior's owned mailbox it w
 Given that the system needs to be performant Next.js was chosen due to its support for Server-Side Rendering (SSR) and Progressive Web App (PWA) capabilities.
 
 SSR offers several advantages namely 
-**improved SEO** and **faster initial page load** which are curcial for the app to obtain adoption with the user base.
+**improved SEO** and **faster initial page load** which are crucial for the app to obtain adoption with the user base.
 
-PWAs offer features which allow the application to be much more accessible due to **offline support** which allows for browsing in areas of limited internet, **app experience and packing** which facilitates publishing to mobile stores, **caching strategies** which allow the storage of assets and data on the client's device to ensure fast load times on subsequent visits.
+PWAs offer features that allow the application to be much more accessible due to **offline support** which allows for browsing in areas of limited internet, **app experience and packing** which facilitates publishing to mobile stores, **caching strategies** which allow the storage of assets and data on the client's device to ensure fast load times on subsequent visits.
 
 [ADR 1 - Progressive Web App](/Resources/ADRs/ADR01-Progressive-web-app.md)
 
@@ -577,7 +577,7 @@ PWAs offer features which allow the application to be much more accessible due t
 
 ### Cosmos DB
 
-CosmosDB is the backbone of the app's data management strategy. With its globally distributed, multi-model database service, CosmosDB enables us to seamlessly handle vast amounts of data, provide low-latency access to users worldwide, and ensure high availability and scalability. Its support for various data models, including document, key-value, graph, and column-family, offers the flexibility needed to store and query diverse types of data efficiently. CosmosDB's built-in global distribution, automatic scaling, and robust consistency options align perfectly with the app's requirements for data resilience, real-time updates, and responsive performance. It's the foundational layer that empowers the app to deliver a seamless and data-rich user experience.
+CosmosDB is the backbone of the app's data management strategy. With its globally distributed, multi-model database service, CosmosDB enables us to seamlessly handle vast amounts of data, provide low-latency access to users worldwide, and ensure high availability and scalability. Its support for various data models, including document, key-value, graph, and column family, offers the flexibility needed to store and query diverse types of data efficiently. CosmosDB's built-in global distribution, automatic scaling, and robust consistency options align perfectly with the app's requirements for data resilience, real-time updates, and responsive performance. It's the foundational layer that empowers the app to deliver a seamless and data-rich user experience.
 
 [ADR 3 - Cosmos DB and Redis for Global Data Distribution](/Resources/ADRs/ADR03-Data-Distribution.md)
 
@@ -622,7 +622,7 @@ Azure Front Door acts as a global entry point, combining security and load balan
 
 ### Privatelink
 
-In order to improve security, reliability, and performance for the main cluster and the geographically dispersed API endpoints, the solution will employ the usage of privatelinks. This is a service that enables secure and private communication between the application and services, like databases, storage, and other resources, without traversing the public internet. 
+In order to improve security, reliability, and performance for the main cluster and the geographically dispersed API endpoints, the solution will employ the usage of private links. This is a service that enables secure and private communication between the application and services, like databases, storage, and other resources, without traversing the public internet. 
 
 This approach will be utilised to improve:
 
@@ -632,7 +632,7 @@ This approach will be utilised to improve:
 
 - **Improved Performance** by eliminating the need for data to traverse the public internet.
 
-Overall this approach is expectected to create an isolated environment for the application's backbone thereby reducing exposure to external threats and ensuring that our application's dependencies are accessible only through a private, secure channel.
+Overall this approach is expected to create an isolated environment for the application's backbone thereby reducing exposure to external threats and ensuring that our application's dependencies are accessible only through a private, secure channel.
 
 ### Azure Synapse
 
@@ -642,19 +642,19 @@ Azure Synapse serves as the backbone of the app's data analytics and warehousing
 
 Having gone over the [MVP Timeline Proposal](#mvp-timeline-proposal) and identified the core components that will make the system in [Identifying Architectural Quanta](#identifying-architectural-quanta) we will start to outline how the solution will physically be built vis-a-vis the MVP roll out and the expected cost at each phase of the architecture. Azure has been used as an example platform to reference specific managed services and calculate a baseline cost. As previously mentioned the system is to be built in an abstract way that allows all managed services to be swapped out to any other Cloud managed services. Azure will however be used for us to be able to come up with a base price for the platform.
 
-Throughout the technical build up we constantly kept in mind the following requirements: 
+Throughout the technical build-up, we constantly kept in mind the following requirements: 
 
 - 2 million active users per week
 - 15 million total users within the system
 - Maximum of 5 minutes downtime per month
 - Updates must be within the app within 5 minutes
-- Response time should be 800ms and first contentful paint under 1.4 seconds.
+- Response time should be 800ms and the first contentful paint under 1.4 seconds.
 
 ### MVP 1 - Road Warrior Soft-Launch
 
-Given that Road Warrior is a start up it is critical to ensure a cost-effective MVP rollout that does not cripple the start up. Therefore, we will concentrate on delivering a lean and focused version of our product. Utilising cloud services, and taking a scale as you go approach, we will optimise development costs. Our design will be minimalistic yet functional, and we will follow an agile development approach for rapid iteration based on user feedback. We'll continuously monitor costs and performance to make data-driven decisions. This approach will enable us to validate our concept while effectively managing our startup's financial resources.
+Given that Road Warrior is a start-up it is critical to ensure a cost-effective MVP rollout that does not cripple the start-up. Therefore, we will concentrate on delivering a lean and focused version of our product. Utilising cloud services, and taking a scale-as-you-go approach, we will optimise development costs. Our design will be minimalistic yet functional, and we will follow an agile development approach for rapid iteration based on user feedback. We'll continuously monitor costs and performance to make data-driven decisions. This approach will enable us to validate our concept while effectively managing our startup's financial resources.
 
-To this end the first MVP is a bare bones deployment consisting of:
+To this end the first MVP is a bare-bones deployment consisting of:
 - Standard Kubernetes Cluster
 - Standard Container Registry
 - Standard Event Grid
@@ -663,7 +663,7 @@ To this end the first MVP is a bare bones deployment consisting of:
 - General Purpose Storage Account
 - Azure DNS
 
-While this is not the most performant for the forecasted user base, we do not expect a huge amount of traffic in the initial roll out either.Therefore, we foresee this to be viable in the beginning.The below diagram depicts the infrastructure set up at this point
+While this is not the most performant for the forecasted user base, we do not expect a huge amount of traffic in the initial rollout either. Therefore, we foresee this to be viable in the beginning. The below diagram depicts the infrastructure set up at this point
 
 ![Technical Architecture MVP 1](Images/TechnicalImplementation/MVP1-Katas.png)
 
@@ -711,11 +711,11 @@ The MVP 2 iteration will see the following changes:
 | Power Automate | 1 Standard User | $15.00 | 
 | | | $912.41 |
 
-The cost at this stage is expected to go up to $912.41 per month. While this is almost double the cost of MVP 1 it can be noted that the core services' Cluster, Database and front facing App Service have also been significantly upgraded. These upgrades are due to the additional load that the third-party integration will start introducing and with the expectations that the system would have started to generate traction and more users' are onboarding.
+The cost at this stage is expected to go up to $912.41 per month. While this is almost double the cost of MVP 1 it can be noted that the core services' Cluster, Database, and front-facing App Service have also been significantly upgraded. These upgrades are due to the additional load that the third-party integration will start introducing and with the expectations that the system would have started to generate traction and more users are onboarding.
 
 ### MVP 3 - Reporting and Analytics
 
-This iteration focuses mainly on the Analytics and Reporting aspect of the system which will be expected to feature greatly in the application's forecasted growth. At this point we are also assuming that the amount of active users per week is starting to approach the 2 million mark. Therefore, this MVP iteration will see the following changes:
+This iteration focuses mainly on the Analytics and Reporting aspect of the system which will be expected to feature greatly in the application's forecasted growth. At this point, we are also assuming that the amount of active users per week is starting to approach the 2 million mark. Therefore, this MVP iteration will see the following changes:
 
 - Upgraded Cluster
 - Azure Synapse Analytics
@@ -742,11 +742,11 @@ This iteration focuses mainly on the Analytics and Reporting aspect of the syste
 | Power BI | 1 Premium User | $20.00 | 
 | | | $1,829.64 |
 
-The cost has once more double from MVP 2 to MVP 3 with the new forecasted cost being at $1,829.64 per month. However, this iteration, apart from more upgrades to the cluster starts setting the foundation of the analytics engine. While this is costly it is also an essential part of the application and has therefore started to feature.
+The cost has once more doubled from MVP 2 to MVP 3 with the new forecasted cost being at $1,829.64 per month. However, this iteration, apart from more upgrades to the cluster starts setting the foundation of the analytics engine. While this is costly it is also an essential part of the application and has therefore started to feature.
 
 ### MVP 4 - Geographical Distribution 
 
-The final main iteration will consist of geographical expansion through replication of Cosmos DB via geographical distribution and the usage of better load balancing techniques. This iteration will also used to gathered usage metric data to commit to reserved instances for 3 years to bring down the cost of infrastructure. While this means that Road Warriors is committed to 3 years with the same minimum cluster size we are assuming that the start-up has now stabilised and has prospects of more growth going forward. To this end, MVP 4 will focus on geographical distribution and loadbalancing by adding:
+The final main iteration will consist of geographical expansion through the replication of Cosmos DB via geographical distribution and the usage of better load-balancing techniques. This iteration will also used to gather usage metric data to commit to reserved instances for 3 years to bring down the cost of infrastructure. While this means that Road Warriors is committed to 3 years with the same minimum cluster size we are assuming that the start-up has now stabilised and has prospects of more growth going forward. To this end, MVP 4 will focus on geographical distribution and load-balancing by adding:
 
   - Upgraded Cluster (with reserved instances)
   - Cosmos DB Geographical Distribution
@@ -764,7 +764,7 @@ This leads to the below final overall architecture
 | ----------- | ----------- | ----------- |
 | Azure Kubernetes Service (AKS) | 2 Linux E16-8as v5 Node (3 year reserved instances) with S4 - 32GB of OS Disk | $774.02 |
 | Azure Container Registry | Standard | $20.00 |
-| Azure Cosmos DB | Autoscale Provisioned Throughput with 200GB of storage with availability in West Europe, East US, East Asia and Southeast Asia and a maximum of 2000 Requests per second | $500.40 |
+| Azure Cosmos DB | Autoscale Provisioned Throughput with 200GB of storage with availability in West Europe, East US, East Asia, and Southeast Asia and a maximum of 2000 Requests per second | $500.40 |
 | Event Grid | Standard - Event Grid Namespace  (Assuming up to 50 million monthly events)  | $29.40 |
 | Storage Account | General Purpose v2 | $23.88 |
 | App Service | Premium V2 (P1V2) to be used by PWA in 4 regions | $584.00 |
@@ -782,26 +782,26 @@ This leads to the below final overall architecture
 | | | $3,404.13 |
 
 While once more we are seeing a steep cost when compared to MVP 3 with the new monthly cost going to $3,404.13 per month we have managed to make our application more accessible and responsive in different parts of the globe. 
-This is critical since the nature of the application makes it required to be performant globally since even the if the user base are focused in a specific country, the same users will largely be consuming the contents of the application while actively on a trip.
+This is critical since the nature of the application makes it required to be performant globally since even if the user base is focused in a specific country, the same users will largely be consuming the contents of the application while actively on a trip.
 
-The final cost of $3,404.13 per month should not be taken as a fixed number since we would continuously continue to monitor the application to see if we need to scale up or down. Such scaling will have an affect on the cost in respect to the scaling direction.
+The final cost of $3,404.13 per month should not be taken as a fixed number since we would continuously continue to monitor the application to see if we need to scale up or down. Such scaling will have an effect on the cost with respect to the scaling direction.
 
 ## Engineering Practices
 
 The following are some software engineering practices that will be adhered to during the undertaking of the project:
 
 ### Provider Pattern
-A design pattern used to abstract the creation of objects or services. This pattern decouples client code from the specific implementation and is commonly used in dependency injection and inversion of control.
+A design pattern that is used to abstract the creation of objects or services. This pattern decouples client code from the specific implementation and is commonly used in dependency injection and inversion of control.
 
-This pattern will be used thoroughly within the solution in areas where common code can be used to cover features which are fed inputs from different sources which need to undergo the same business logic, as is the case with supporting different SSO authentication providers, different travel agency integrations and so on.
+This pattern will be used thoroughly within the solution in areas where common code can be used to cover features that are fed inputs from different sources that need to undergo the same business logic, as is the case with supporting different SSO authentication providers, different travel agency integrations, and so on.
 
 [ADR 7 - Provider Pattern](/Resources/ADRs/ADR07-Provider-pattern.md)
 
 ### Domain Driven Design (DDD) with Command Query Responsibility Segregation (CQRS)
 
-Given the usage of domain boundary analysis in the event storming phase it comes natural that the solution will adopt DDD with CQRS as an engineering pattern. This combination allows building complex, scalable, and maintainable software systems. All of which are identified as key architectural characteristics which the solution requires as key pillars of its foundation.
+Given the usage of domain boundary analysis in the event storming phase it comes naturally that the solution will adopt DDD with CQRS as an engineering pattern. This combination allows the building of complex, scalable, and maintainable software systems. All of these are identified as key architectural characteristics that the solution requires as key pillars of its foundation.
 
-This methodology empowers the creation of a shared understanding of the complex travel management domain and craft a software solution that truly aligns with the real-world intricacies of travel, reservations, and user interactions. In this context, DDD is not just an engineering strategy but allows the creation of a user-centric travel management platform.
+This methodology empowers the creation of a shared understanding of the complex travel management domain and the crafting of a software solution that truly aligns with the real-world intricacies of travel, reservations, and user interactions. In this context, DDD is not just an engineering strategy but allows the creation of a user-centric travel management platform.
 
 By combining CQRS with DDD, we achieve a robust and flexible architecture. The write side of CQRS aligns well with DDD's focus on modeling the domain, encapsulating business logic, and enforcing consistency.
 
@@ -812,7 +812,7 @@ Events can be leveraged to communicate changes between bounded contexts, facilit
 [ADR 15 - DDD with CQRS Pattern](/Resources/ADRs/ADR15-DDD-with-CQRS-pattern.md)
 
 ### Deployment Pipelines
-Deployment pipelines refer to an automated series of steps for deploying changes to the product. This is in line with the chosen idea to produce MVPs that increment on top of eachother with new features. It helps ensure consistent and reliable software delivery, void of human errors caused by mistakes in the deployment process.
+Deployment pipelines refer to an automated series of steps for deploying changes to the product. This is in line with the chosen idea to produce MVPs that increment on top of each other with new features. It helps ensure consistent and reliable software delivery, void of human errors caused by mistakes in the deployment process.
 
 This practice is supplemented by CI/CD (Continuous Integration/Continuous Deployment):
 - CI: Frequent integration of code changes into a shared repository.
@@ -830,7 +830,7 @@ The SOLID principles are a series of guidelines for writing maintainable and ext
 5. **Dependency Inversion Principle (DIP):** High-level modules should not depend on low-level modules, both should depend on abstractions, and abstractions should not depend on details; it encourages the use of interfaces or abstract classes to decouple components.
 
 ### Unit Tests
-Small, isolated tests that validate the behavior of individual code units (e.g., modifications of trips/reservations). Unit tests help ensure that each piece of code works correctly in isolation and keep a contribute towards consistent code quality assurance.
+Small, isolated tests that validate the behavior of individual code units (e.g., modifications of trips/reservations). Unit tests help ensure that each piece of code works correctly in isolation and contribute towards consistent code quality assurance.
 
 ## ADRS
 
