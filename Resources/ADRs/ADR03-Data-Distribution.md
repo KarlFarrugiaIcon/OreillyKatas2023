@@ -1,18 +1,27 @@
 
-# ADR 3: Cosmos DB and Redis for Global Data Distribution
+# ADR 3: Distributed Databases and Redis for Global Data Distribution
+
+In addition to some necessitated performance benchmarks, providing a seamless experience for people on the Go can be considered as an implied requirement. The business logic involved in the application is relatively simple, therefore there is only so much that can be done in the ways of the backend design. On the other hand, the architectural elements related to the data infrastructure as well as where and how the data is fetched, can be a significant hinderance to performance if they are neglected.
 
 ## Rationale 
-In our architectural discussions, we addressed the need for global data distribution to ensure low-latency access to data for users in different geographic regions. We evaluated several options and have made the decision to use Cosmos DB in combination with Redis for this purpose
+
+The application being a travel companion implied that users across the globe will be using the application, and potentially individuals may even access it from different locations in a short timespan.
+
+This meant that considering a distributed-database design, as opposed to a centralised one, offered great promise for contributing towards optimised performance for this specific business case.
+
+As an additional micro-optimisation for improving request performance, pairing data retrieval with a caching service (i.e. Redis), also made sense - especially since there may be several features that involve querying the same elements (such as shifting from one dashboard to the next).
 
 ## Decision 
-After careful consideration of our project's requirements and objectives, we have chosen to implement a solution that involves using Cosmos DB and Redis to achieve global data distribution. This approach ensures data is efficiently disseminated from the primary Cosmos DB to regional read/write Cosmos DB instances, which are further responsible for dispersing information to other Cosmos DB instances within their respective regions.
+
+Incorporating distributed databases and Redis into the data segments of the system architecture is proposed.
 
 ## Consequences
+
 Positive:
-+ Cosmos DB ensures low-latency access for users worldwide 
-+ Cosmos DB can scale horizontally to handle high-throughput workloads
-+ Redis serves as an efficient in-memory cache, reducing the load on the primary Cosmos DB by storing frequently accessed data,
+* Distributed databases optimise minimal latency access for users worldwide;
+* Managed services for distributed databases (such as Cosmos DB) provide out-of-the-box horizontal scaling features to handle high-throughput workloads;
+* Leveraging Redis as a managed service or an in-memory cache is an efficient way to reduce unnecessary requests to the database.
 
 Negative:  
-+ Redis may cause synchronization issues
-+ Operating and maintaining both Cosmos DB and Redis instances, along with monitoring and ensuring data consistency, requires careful planning and resources
+* While performance would be problematic for this scenario, centralised databases are easier to enforce data consistency in comparison to distributed databases, which will require both in-built replication services to be running, and ideally also covered within the code infrastructure;
+* Redis may cause synchronisation issues if enough code-safeguards are not put in place.
