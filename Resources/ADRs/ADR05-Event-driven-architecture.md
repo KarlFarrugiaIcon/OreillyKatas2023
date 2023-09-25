@@ -2,6 +2,10 @@
 
 The execution of an event-storming exercise to outline the behavioral requirements of the system in addition to the consideration of Microservices and Domain-Driven Design elements as part of the proposed architecture highlighted the need to consider how domain events will be managed.
 
+## Status
+
+Proposed
+
 ## Rationale
 
 The event-driven approach is based on the idea that microservices communicate with each other by exchanging events. An event is a message that represents something that happened in the system, such as a change in data, a request from a user, or a notification from another service. Events are published to common channels (in this case, the Event Streaming and Queue Infrastructure) where they can be consumed by other interested microservices. This way, microservices can react to events asynchronously and independently, without having to know the details of each other's implementation. 
