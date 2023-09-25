@@ -17,7 +17,7 @@ As an additional micro-optimisation for improving request performance, pairing d
 
 ## Decision 
 
-Incorporating distributed databases and Redis into the data segments of the system architecture is proposed.
+Incorporating distributed databases and Redis into the data segments of the system architecture is the agreed upon approach.
 
 ## Consequences
 
