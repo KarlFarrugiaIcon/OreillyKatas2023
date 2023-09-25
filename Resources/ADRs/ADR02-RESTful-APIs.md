@@ -9,7 +9,7 @@ While both options support the necessitated system architecture, a decision here
 
 ## Status
 
-Proposed
+Approved
 
 ## Rationale
 
