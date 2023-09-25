@@ -8,7 +8,7 @@ This decision is potentially the most impactful one throughout the project as it
 
 ## Status
 
-Proposed
+Approved
 
 ## Rationale 
 
