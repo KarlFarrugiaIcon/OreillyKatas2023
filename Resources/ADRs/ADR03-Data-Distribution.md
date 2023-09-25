@@ -5,7 +5,7 @@ In addition to some necessitated performance benchmarks, providing a seamless ex
 
 ## Status
 
-Proposed
+Approved
 
 ## Rationale 
 
