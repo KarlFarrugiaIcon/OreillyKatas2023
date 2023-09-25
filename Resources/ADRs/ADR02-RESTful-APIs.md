@@ -7,6 +7,10 @@ On the topic of enabling communication to the back-end APIs, the following were 
 
 While both options support the necessitated system architecture, a decision here was necessary as it would impact implementation costs.
 
+## Status
+
+Proposed
+
 ## Rationale
 
 The bottom-line difference between both options is that REST provides a well-established standard for implementing traditional APIs while GraphQL offers flexible data querying. As the nature of the technology implies, GraphQL is excellent for the following conditions:
