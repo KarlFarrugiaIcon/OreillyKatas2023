@@ -717,9 +717,9 @@ The MVP 2 iteration will see the following changes:
 | Azure DNS | Zone 1 Public DNS | $0.90 |
 | IP Addresses | Global ARM 1 Static IP | $16.06 |
 | Power Automate | 1 Standard User | $15.00 | 
-| | | $912.41 |
+| | | $912.42 |
 
-The cost at this stage is expected to go up to $912.41 per month. While this is almost double the cost of MVP 1 it can be noted that the core services' Cluster, Database, and front-facing App Service have also been significantly upgraded. These upgrades are due to the additional load that the third-party integration will start introducing and with the expectations that the system would have started to generate traction and more users are onboarding.
+The cost at this stage is expected to go up to $912.42 per month. While this is almost double the cost of MVP 1 it can be noted that the core services' Cluster, Database, and front-facing App Service have also been significantly upgraded. These upgrades are due to the additional load that the third-party integration will start introducing and with the expectations that the system would have started to generate traction and more users are onboarding.
 
 ### MVP 3 - Reporting and Analytics
 
@@ -745,12 +745,12 @@ This iteration focuses mainly on the Analytics and Reporting aspect of the syste
 | Azure DNS | Zone 1 Public DNS | $0.90 |
 | IP Addresses | Global ARM 1 Static IP | $16.06 |
 | Power Automate | 1 Standard User | $15.00 | 
-| Azure Synapse | Compute Optimised Gen2 with 100 DWU Blocks and a 3 year reserve instance |  $397.30 | 
+| Azure Synapse | Compute Optimised Gen2 with 100 DWU Blocks, 10 hour daily commitment and a 3 year reserve instance |  $397.30 | 
 | Apache Spark Pool | Small Memory Optimised (4 vCores with 32 GB) | $166.92 |
 | Power BI | 1 Premium User | $20.00 | 
-| | | $1,829.64 |
+| | | $1,829.68 |
 
-The cost has once more doubled from MVP 2 to MVP 3 with the new forecasted cost being at $1,829.64 per month. However, this iteration, apart from more upgrades to the cluster starts setting the foundation of the analytics engine. While this is costly it is also an essential part of the application and has therefore started to feature.
+The cost has once more doubled from MVP 2 to MVP 3 with the new forecasted cost being at $1,829.68 per month. However, this iteration, apart from more upgrades to the cluster starts setting the foundation of the analytics engine. While this is costly it is also an essential part of the application and has therefore started to feature.
 
 ### MVP 4 - Geographical Distribution 
 
