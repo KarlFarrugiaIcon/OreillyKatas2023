@@ -30,4 +30,4 @@ Positive:
 
 Negative:
 * PWA may not fully leverage platform-specific native features, which has more direct access to native APIs.
-* While PWA performance has significantly improved in the case of most contemporary technologies, it may not match the performance of a fully optimized native app in all scenarios.
+* While PWA performance has significantly improved in the case of most contemporary technologies, it may not match the performance of a fully optimised native app in all scenarios.

@@ -8,7 +8,7 @@ Approved
 
 ### Technological Considerations
 
-When a user performs a write operation, we aim to provide a responsive and efficient experience. Relying on local storage to show the latest data aligns with our goal of minimizing latency for write operations. This approach facilitates prioratising the speed of write operations by not waiting for the database to replicate data immediately.
+When a user performs a write operation, we aim to provide a responsive and efficient experience. Relying on local storage to show the latest data aligns with our goal of minimising latency for write operations. This approach facilitates prioratising the speed of write operations by not waiting for the database to replicate data immediately.
 
 ### Cost Implications
 

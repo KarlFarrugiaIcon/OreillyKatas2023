@@ -1,7 +1,7 @@
 
 # ADR 3: Distributed Databases and Redis for Global Data Distribution
 
-In addition to some necessitated performance benchmarks, providing a seamless experience for people on the Go can be considered as an implied requirement. The business logic involved in the application is relatively simple, therefore there is only so much that can be done in the ways of the backend design. On the other hand, the architectural elements related to the data infrastructure as well as where and how the data is fetched, can be a significant hinderance to performance if they are neglected.
+In addition to some necessitated performance benchmarks, providing a seamless experience for people on the go can be considered as an implied requirement. The business logic involved in the application is relatively simple, therefore there is only so much that can be done in the ways of the backend design. On the other hand, the architectural elements related to the data infrastructure as well as where and how the data is fetched, can be a significant hinderance to performance if they are neglected.
 
 ## Status
 

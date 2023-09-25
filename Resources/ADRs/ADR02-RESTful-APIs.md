@@ -17,8 +17,8 @@ The bottom-line difference between both options is that REST provides a well-est
 * A: API Requests are mainly data-centric; 
 * B: Multiple platforms would like to use the same endpoints but request different information at their whim.
 
-Condition a is not particularly applicable because the business case requirements do not show a significant reliance on data-centric API requests, and in the area where they are (Reporting & Analytics), a segregated solution has been suggested.
-With regards to condition b, due to the fact that a PWA front-end is going to be developed (i.e. both the Web Application and the Mobile Application share identical code), there is a single front-end implementation, so the necessity to implement different different endpoint recipients is absent.
+Condition A is not particularly applicable because the business case requirements do not show a significant reliance on data-centric API requests, and in the area where they are (Reporting & Analytics), a segregated solution has been suggested.
+With regards to condition B, due to the fact that a PWA front-end is going to be developed (i.e. both the Web Application and the Mobile Application share identical code), there is a single front-end implementation, so the necessity to implement different different endpoint recipients is absent.
 
 In contrast, utilising the REST API combined with CQRS helps build more domain-behaviour oriented API-BL interactions, suitable for covering the business case without introducing additional complexity. The use of CQRS alongside libraries such as MediatR helps streamline the way in which Domain Events can be fired off.
 
