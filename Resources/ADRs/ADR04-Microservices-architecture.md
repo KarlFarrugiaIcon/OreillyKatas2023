@@ -6,6 +6,10 @@ With an array of modules identified and a series of non-functional requirements 
 
 This decision is potentially the most impactful one throughout the project as it sets a precedent for the development and infrastructure deployment philosophy to be followed for the entire implementation.
 
+## Status
+
+Proposed
+
 ## Rationale 
 
 Microservices are not a new idea, but a way of applying traditional programming concepts and best practices (such as the SOLID Principles) to the modern context of distributed and service-oriented architectures. 
