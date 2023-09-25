@@ -20,7 +20,7 @@ Microservices are easily coupled with Domain Driven Design, which were originall
 
 ## Decision   
 
-The Microservices desgin is proposed for the general system architecture across the board.
+The Microservices desgin will be used for the general system architecture across the board.
 
 ## Consequences  
 
