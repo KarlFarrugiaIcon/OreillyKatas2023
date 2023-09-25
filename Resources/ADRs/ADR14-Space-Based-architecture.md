@@ -5,21 +5,21 @@ Approved
 
 ## Rationale
 
-The system's requirements align with the benefits offered by SBA. We propose implementing SBA to address the following key aspects; scalability, low-latency data access, redundancy and fault tolerance.
+The system's requirements align with the benefits offered by SBA. The team proposes implementing SBA to address the following key aspects; scalability, low-latency data access, redundancy and fault tolerance.
 
 ## Decision   
-we have decided to adopt an Space-Driven Architecture as the foundational approach for handling data intensive events within the Road Warrior system
+A Space-Driven Architecture will be engaged as the foundational approach for handling data intensive events within the Road Warrior system.
 
 ## Consequences  
 Positive:
-+ Scalability
-+ High Performance
-+ Fault Tolerance
-+ Real-time Capabilities
-+ Modularity
++ Scalability;
++ High Performance;
++ Fault Tolerance;
++ Real-time Capabilities;
++ Modularity.
 
 ## Consequences  
 Negative:
-- Complexity
-- Cost
-- Data consistency challenges
+* Complexity;
+* Added overhead cost;
+* Data consistency challenges.
