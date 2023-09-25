@@ -8,6 +8,10 @@ Two distinction options were considered:
 
 This decision has a significant impact on the development workload and general user experience of Road Warrior.
 
+## Status
+
+Proposed
+
 ## Rationale
 The only significant advantages that Option 1 had to offer, were not very applicable to this business case, mainly because:
 * Its key advantage would have been to have a dedicated Mobile Application, which makes it easier to consume mobile-specific resources - but, the required features on the mobile application do not have any complexity or access that cannot be covered with PWA mobile support.
