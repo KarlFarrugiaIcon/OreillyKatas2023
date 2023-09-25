@@ -24,7 +24,7 @@ In contrast, utilising the REST API combined with CQRS helps build more domain-b
 
 ## Decision 
 
-The use of REST + CQRS is proposed.
+Rest will be used for all API communication and CQRS will be used to encapsualte business logic.
 
 ## Consequences
 
