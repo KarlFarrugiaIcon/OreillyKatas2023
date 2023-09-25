@@ -858,7 +858,7 @@ Small, isolated tests that validate the behavior of individual code units (e.g.,
 
 [ADR 8 - Polling vs Webhooks with Email Forwarding Rule](/Resources//ADRs/ADR08-Polling-vs-InboxWebhooksWithEmailForwardingRule.md)
 
-[ADR 9 - Cosmos DB](/Resources/ADRs/ADR09-CosmosDB-Consistency.md)
+[ADR 9 - Choice of "Eventual Consistency" for Distributed Databases](/Resources/ADRs/ADR09-CosmosDB-Consistency.md)
 
 [ADR 10 - Load Balancing of Core Services](/Resources/ADRs/ADR10-Load-balancing-Core-Services.md)
 
