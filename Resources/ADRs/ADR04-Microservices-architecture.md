@@ -1,19 +1,29 @@
-
 # ADR 4: Microservices Architecture
 
+The general architecture of the overall system is the starting point of all development work and the catalyst to addressing all non-functional requirements for the system. After careful analysis of the preliminary business case and behavioral requirements, a series of distinct modules were identified from an early stage.
+
+With an array of modules identified and a series of non-functional requirements based around elasticity and scalability, considering Microservices as a baseline architecture for the solution became an obvious option.
+
+This decision is potentially the most impactful one throughout the project as it sets a precedent for the development and infrastructure deployment philosophy to be followed for the entire implementation.
+
 ## Rationale 
-Microservices are not a new idea, but a way of applying old programming concepts and best practices to the modern context of distributed and service-oriented architectures. One of these concepts is that software modules should be designed with low coupling and high cohesion, meaning that they should have clear boundaries and responsibilities, and minimal dependencies on each other. This is based on the more fundamental programming principles of separation of concerns, principle of least knowledge, and single responsibility principle.  
-Microservices also adopt the principles of Domain Driven Design, which were originally developed to deal with the challenges of large and complex monolithic systems that were divided by technology layers. Domain Driven Design focuses on the business domain and its logic, rather than the technical details of the implementation.  
-The advantage of this approach is that it can be applied to any system, regardless of its architecture. Even if we choose to build a modular monolith, we can still use the same principles to design and build its components. The modular structure of the system should reflect the proposed architecture at each layer.
+
+Microservices are not a new idea, but a way of applying traditional programming concepts and best practices (such as the SOLID Principles) to the modern context of distributed and service-oriented architectures. 
+
+A key principle for developing robust and maintainable software is that modules should be designed with low coupling and high cohesion, having clear boundaries and responsibilities, with little-to-no dependencies on each other. This is based on the more fundamental programming principles of separation of concerns, principle of least knowledge, and single responsibility principle.
+
+Microservices are easily coupled with Domain Driven Design, which were originally developed to deal with the challenges of large and complex monolithic systems that were divided by technology layers. Domain Driven Design focuses on the business domain and its logic, rather than the technical details of the implementation - allowing for easier design of abstract components void of technical constraints.
 
 ## Decision   
-We have opted for the Microservices architecture to design and structure the Road Warrior system
+
+The Microservices desgin is proposed for the general system architecture across the board.
 
 ## Consequences  
+
 Positive:
-+ It gives us greater scalability and isolation compared to a modular monolith
-+ It allows us to use different technologies and programming languages for each service, enabling us to choose the best tool for each specific task
-+ independent units that can be developed, deployed, and maintained separately. 
+* Scalability across the board and for individual modules (Elasticity) is easily managed when clearly-distinct service instances are deployed, in comparison to traditional monolithic systems;
+* Technological constraints across the board are eliminated, as services are independent and can make use of whatever technologies and elements are necessary without being burdened or bloated with unnecessary implementations;
+* Iterative development and deployments are more easily managed when service distinctions are made by design.
 
 Negative:  
-+ Complexity in terms of service discovery, inter-service communication, and data consistency between services.
+* Complexity in terms of infrastructure (i.e. service discovery, inter-service communication) and data consistency between services is increased and requires additional efforts and specific design to ensure reliability.
