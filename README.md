@@ -339,7 +339,7 @@ The following section provides a description of the interactions with the neighb
 The following are some characteristics that are present for every module and thus are described prior to the service-specific descriptions.
 
 - The entry-point for all requests going downstream from the Client-facing applications is always through an Application Gateway which acts as a security mechanism for validating that requests towards the backend services come from an accepted origin.
-- Each Microservice is provisioned within a Kubernetes Cluster and is designed to scale horizontally based on the load on the system. A minimum of one service instance will be made available in different regions. 
+- Each Microservice is provisioned within a Kubernetes Cluster and is designed to scale horizontally based on the load on the system. A minimum of one service instance will be made available for each service at any given moment. 
 - A load balancer will be configured within the Kubernetes Cluster to handle redirection of requests based on proximity and availability.
 - Standard database operations occur against a data center with the closest proximity to the originating request. To support eventual consistency, the updated/deleted records are replicated across the distributed database instances in near real-time.
 
