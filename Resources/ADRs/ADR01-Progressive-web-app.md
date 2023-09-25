@@ -8,15 +8,15 @@ Two distinction options were considered:
 
 This decision has a significant impact on the development workload and general user experience of Road Warrior.
 
-## Decision
-The Progressive Web App (PWA) option is proposed.
-
 ## Rationale
 The only significant advantages that Option 1 had to offer, were not very applicable to this business case, mainly because:
 * Its key advantage would have been to have a dedicated Mobile Application, which makes it easier to consume mobile-specific resources - but, the required features on the mobile application do not have any complexity or access that cannot be covered with PWA mobile support.
 * Although cross-platform options are available, developing native mobile applications would have potentially resulted in different workstreams concerning Apple and Android platforms - in addition to the need to build a distinct website.
 
 With this in mind, due to the relatively complexity-free nature of the features specified in the product (from an end-user perspective), a PWA front-end architecture is clearly the superior option. In addition to meeting the baseline requirements adequately, the PWA will still allow usage of mobile features needed (or forecasted to be needed), such as Location Tracking and Push Notifications. Ultimately, development & maintenance efforts and costs are reduced due to the need to build & support one single component.
+
+## Decision
+The Progressive Web App (PWA) option is proposed.
 
 ## Consequences
 Positive:
