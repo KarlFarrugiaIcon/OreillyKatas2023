@@ -10,7 +10,7 @@ This decision has a significant impact on the development workload and general u
 
 ## Status
 
-Proposed
+Approved
 
 ## Rationale
 The only significant advantages that Option 1 had to offer, were not very applicable to this business case, mainly because:
