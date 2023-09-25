@@ -4,7 +4,7 @@ The execution of an event-storming exercise to outline the behavioral requiremen
 
 ## Status
 
-Proposed
+Approved
 
 ## Rationale
 
