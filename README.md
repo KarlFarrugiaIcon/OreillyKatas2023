@@ -846,7 +846,7 @@ Small, isolated tests that validate the behavior of individual code units (e.g.,
 
 [ADR 2 - Choosing REST and CQRS over GraphQL](/Resources/ADRs/ADR02-RESTful-APIs.md)
 
-[ADR 3 - Cosmos DB and Redis for Global Data Distribution](/Resources/ADRs/ADR03-Data-Distribution.md)
+[ADR 3 - Distributed Databases and Redis for Global Data Distribution](/Resources/ADRs/ADR03-Data-Distribution.md)
 
 [ADR 4 - Microservice Architecture](/Resources/ADRs/ADR04-Microservices-architecture.md)
 
