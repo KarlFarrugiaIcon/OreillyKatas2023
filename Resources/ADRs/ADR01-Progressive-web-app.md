@@ -1,5 +1,5 @@
 
-# ADR 1: Progressive Web APP
+# ADR 1: Progressive Web App
 One of the first architectural decisions taken concerned choosing the right public-facing component which users will interact with. 
 
 Two distinction options were considered:
