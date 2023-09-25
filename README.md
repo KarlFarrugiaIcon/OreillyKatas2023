@@ -147,7 +147,7 @@ The solution adheres to a boundary analysis that encompasses several key compone
 
 - Data Analytics: The solution incorporates data analytics to derive insights from user interactions, helping to improve user experiences and provide personalised recommendations based on historical travel data.
 
-- Recommendation Engine: Utilizing a recommendation engine, the system offers tailored suggestions to users based on their travel history, preferences, and current bookings, enhancing their travel planning and decision-making process.
+- Recommendation Engine: Utilising a recommendation engine, the system offers tailored suggestions to users based on their travel history, preferences, and current bookings, enhancing their travel planning and decision-making process.
 
 - User Authentication: Security is paramount, and the system includes robust user authentication mechanisms to protect user data and ensure only authorised access to accounts and itineraries.
 
