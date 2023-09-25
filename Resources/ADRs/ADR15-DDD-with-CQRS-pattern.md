@@ -5,7 +5,7 @@ Approved
 
 ## Rationale
 
-It is being proposed to uptake the usage of Domain Driven Design, due to the way it can implement the Domain Boundaries which were being outlined in the event storming phase, and marry it with CQRS since the latter advocates the separation of concerns between commands and queries, enabling us to design and optimise the system for different tasks independently
+It is being proposed to uptake the usage of Domain Driven Design, due to the way it can implement the Domain Boundaries which were being outlined in the event storming phase, and marry it with CQRS since the latter advocates the separation of concerns between commands and queries, enabling us to design and optimise the system for different tasks independently.
 
 ## Decision
 
@@ -19,19 +19,19 @@ CQRS on the other hand encourages the separation of the command and query respon
 
 This also enables horizontal scalability by optimising read and write paths separately. We can scale the read side for high query performance and the write side for handling a large number of commands.
 
-Furthermore, paired with our event-driven architecture CQRS pairs well with Event Sourcing, which records all changes to the application's state as a sequence of events. This can be used for auditing, debugging, and ensuring data consistency.
+Furthermore, alongside event-driven architecture, CQRS pairs well with Event Sourcing, which records all changes to the application's state as a sequence of events. This can be used for auditing, debugging, and ensuring data consistency.
 
 ## Consequences
 Positive:
 
-+ Separation of Concerns
-+ Scalability
-+ Observabilitiy
+* Separation of Concerns;
+* Scalability;
+* Observabilitiy.
 
 These are all requirements of our architecture characteristics.
 
 Negative:  
 
-- Complexity
-- Potentially Over-engineered solution
-- Data synchronisation headaches
+* Complexity;
+* Potentially Over-engineered solution;
+* Data synchronisation headaches.
