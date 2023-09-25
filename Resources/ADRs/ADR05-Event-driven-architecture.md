@@ -14,7 +14,7 @@ The need for efficient, robust and secure event streaming was outlined and furth
 
 ## Decision
 
-The Event-Driven architecture is proposed as the foundational approach for handling domain events and communication between Microservices.
+The Event-Driven architecture will be used as the foundational approach for handling domain events and communication between Microservices.
 
 ## Consequences  
 Positive:
