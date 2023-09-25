@@ -587,9 +587,9 @@ PWAs offer features that allow the application to be much more accessible due to
 
 CosmosDB is the backbone of the app's data management strategy. With its globally distributed, multi-model database service, CosmosDB enables us to seamlessly handle vast amounts of data, provide low-latency access to users worldwide, and ensure high availability and scalability. Its support for various data models, including document, key-value, graph, and column family, offers the flexibility needed to store and query diverse types of data efficiently. CosmosDB's built-in global distribution, automatic scaling, and robust consistency options align perfectly with the app's requirements for data resilience, real-time updates, and responsive performance. It's the foundational layer that empowers the app to deliver a seamless and data-rich user experience.
 
-[ADR 3 - Cosmos DB and Redis for Global Data Distribution](/Resources/ADRs/ADR03-Data-Distribution.md)
+[ADR 3 - Distributed Databasesand Redis for Global Data Distribution](/Resources/ADRs/ADR03-Data-Distribution.md)
 
-[ADR 9 - Cosmos DB](/Resources/ADRs/ADR09-CosmosDB-Consistency.md)
+[ADR 9 - Choice of "Eventual Consistency" for Distributed Databases](/Resources/ADRs/ADR09-CosmosDB-Consistency.md)
 
 [ADR 12 - Distribution of Data Globally](/Resources/ADRs/ADR12-Distributing-Data-Globally.md)
 
@@ -597,7 +597,7 @@ CosmosDB is the backbone of the app's data management strategy. With its globall
 
 Redis plays a pivotal role in enhancing the speed and efficiency of the app. As an in-memory data store, Redis excels at caching frequently accessed data, reducing database load, and significantly improving response times for users. Its support for data structures like strings, sets, and hashes makes it versatile for various application needs, such as session management, real-time analytics, and queuing. With Redis, the app can deliver fast data retrieval and processing, ensuring a snappy and highly responsive user experience. It's a key component that enhances the overall performance and scalability of the application.
 
-[ADR 3 - Cosmos DB and Redis for Global Data Distribution](/Resources/ADRs/ADR03-Data-Distribution.md)
+[ADR 3 - Distributed Databases and Redis for Global Data Distribution](/Resources/ADRs/ADR03-Data-Distribution.md)
 
 [ADR 13 - Usage of Serverless Functions with Redis Over APIs](/Resources/ADRs/ADR13-Usage-of-Serverless-Functions-with-Redis-Over-APIs.md)
 
